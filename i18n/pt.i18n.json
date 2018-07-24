@@ -1,3 +1,37 @@
 {
-	"hello": "Olá!"
+	"landing-1-title": "O que é o BreakingDev?",
+	"landing-1-desc": "O BreakingDev é o maior hackathon univesitário de Lisboa. Durante 48 horas, alunos das principais faculdades de Lisboa e de todo o país juntam-se para desenvolver uma ideia ou projeto que tenham, num ambiente descontraído e informal, onde ainda podem ganhar prémios!",
+	"landing-1-video": "Ainda não estás convencido?",
+	"landing-1-video-link": "Vê aqui o nosso aftermovie da edição de 2017.",
+
+	"landing-2-title": "Como posso participar?",
+	"landing-2-participant": "É muito simples, junta-te um grupo de 2 a 4 amigos e escolhe uma das nossas categorias em baixo para participares. Faz a tua incrição e vem passar o fim de semana connosco.",
+	"landing-2-volunteer": "Se achas que programar não é pra ti mas queres participar na mesma no BreakingDev podes sempre juntar-te ao nosso programa de voluntariado.",
+	"landing-2-account": "Em qualquer dos casos, basta criares conta no nosso site e seguir os passos.",
+
+	"landing-3-title": "Categorias",
+	"landing-3-web-title": "Web",
+	"landing-3-web-sponsor": "by Sponsor",
+	"landing-3-web-desc": "Google, Facebook, Github, ... Hoje em dia é impossível fugir as aplicações web, portanto se HTML e Javascript não te assustam, esta pode ser a categoria pra ti.",
+	"landing-3-games-title": "Jogos",
+	"landing-3-games-sponsor": "by Sponsor",
+	"landing-3-games-desc": "Se os jogos são a tua paixão, vem fazer um jogo para qualquer plataforma, em qualquer formato, sobre qualquer tema, todas as ideias valem!",
+	"landing-3-awards-soon": "Fica atento às nossas redes sociais enquanto anunciamos os nossos prémios",
+
+	"landing-4-title": "Challenges",
+	"landing-4-challenges": "Os Challenges são prémios extra para reconhecer as melhores equipas em diversas áreas",
+	"landing-4-aplus-title": "A+ Challenge",
+	"landing-4-aplus-sponsor": "by Sponsor",
+	"landing-4-aplus-desc": "O projeto com mais valor para a comunidade académica",
+	"landing-4-crowd-title": "Crowd Award",
+	"landing-4-crowd-sponsor": "by Sponsor",
+	"landing-4-crowd-desc": "Para a equipa preferida dos participantes ao longo do fim-de-semana",
+	"landing-4-innovation-title": "Innovation",
+	"landing-4-innovation-sponsor": "by Sponsor",
+	"landing-4-innovation-desc": "Ao projeto mais inovador de todas as equipas participantes",
+	"landing-4-awards-soon": "Fica atento às nossas redes sociais enquanto anunciamos os nossos prémios",
+
+	"landing-5-title": "Tens dúvidas?",
+	"landing-5-desc": "Se ainda não estás esclarecido sobre como o BreakingDev funciona,",
+	"landing-5-faq" : "Acede aqui às nossas FAQ's"
 }
