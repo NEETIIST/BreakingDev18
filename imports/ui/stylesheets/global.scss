@@ -1,0 +1,97 @@
+
+
+/* VARIABLES! */
+$primary-red: #cc2e30;
+$dark-red: #a52729;
+$black: #1c1c1c;
+
+/* Fonts */
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+body {
+	font-family: 'Titillium Web', sans-serif !important;
+	font-weight: 400 !important;
+}
+.fw-6 { font-weight: 600; }
+.fw-4 { font-weight: 400; }
+.f-it { font-style: italic; }
+.f-black { color:#1c1c1c; }
+.f-white { color:#ffffff; }
+.fs-1 { font-size:1em; }  	/*  Use in menus and such */
+.fs-2 { font-size:1.1em; }
+.fs-3 { font-size:1.2em; }	/*  Use for texts */
+.fs-4 { font-size:1.4em; } 	
+.fs-5 { font-size:1.6em; }	/*  Use for titles */
+.fs-6 { font-size:1.8em; }
+.fs-7 { font-size:2.2em; }
+.fs-8 { font-size:2.5em; }
+.flh-1 { line-height: 1.2em; }
+.flh-2 { line-height: 1.4em; }
+.flh-3 { line-height: 1.6em; }
+.f-inherit { font-family: inherit !important; }
+.f-underline { text-decoration: underline };
+
+/* Links */
+a {	text-decoration: none !important; color:inherit !important; }
+a:hover { text-decoration: none !important; color:inherit !important; }
+a:visited { text-decoration: none !important; color:inherit !important; }
+
+/* Viewports */
+.vh-100 { min-height: 100vh ; }
+.vh-95 { min-height: 95vh ; }
+.vh-90 { min-height: 90vh ; }
+.vh-85 { min-height: 85vh ; }
+.vh-80 { min-height: 80vh ; }
+.vh-70 { min-height: 70vh ; }
+.vh-60 { min-height: 60vh ; }
+.vh-50 { min-height: 50vh ; }
+.vh-40 { min-height: 40vh ; }
+.vh-35 { min-height: 35vh ; }
+.vh-30 { min-height: 30vh ; }
+.vh-25 { min-height: 25vh ; }
+.vh-20 { min-height: 20vh ; }
+.vh-15 { min-height: 15vh ; }
+.vh-10 { min-height: 10vh ; }
+.vh-5 { min-height: 5vh ; }
+
+.vw-100 { min-width: 100vw ; }
+.vw-75 { min-width: 75vw ; }
+.vw-50 { min-width: 50vw ; }
+.vw-35 { min-width: 35vw ; }
+.vw-25 { min-width: 25vw ; }
+.vw-10 { min-width: 10vw ; }
+
+/* Spacers */
+.spacer-2 { min-height: 2vh; }
+.spacer-4 { min-height: 4vh; }
+.spacer-6 { min-height: 6vh; }
+.spacer-8 { min-height: 8vh; }
+
+/* Background Colors */
+.black { background-color: #1c1c1c };
+.white { background-color: #ffffff };
+.red { background-color: $primary-red };
+.dark-red { background-color: $dark-red };
+.dark-grey { background-color: #515151 };
+.light-grey { background-color: #c9c9c9 };
+
+/* Font Colors */
+.f-black { color: #1c1c1c };
+.f-white { color: #ffffff };
+.f-red { color: $primary-red };
+.f-dark-red { color: $dark-red };
+.f-dark-grey { color: #515151 };
+.f-light-grey { color: #c9c9c9 };
+
+/* Cursors */
+.cp { cursor: pointer; }
+.cd { cursor: no-drop; }
+
+/* Images */
+.round { border-radius: 3em; }

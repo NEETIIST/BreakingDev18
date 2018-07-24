@@ -1,0 +1,36 @@
+#menu-col
+{
+	border-left: 2px solid $primary-red;
+	//background-color: $primary-red;
+	background-color: $black;
+	//background-color: #1c1c1c;
+	background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23272727' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+#landing-content
+{
+	min-height: 100vh;
+	max-height: 100vh;
+	overflow-y: scroll;
+}
+
+.hover-test
+{
+	color: white;
+	transition: 0.2s;
+	//border-bottom: 1px solid white;
+	border-right: 1px solid white;
+}
+
+.hover-test:hover
+{
+	color: $primary-red;
+	//border-bottom: 1px solid $primary-red;
+	border-right: 1px solid $primary-red;
+	transition: 0.2s;
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
