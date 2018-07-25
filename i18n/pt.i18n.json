@@ -33,5 +33,18 @@
 
 	"landing-5-title": "Tens dúvidas?",
 	"landing-5-desc": "Se ainda não estás esclarecido sobre como o BreakingDev funciona,",
-	"landing-5-faq" : "Acede aqui às nossas FAQ's"
+	"landing-5-faq" : "Acede aqui às nossas FAQ's",
+
+	"landing-6-organization": "Uma organização:",
+	"landing-6-support": "Com o apoio:",
+
+	"footer-sponsor": "Seja um patrocinador",
+	"footer-sourcecode": "Source-code no Github",
+	"footer-tools": "Feito com ",
+
+	"menu-start": "Início",
+	"menu-participate": "Participar",
+	"menu-categories": "Categorias",
+	"menu-challenges": "Challenges",
+	"menu-sponsors": "Patrocinadores"
 }

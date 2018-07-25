@@ -1,8 +1,8 @@
 <template name="index">
 
-    <div class="row justify-content-center align-items-center m-0 vh-100">
-        <div class="col-lg-10 col-12 px-0" id="landing-content">
-            <div class="row justify-content-center align-items-center m-0 black vh-90">
+    <div class="row justify-content-start align-items-center m-0">
+        <div class="col-lg-10 col-12 px-0 -2" id="landing-content">
+            <div class="row justify-content-center align-items-center m-0 black vh-90 scrl-controller" id="landing-0">
                 <div class="col-lg-8 col-10">
                     <img class="img-fluid" src="/logos/landingBDev.png"/>
                 </div>
@@ -12,8 +12,9 @@
                     <i class="fas fa-chevron-down f-white cp hvr-sink"></i>
                 </div>
             </div>
-            <div class="row justify-content-center align-items-center m-0 black vh-70">
+            <div class="row justify-content-center align-items-center m-0 black vh-70 scrl-controller" id="landing-1">
                 <div class="col-10 p-0 text-left">
+                    <div class="spacer-4"></div>
                     <span class="f-white fs-6 fw-6">{{_ "landing-1-title"}}</span>
                     <hr class="red f-red" style="height:2px;border:none;" >
                     <p class="f-white fs-3 fw-4">{{_ "landing-1-desc"}}</p>
@@ -21,10 +22,12 @@
                     <span class="f-white fs-3 fw-4 cp hvr-white-to-red">
                         <a href="#" target="_blank">{{_ "landing-1-video-link"}}</a>
                     </span>
+                    <div class="spacer-4"></div>
                 </div>
             </div>
-            <div class="row justify-content-center align-items-center m-0 black vh-70">
+            <div class="row justify-content-center align-items-center m-0 black vh-70 scrl-controller" id="landing-2">
                 <div class="col-10 p-0 text-right">
+                    <div class="spacer-4"></div>
                     <span class="f-white fs-6 fw-6">{{_ "landing-2-title"}}</span>
                     <hr class="red f-red" style="height:2px;border:none;" >
                     <p class="f-white fs-3 fw-4">{{_ "landing-2-participant"}}</p>
@@ -32,22 +35,26 @@
                     <span class="f-white fs-3 fw-4 cp hvr-white-to-red">
                         <a href="#">{{_ "landing-2-account"}}</a>
                     </span>
+                    <div class="spacer-4"></div>
                 </div>
             </div>
             <!-- Categories -->
-            <div class="row justify-content-center align-items-center m-0 black vh-100">
+            <div class="row justify-content-center align-items-center m-0 black vh-100 scrl-controller" id="landing-3">
                 <div class="col-10 p-0 text-center">
+                    <div class="spacer-4"></div>
                     <span class="f-white fs-6 fw-6">{{_ "landing-3-title"}}</span>
                     <hr class="red f-red" style="height:2px;border:none;" >
                     <div class="row justify-content-center align-items-start m-0 p-0">
                         <div class="col-lg-6 col-12 pl-lg-0 pr-lg-3 px-0">
+                            <img class="square-icon" src="icons/Web.png"/>
                             <p class="f-white fs-4 fw-6 text-center">
                                 {{_ "landing-3-web-title"}}
                                 <a href="#"><span class="fw-4 hvr-white-to-red cp">{{_ "landing-3-web-sponsor"}}</span></a>
                             </p>
                             <p class="f-white fs-3 fw-4 text-justify">{{_ "landing-3-web-desc"}}</p>
                         </div>
-                        <div class="col-lg-6 col-12 text-justify pr-lg-0 pl-lg-3 px-0">
+                        <div class="col-lg-6 col-12 pr-lg-0 pl-lg-3 px-0">
+                            <img class="square-icon" src="icons/Jogos.png"/>
                             <p class="f-white fs-4 fw-6 text-center">
                                 {{_ "landing-3-games-title"}}
                                 <a href="#"><span class="fw-4 hvr-white-to-red cp">{{_ "landing-3-games-sponsor"}}</span></a>
@@ -57,31 +64,36 @@
                     </div>
                     <div class="spacer-4"></div>
                     <span class="f-white fs-3 fw-4">{{_ "landing-3-awards-soon"}}</span>
+                    <div class="spacer-4"></div>
                 </div>
             </div>
             <!-- Challenges -->
-            <div class="row justify-content-center align-items-center m-0 black vh-100">
+            <div class="row justify-content-center align-items-center m-0 black vh-100 scrl-controller" id="landing-4">
                 <div class="col-10 p-0 text-center">
+                    <div class="spacer-4"></div>
                     <p class="f-white fs-6 fw-6">{{_ "landing-4-title"}}</p>
                     <hr class="red f-red" style="height:2px;border:none;" >
-                    <p class="f-white fs-3 fw-4 mb-0">{{_ "landing-4-challenges"}}</p>
+                    <p class="f-white fs-3 fw-4 mb-3">{{_ "landing-4-challenges"}}</p>
                     <div class="row justify-content-center align-items-start m-0 p-0">
                         <div class="col-lg-4 col-12 pl-lg-0 pr-lg-3 px-0">
-                            <p class="f-white fs-4 fw-6 text-center">
+                            <img class="square-icon" src="icons/A+.png"/>
+                            <p class="f-white fs-4 fw-6 text-center mt-2">
                                 {{_ "landing-4-aplus-title"}}
                                 <a href="#"><span class="fw-4 hvr-white-to-red cp">{{_ "landing-4-aplus-sponsor"}}</span></a>
                             </p>
                             <p class="f-white fs-3 fw-4 text-justify">{{_ "landing-4-aplus-desc"}}</p>
                         </div>
-                        <div class="col-lg-4 col-12 px-lg-3 px-0">
-                            <p class="f-white fs-4 fw-6 text-center">
+                        <div class="col-lg-4 col-12 px-lg-2 px-0">
+                            <img class="square-icon" src="icons/Crowd.png"/>
+                            <p class="f-white fs-4 fw-6 text-center mt-2">
                                 {{_ "landing-4-crowd-title"}}
                                 <a href="#"><span class="fw-4 hvr-white-to-red cp">{{_ "landing-4-crowd-sponsor"}}</span></a>
                             </p>
                             <p class="f-white fs-3 fw-4 text-justify">{{_ "landing-4-crowd-desc"}}</p>
                         </div>
-                        <div class="col-lg-4 col-12 text-justify pr-lg-0 pl-lg-3 px-0">
-                            <p class="f-white fs-4 fw-6 text-center">
+                        <div class="col-lg-4 col-12 pr-lg-0 pl-lg-3 px-0">
+                            <img class="square-icon" src="icons/Innov.png"/>
+                            <p class="f-white fs-4 fw-6 text-center mt-2">
                                 {{_ "landing-4-innovation-title"}}
                                 <a href="#"><span class="fw-4 hvr-white-to-red cp">{{_ "landing-4-innovation-sponsor"}}</span></a>
                             </p>
@@ -90,42 +102,107 @@
                     </div>
                     <div class="spacer-4"></div>
                     <span class="f-white fs-3 fw-4">{{_ "landing-4-awards-soon"}}</span>
+                    <div class="spacer-4"></div>
                 </div>
             </div>
             <!-- FAQ's -->
             <div class="row justify-content-center align-items-center m-0 black vh-50">
-                <div class="col-lg-2">
+                <div class="col-lg-2 d-none d-lg-block">
                     <i class="far fa-question-circle fa-7x f-white"></i>
                 </div>
                 <div class="col-lg-8 col-10 p-0 text-left">
+                    <div class="spacer-4"></div>
                     <span class="f-white fs-6 fw-6">{{_ "landing-5-title"}}</span>
                     <hr class="red f-red" style="height:2px;border:none;" >
                     <p class="f-white fs-3 fw-4 mb-1">{{_ "landing-5-desc"}}</p>
                     <span class="f-white fs-3 fw-4 cp hvr-white-to-red">
                         <a href="#">{{_ "landing-5-faq"}}</a>
                     </span>
+                    <div class="spacer-4"></div>
                 </div>
             </div>
             <!-- Sponsors -->
-            
+            <div class="row justify-content-center align-items-center m-0 black vh-50 scrl-controller" id="landing-5">
+                <div class="col-10 p-0 text-right">
+                    <div class="spacer-4"></div>
+                    <div class="row justify-content-center align-items-start">
+                        <div class="col-4 text-center">
+                            <span class="f-white fs-3 fw-4 text-left">{{_ "landing-6-organization"}}</span>
+                        </div>
+                        <div class="col-4 text-center">
+                            <span class="f-white fs-3 fw-4 text-left">{{_ "landing-6-support"}}</span>
+                        </div>
+                        <div class="col-4 text-center">
+                            .
+                        </div>
+                    </div>
+                    <hr class="red f-red" style="height:2px;border:none;">
+                    <div class="row justify-content-center align-items-start">
+                        <div class="col-4 text-center">
+                            <a href="#" class="hvr-white-to-red">
+                                <span class="f-white fs-1 fw-4">{{_ "footer-sponsor"}}</span>
+                            </a>
+                        </div>
+                        <div class="col-4 text-center">
+                            <a href="#" target="_blank" class="hvr-white-to-red">
+                                <span class="f-white fs-1 fw-4">{{_ "footer-sourcecode"}}</span>
+                            </a>
+                        </div>
+                        <div class="col-4 text-center">
+                            <span class="f-white fs-1 fw-4">{{_ "footer-tools"}}
+                                <a href="#" target="_blank" class="hvr-white-to-red">Meteor </a>& 
+                                <a href="#" target="_blank">Bootstrap</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-2 p-0 d-none d-lg-block" id="menu-col">
+        <div class="col-2 p-0 d-none d-lg-block position-fixed offset-10" id="menu-col">
             <div class="row justify-content-center align-items-center m-0 vh-20">
                 <div class="col-10 text-center">
-                    <span class="f-white fs-3 fw-4">#BreakingDev</span>
+                    <span class="f-white fs-3 fw-6">#BreakingDev</span>
                 </div>
             </div>
             <div class="row justify-content-center align-items-center m-0 vh-60">
-                <div class="col-10 text-right">
-                    <div class="row justify-content-center align-items-center m-0">
+                <div class="col-12 text-right">
+                    <div class="row justify-content-center align-items-center m-0 cp">
                         <div class="col-12">
-                            <span class="f-white fs-3 fw-4 hover-test p-1 px-2 my-2">#BreakingDev</span>
+                            <span class="f-white fs-2 fw-4 {{isMenuActive 1}} p-1 px-2 my-2 scroll-menu" id="menu-opt-1">
+                                {{_ "menu-start"}}
+                            </span>
                         </div>
                     </div>
                     <div class="spacer-4"></div>
-                    <div class="row justify-content-center align-items-center m-0">
+                    <div class="row justify-content-center align-items-center m-0 cp">
                         <div class="col-12">
-                            <span class="f-white fs-3 fw-4 hover-test p-1 px-2 my-2">#BreakingDev</span>
+                            <span class="f-white fs-2 fw-4 {{isMenuActive 2}} p-1 px-2 my-2 scroll-menu" id="menu-opt-2">
+                                {{_ "menu-participate"}}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="spacer-4"></div>
+                    <div class="row justify-content-center align-items-center m-0 cp">
+                        <div class="col-12">
+                            <span class="f-white fs-2 fw-4 {{isMenuActive 3}} p-1 px-2 my-2 scroll-menu" id="menu-opt-3">
+                                {{_ "menu-categories"}}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="spacer-4"></div>
+                    <div class="row justify-content-center align-items-center m-0 cp">
+                        <div class="col-12">
+                            <span class="f-white fs-2 fw-4 {{isMenuActive 4}} p-1 px-2 my-2 scroll-menu" id="menu-opt-4">
+                                {{_ "menu-challenges"}}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="spacer-4"></div>
+                    <div class="row justify-content-center align-items-center m-0 cp">
+                        <div class="col-12">
+                            <span class="f-white fs-2 fw-4 {{isMenuActive 5}} p-1 px-2 my-2 scroll-menu" id="menu-opt-5">
+                                {{_ "menu-sponsors"}}
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -137,5 +214,7 @@
             </div>
         </div>
     </div>
+
+
 
 </template>
