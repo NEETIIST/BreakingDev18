@@ -27,14 +27,20 @@ johanbrook:publication-collector  # Test a Meteor publication by collecting its 
 aldeed:collection2
 http
 email
+check
 peerlibrary:xml2js
 fourseven:scss
 
 mizzao:jquery-ui
 session
-accounts-password
 tap:i18n
-
 bigu:waypoints
 meteortoys:allthings
-ruslan:jquery-ui
+
+# User Accounts
+useraccounts:core
+useraccounts:unstyled
+useraccounts:flow-routing
+accounts-password
+alanning:roles
+dynamic-import@0.1.1
