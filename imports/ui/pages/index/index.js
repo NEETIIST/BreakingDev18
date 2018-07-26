@@ -57,6 +57,22 @@ Template.index.helpers({
 });
 
 Template.index.events({
+	'click #open-menu': function(){
+		$("#open-menu").hide("fade", 200, function(){
+			$("#menu-col").show("slide", {direction:"right"}, 1000, function(){
+				$("#close-menu").show("fade",200);
+			});
+		});
+	},
+
+	'click #close-menu': function(){
+		$("#close-menu").hide("fade", 200, function(){
+			$("#menu-col").hide("slide", {direction:"right"}, 1000, function(){
+				$("#open-menu").show("fade",200);
+			});
+		});
+	},
+
   	'click #scroll-landing': function(){
     	$('html, body').animate({
         	scrollTop: $("#landing-1").offset().top 
@@ -74,8 +90,26 @@ Template.index.events({
 			dir = -2;
 		else
 			dir = 2;
-		$('html, body').animate({
-        	scrollTop: $("#landing-"+newopt).offset().top + dir
-    	}, 1000);
+
+		// Close Mobile just in case
+		if ( $(window)[0].outerWidth < 768)
+		{
+			console.log("here");
+			$("#close-menu").hide("fade", 200, function(){
+				$("#menu-col").hide("slide", {direction:"right"}, 1000, function(){
+					$("#open-menu").show("fade",200, function(){
+						$('html, body').animate({
+				        	scrollTop: $("#landing-"+newopt).offset().top + dir
+				    	}, 1000);
+					});
+				});
+			});
+		}
+		else
+		{
+			$('html, body').animate({
+	        	scrollTop: $("#landing-"+newopt).offset().top + dir
+	    	}, 1000);
+		}
 	},
 });

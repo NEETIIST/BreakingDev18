@@ -1,6 +1,16 @@
 <template name="index">
 
-    <div class="row justify-content-start align-items-center m-0">
+    <div class="row justify-content-start align-items-center m-0"> 
+        <div class="col-3 offset-9 position-fixed d-block d-md-none" style="top: 0; right:0; z-index: 10">
+            <div class="row justify-content-start align-items-center m-0 vh-15">
+                <div class="col-12 text-center" id="open-menu">
+                    <i class="fas f-white fa-bars cp fa-2x"></i>
+                </div>
+                <div class="col-12 text-center" id="close-menu" style="display:none">
+                    <i class="fas f-white fa-times cp fa-2x"></i>
+                </div>
+            </div> 
+        </div>
         <div class="col-lg-10 col-md-9 col-12 px-0" id="landing-content">
             <div class="row justify-content-center align-items-center m-0 black vh-90 scrl-controller" id="landing-0">
                 <div class="col-lg-8 col-10">
@@ -158,9 +168,9 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 col-lg-2 col-md-3 p-0 d-none d-md-block position-fixed offset-lg-10 offset-md-9" id="menu-col">
+        <div class="col-12 col-lg-2 col-md-3 p-0 d-md-block position-fixed offset-lg-10 offset-md-9" id="menu-col">
             <div class="row justify-content-center align-items-center m-0 vh-20">
-                <div class="col-12 text-right">
+                <div class="col-10 col-md-12 text-md-right text-left">
                     <div class="spacer-4"></div>
                     <!--
                     <div class="row justify-content-center align-items-center m-0 cp">
@@ -184,7 +194,7 @@
                 </div>
             </div>
             <div class="row justify-content-center align-items-center m-0 vh-60">
-                <div class="col-12 text-right">
+                <div class="col-10 col-md-12 text-md-right text-left">
                     <div class="row justify-content-center align-items-center m-0 cp">
                         <div class="col-12 px-1">
                             <span class="f-white fs-2 fw-4 {{isMenuActive 1}} p-1 px-2 my-2 scroll-menu" id="menu-opt-1">
