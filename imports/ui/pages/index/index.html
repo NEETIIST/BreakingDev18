@@ -1,7 +1,7 @@
 <template name="index">
 
     <div class="row justify-content-start align-items-center m-0">
-        <div class="col-lg-10 col-12 px-0 -2" id="landing-content">
+        <div class="col-lg-10 col-md-9 col-12 px-0" id="landing-content">
             <div class="row justify-content-center align-items-center m-0 black vh-90 scrl-controller" id="landing-0">
                 <div class="col-lg-8 col-10">
                     <img class="img-fluid" src="/logos/landingBDev.png"/>
@@ -151,23 +151,42 @@
                         <div class="col-4 text-center">
                             <span class="f-white fs-1 fw-4">{{_ "footer-tools"}}
                                 <a href="#" target="_blank" class="hvr-white-to-red">Meteor </a>& 
-                                <a href="#" target="_blank">Bootstrap</a>
+                                <a href="#" target="_blank" class="hvr-white-to-red">Bootstrap</a>
                             </span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-2 p-0 d-none d-lg-block position-fixed offset-10" id="menu-col">
+        <div class="col-12 col-lg-2 col-md-3 p-0 d-none d-md-block position-fixed offset-lg-10 offset-md-9" id="menu-col">
             <div class="row justify-content-center align-items-center m-0 vh-20">
-                <div class="col-10 text-center">
-                    <span class="f-white fs-3 fw-6">#BreakingDev</span>
+                <div class="col-12 text-right">
+                    <div class="spacer-4"></div>
+                    <!--
+                    <div class="row justify-content-center align-items-center m-0 cp">
+                        <div class="col-12 px-1">
+                            <span class="f-white menu-hover fs-2 fw-4 p-1 px-2 my-2">{{_ "menu-login"}}</span>
+                        </div>
+                    </div>
+                    <div class="spacer-4"></div>
+                    <div class="row justify-content-center align-items-center m-0 cp">
+                        <div class="col-12 px-1">
+                            <span class="f-white menu-hover fs-2 fw-4 p-1 px-2 my-2">{{_ "menu-signup"}}</span>
+                        </div>
+                    </div>
+                    -->
+                    <div class="row justify-content-center align-items-center m-0 cp">
+                        <div class="col-12 px-1 menu-hover">
+                            <p class="fs-3 fw-6 px-2 mb-1 flh-1">Tomás Jacob</p>
+                            <p class="fs-1 fw-4 px-2 mb-1 mt-0 flh-1">Staff</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row justify-content-center align-items-center m-0 vh-60">
                 <div class="col-12 text-right">
                     <div class="row justify-content-center align-items-center m-0 cp">
-                        <div class="col-12">
+                        <div class="col-12 px-1">
                             <span class="f-white fs-2 fw-4 {{isMenuActive 1}} p-1 px-2 my-2 scroll-menu" id="menu-opt-1">
                                 {{_ "menu-start"}}
                             </span>
@@ -175,7 +194,7 @@
                     </div>
                     <div class="spacer-4"></div>
                     <div class="row justify-content-center align-items-center m-0 cp">
-                        <div class="col-12">
+                        <div class="col-12 px-1">
                             <span class="f-white fs-2 fw-4 {{isMenuActive 2}} p-1 px-2 my-2 scroll-menu" id="menu-opt-2">
                                 {{_ "menu-participate"}}
                             </span>
@@ -183,7 +202,7 @@
                     </div>
                     <div class="spacer-4"></div>
                     <div class="row justify-content-center align-items-center m-0 cp">
-                        <div class="col-12">
+                        <div class="col-12 px-1">
                             <span class="f-white fs-2 fw-4 {{isMenuActive 3}} p-1 px-2 my-2 scroll-menu" id="menu-opt-3">
                                 {{_ "menu-categories"}}
                             </span>
@@ -191,7 +210,7 @@
                     </div>
                     <div class="spacer-4"></div>
                     <div class="row justify-content-center align-items-center m-0 cp">
-                        <div class="col-12">
+                        <div class="col-12 px-1">
                             <span class="f-white fs-2 fw-4 {{isMenuActive 4}} p-1 px-2 my-2 scroll-menu" id="menu-opt-4">
                                 {{_ "menu-challenges"}}
                             </span>
@@ -199,7 +218,7 @@
                     </div>
                     <div class="spacer-4"></div>
                     <div class="row justify-content-center align-items-center m-0 cp">
-                        <div class="col-12">
+                        <div class="col-12 px-1">
                             <span class="f-white fs-2 fw-4 {{isMenuActive 5}} p-1 px-2 my-2 scroll-menu" id="menu-opt-5">
                                 {{_ "menu-sponsors"}}
                             </span>
@@ -208,8 +227,12 @@
                 </div>
             </div>
             <div class="row justify-content-center align-items-center m-0 vh-20">
-                <div class="col-10 text-right">
-                    <span class="f-white fs-3 fw-4">#BreakingDev</span>
+                <div class="col-10 text-center">
+                    <span class="f-white fs-1 fw-4">NEETI 2018</span>
+                    <br>
+                    <!--
+                    <a href="#" target="_blank" class="hvr-white-to-red"><i class="fab fa-facebook f-white"></i></a>
+                    -->
                 </div>
             </div>
         </div>

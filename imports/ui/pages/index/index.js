@@ -65,11 +65,17 @@ Template.index.events({
 	
 	'click .scroll-menu': function(e,t)
 	{
+		let curopt = Template.instance().menuActive.get();
 		let newopt = e.target.id ;
 		newopt = parseInt(newopt.split("menu-opt-")[1]);
 		//Template.instance().menuActive.set(newopt);
+		let dir = 0;
+		if ( newopt < curopt )
+			dir = -2;
+		else
+			dir = 2;
 		$('html, body').animate({
-        	scrollTop: $("#landing-"+newopt).offset().top + 10
+        	scrollTop: $("#landing-"+newopt).offset().top + dir
     	}, 1000);
 	},
 });
