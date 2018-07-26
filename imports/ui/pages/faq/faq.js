@@ -1,16 +1,13 @@
-import './index.html';
+import './faq.html';
 
-//import '../../components/hello/hello.js';
-//import '../../components/info/info.js';
-
-Template.index.onCreated(function () {
+Template.faq.onCreated(function () {
 	this.menuActive = new ReactiveVar( 0 );
 });
 
-Template.index.onRendered( function(){
+Template.faq.onRendered( function(){
 	
 	window.scrollTo(0,0);
-	
+
 	var temp = Template.instance()
 
 	var w1 = new Waypoint({
@@ -25,6 +22,7 @@ Template.index.onRendered( function(){
 			temp.menuActive.set(2);
 		},
 	});
+	/*
 	var w3 = new Waypoint({
 		element: document.getElementById("landing-3"),
 		handler: function(direction) {
@@ -43,17 +41,11 @@ Template.index.onRendered( function(){
 			temp.menuActive.set(5);
 		},
 	});
-	var w6 = new Waypoint({
-		element: document.getElementById("landing-6"),
-		handler: function(direction) {
-			temp.menuActive.set(6);
-		},
-	});
-	
+	*/
 
 })
 
-Template.index.helpers({
+Template.faq.helpers({
 	isMenuActive(opt)
 	{
 		//console.log(opt);
@@ -64,14 +56,13 @@ Template.index.helpers({
 	}
 });
 
-Template.index.events({
+Template.faq.events({
 	'click #open-menu': function(){
 		$("#open-menu").hide("fade", 200, function(){
 			$("#menu-col").show("slide", {direction:"right"}, 1000, function(){
 				$("#close-menu").show("fade",200);
 			});
 		});
-		$("html").css({ "overflow-y":"hidden" });
 	},
 
 	'click #close-menu': function(){
@@ -80,13 +71,16 @@ Template.index.events({
 				$("#open-menu").show("fade",200);
 			});
 		});
-		$("html").css({ "overflow-y":"scroll" });
 	},
 
   	'click #scroll-landing': function(){
     	$('html, body').animate({
         	scrollTop: $("#landing-1").offset().top 
     	}, 1000);
+	},
+
+	'click #menu-goindex': function() {
+		FlowRouter.go("Index");
 	},
 	
 	'click .scroll-menu': function(e,t)
@@ -104,6 +98,7 @@ Template.index.events({
 		// Close Mobile just in case
 		if ( $(window)[0].outerWidth < 768)
 		{
+			console.log("here");
 			$("#close-menu").hide("fade", 200, function(){
 				$("#menu-col").hide("slide", {direction:"right"}, 1000, function(){
 					$("#open-menu").show("fade",200, function(){

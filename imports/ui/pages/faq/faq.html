@@ -1,0 +1,177 @@
+<template name="faq">
+
+	<div class="row justify-content-start align-items-center m-0"> 
+        <div class="col-3 offset-9 position-fixed d-block d-md-none" style="top: 0; right:0; z-index: 10">
+            <div class="row justify-content-start align-items-center m-0 vh-15">
+                <div class="col-12 text-center" id="open-menu">
+                    <i class="fas f-white fa-bars cp fa-2x"></i>
+                </div>
+                <div class="col-12 text-center" id="close-menu" style="display:none">
+                    <i class="fas f-white fa-times cp fa-2x"></i>
+                </div>
+            </div> 
+        </div>
+        <div class="col-lg-10 col-md-9 col-12 px-0" id="landing-content">
+            <div class="row justify-content-center align-items-center m-0 black vh-40 scrl-controller" id="landing-0">
+                <div class="col-10 p-0 text-left">
+                    <div class="spacer-4"></div>
+                    <span class="f-white fs-6 fw-6">{{_ "faq-title"}}</span>
+                    <hr class="red f-red" style="height:2px;border:none;" >
+                    <p class="f-white fs-3 fw-4">{{_ "faq-desc"}}</p>
+                    <div class="spacer-4"></div>
+                </div>
+            </div>
+            <div class="row justify-content-center align-items-center m-0 black vh-50 scrl-controller" id="landing-1">
+            	<div class="col-10 p-0 text-left">
+            		<div class="spacer-4"></div>
+                    <span class="f-white fs-6 fw-6">{{_ "faq-sec-1"}}</span>
+                    <hr class="red f-red" style="height:2px;border:none;" >
+            	</div>
+                <div class="col-md-5 col-10 p-0 text-justify">
+                    <span class="f-white fs-3 fw-6">{{_ "faq-1-q"}}</span>
+                    <p class="f-white fs-2 fw-4">{{_ "faq-1-a"}}</p>
+                    <div class="spacer-4"></div>
+                </div>
+                <div class="col-md-5 col-10 p-0 text-justify">
+                    <span class="f-white fs-3 fw-6">{{_ "faq-2-q"}}</span>
+                    <p class="f-white fs-2 fw-4">{{_ "faq-2-a"}}</p>
+                    <div class="spacer-4"></div>
+                </div>
+                <div class="col-md-5 col-10 p-0 text-justify">
+                    <span class="f-white fs-3 fw-6">{{_ "faq-3-q"}}</span>
+                    <p class="f-white fs-2 fw-4">{{_ "faq-3-a"}}</p>
+                    <div class="spacer-4"></div>
+                </div>
+                <div class="col-md-5 col-10 p-0 text-justify">
+                    <span class="f-white fs-3 fw-6">{{_ "faq-4-q"}}</span>
+                    <p class="f-white fs-2 fw-4">{{_ "faq-4-a"}}</p>
+                    <div class="spacer-4"></div>
+                </div>
+            </div>
+            <div class="row justify-content-center align-items-center m-0 black vh-50 scrl-controller" id="landing-2">
+            	<div class="col-10 p-0 text-right">
+            		<div class="spacer-4"></div>
+                    <span class="f-white fs-6 fw-6">{{_ "faq-sec-2"}}</span>
+                    <hr class="red f-red" style="height:2px;border:none;" >
+            	</div>
+                <div class="col-md-5 col-10 p-0 text-justify">
+                    <span class="f-white fs-3 fw-6">{{_ "faq-5-q"}}</span>
+                    <p class="f-white fs-2 fw-4">{{_ "faq-5-a"}}</p>
+                    <div class="spacer-4"></div>
+                </div>
+                <div class="col-md-5 col-10 p-0 text-justify">
+                    <span class="f-white fs-3 fw-6">{{_ "faq-6-q"}}</span>
+                    <p class="f-white fs-2 fw-4">{{_ "faq-6-a"}}</p>
+                    <div class="spacer-4"></div>
+                </div>
+                <div class="col-md-5 col-10 p-0 text-justify">
+                    <span class="f-white fs-3 fw-6">{{_ "faq-7-q"}}</span>
+                    <p class="f-white fs-2 fw-4">{{_ "faq-7-a"}}</p>
+                    <div class="spacer-4"></div>
+                </div>
+                <div class="col-md-5 col-10 p-0 text-justify">
+                    <span class="f-white fs-3 fw-6">{{_ "faq-8-q"}}</span>
+                    <p class="f-white fs-2 fw-4">{{_ "faq-8-a"}}</p>
+                    <div class="spacer-4"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-2 col-md-3 p-0 d-md-block position-fixed offset-lg-10 offset-md-9" id="menu-col">
+            <div class="row justify-content-center align-items-center m-0 vh-20">
+                <div class="col-10 col-md-12 text-md-right text-left">
+                    <div class="spacer-4"></div>
+                    <!--
+                    <div class="row justify-content-center align-items-center m-0 cp">
+                        <div class="col-12 px-1">
+                            <span class="f-white menu-hover fs-2 fw-4 p-1 px-2 my-2">{{_ "menu-login"}}</span>
+                        </div>
+                    </div>
+                    <div class="spacer-4"></div>
+                    <div class="row justify-content-center align-items-center m-0 cp">
+                        <div class="col-12 px-1">
+                            <span class="f-white menu-hover fs-2 fw-4 p-1 px-2 my-2">{{_ "menu-signup"}}</span>
+                        </div>
+                    </div>
+                    -->
+                    <div class="row justify-content-center align-items-center m-0 cp">
+                        <div class="col-12 px-1 menu-hover">
+                            <p class="fs-3 fw-6 px-2 mb-1 flh-1">Tomás Jacob</p>
+                            <p class="fs-1 fw-4 px-2 mb-1 mt-0 flh-1">Staff</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center align-items-center m-0 vh-60">
+                <div class="col-10 col-md-12 text-md-right text-left">
+                	<div class="row justify-content-center align-items-center m-0 cp">
+                        <div class="col-12 px-1">
+                            <span class="f-white fs-2 fw-4 menu-hover p-1 px-2 my-2" id="menu-goindex">
+                                {{_ "menu-goindex"}}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="spacer-8"></div>
+                    <div class="row justify-content-center align-items-center m-0 cp">
+                        <div class="col-12 px-1">
+                            <span class="f-white fs-2 fw-4 {{isMenuActive 1}} p-1 px-2 my-2 scroll-menu" id="menu-opt-1">
+                                {{_ "faq-sec-1"}}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="spacer-4"></div>
+                    <div class="row justify-content-center align-items-center m-0 cp">
+                        <div class="col-12 px-1">
+                            <span class="f-white fs-2 fw-4 {{isMenuActive 2}} p-1 px-2 my-2 scroll-menu" id="menu-opt-2">
+                                {{_ "faq-sec-2"}}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="spacer-4"></div>
+                    <!--
+                    <div class="row justify-content-center align-items-center m-0 cp">
+                        <div class="col-12 px-1">
+                            <span class="f-white fs-2 fw-4 {{isMenuActive 3}} p-1 px-2 my-2 scroll-menu" id="menu-opt-3">
+                                {{_ "menu-categories"}}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="spacer-4"></div>
+                    <div class="row justify-content-center align-items-center m-0 cp">
+                        <div class="col-12 px-1">
+                            <span class="f-white fs-2 fw-4 {{isMenuActive 4}} p-1 px-2 my-2 scroll-menu" id="menu-opt-4">
+                                {{_ "menu-challenges"}}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="spacer-4"></div>
+                    <div class="row justify-content-center align-items-center m-0 cp">
+                        <div class="col-12 px-1">
+                            <span class="f-white fs-2 fw-4 {{isMenuActive 5}} p-1 px-2 my-2 scroll-menu" id="menu-opt-5">
+                                {{_ "menu-sponsors"}}
+                            </span>
+                        </div>
+                    </div>
+                    -->
+                </div>
+            </div>
+            <div class="row justify-content-center align-items-center m-0 vh-20">
+                <div class="col-10 text-center f-white">
+                    <p class="f-white fs-1 fw-4 mb-2">NEETI 2018</p>
+                    <a href="https://www.facebook.com/BreakingDev/" target="_blank" class="hvr-white-to-red">
+                        <i class="fab fa-facebook-square fs-5 px-1"></i>
+                    </a>
+                    <a href="https://www.instagram.com/neeti_ist/" target="_blank" class="hvr-white-to-red">
+                        <i class="fab fa-instagram fs-5 px-1"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company-beta/3507596/" target="_blank" class="hvr-white-to-red">
+                        <i class="fab fa-linkedin fs-5 px-1"></i>
+                    </a>
+                    <a href="https://github.com/NEETIIST" target="_blank" class="hvr-white-to-red">
+                        <i class="fab fa-github-square fs-5 px-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</template>
