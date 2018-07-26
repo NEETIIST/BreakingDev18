@@ -6,6 +6,8 @@ import '../../ui/layouts/body/body.js';
 import '../../ui/pages/home/home.js';
 import '../../ui/pages/index/index.js';
 import '../../ui/pages/faq/faq.js';
+import '../../ui/pages/adminpanel/adminpanel.js';
+import '../../ui/pages/dashboard/dashboard.js';
 import '../../ui/pages/not-found/not-found.js';
 
 // Set up all routes in the app
@@ -20,6 +22,27 @@ FlowRouter.route('/faq', {
   name: 'FAQ',
   action() {
     BlazeLayout.render('faq');
+  },
+});
+
+FlowRouter.route('/admin', {
+  name: 'AdminPanel',
+  action() {
+    BlazeLayout.render('adminPanel');
+  },
+});
+
+FlowRouter.route('/dashboard', {
+  name: 'Dashboard',
+  action() {
+    BlazeLayout.render('dashboard');
+  },
+});
+
+FlowRouter.route('/contact', {
+  name: 'Contact',
+  action() {
+    BlazeLayout.render('contact');
   },
 });
 
