@@ -8,7 +8,7 @@ AccountsTemplates.configure({
 	forbidClientAccountCreation: false,
 	overrideLoginErrors: true,
 	sendVerificationEmail: true,
-	lowercaseUsername: true,
+	lowercaseUsername: false,
 	focusFirstInput: true,
 
 	// Appearance
@@ -17,6 +17,8 @@ AccountsTemplates.configure({
 	showLabels: true,
 	showPlaceholders: false,
 	showResendVerificationEmailLink: false,
+	hideSignInLink: true,
+	hideSignUpLink: true,
 
 	// Client-side Validation
 	continuousValidation: false,
@@ -57,7 +59,7 @@ AccountsTemplates.configure({
 	onSubmitHook: ( error, state ) => {
 		if ( !error && (state === 'signIn' || state === 'signUp') ) {
 			// login successful, route to index
-			FlowRouter.redirect('/dash');
+			FlowRouter.redirect("/dashboard");
 		}
 	},
 	onLogoutHook: ( error, state ) => {
@@ -97,9 +99,10 @@ Accounts.emailTemplates.resetPassword = {
 };
 
 Accounts.onLogin(function(){
-	
+	//console.log("Here");
+	FlowRouter.go("Dashboard");
 })
 
 Accounts.onLogout(function(){
-	
+	//FlowRouter.go("Index");	
 })

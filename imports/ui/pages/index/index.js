@@ -1,6 +1,6 @@
 import './index.html';
 
-import '../../components/sidebar/login.js';
+import '../../components/sidebar/logged.js';
 import '../../components/sidebar/footer.js';
 
 Template.index.onCreated(function () {

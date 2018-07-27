@@ -1,0 +1,177 @@
+.at-form
+{
+	border-left: 2px solid $primary-red;
+	padding-left: 1em;
+}
+
+.at-title
+{
+
+}
+
+.at-input
+{
+	margin: 1em 0 ;
+}
+
+#at-field-username_and_email
+{
+	color: inherit;
+	font: inherit ;
+	width: 100% ;
+	border: none;
+    border-bottom: 1px solid white;
+    background: none;
+}
+
+#at-field-username_and_email:focus
+{
+	border: none;
+    border-bottom: 1px solid $primary-red;
+    background: none;
+    outline:none;
+}
+
+#at-field-password
+{
+	color: inherit;
+	font: inherit ;
+	width: 100% ;
+	border: none;
+    border-bottom: 1px solid #ffffff;
+    background: none;
+}
+
+#at-field-password:focus
+{
+	border: none;
+    border-bottom: 1px solid $primary-red;
+    background: none;
+    outline:none;
+}
+
+#at-field-username
+{
+    color: inherit;
+    font: inherit ;
+    width: 100% ;
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    background: none;
+}
+
+#at-field-username:focus
+{
+    border: none;
+    border-bottom: 1px solid $primary-red;
+    background: none;
+    outline:none;
+}
+
+#at-field-email
+{
+    color: inherit;
+    font: inherit ;
+    width: 100% ;
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    background: none;
+}
+
+#at-field-email:focus
+{
+    border: none;
+    border-bottom: 1px solid $primary-red;
+    background: none;
+    outline:none;
+}
+
+#at-field-password_again
+{
+    color: inherit;
+    font: inherit ;
+    width: 100% ;
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    background: none;
+}
+
+#at-field-password_again:focus
+{
+    border: none;
+    border-bottom: 1px solid $primary-red;
+    background: none;
+    outline:none;
+}
+
+.at-pwd-link
+{
+    text-align: right;
+    font-size: 0.6em;
+}
+.at-pwd-link > p
+{
+  margin-bottom: 0;
+}
+
+.at-btn
+{
+    background-color: $black;
+	color: white;
+	border-width: 0px;
+	border: 1px solid white;
+	border-radius: 5px;
+	padding: 0.3em 0.75em 0.3em 0.75em;
+	transition: 0.2s;
+	margin-bottom: 1em;
+	cursor: pointer;
+	outline: none;
+}
+
+.at-btn:focus, .at-btn:active, .at-btn:hover
+{
+	color: $primary-red;
+	border: 1px solid $primary-red;
+	-webkit-box-shadow: 1px 1px 2px 0px rgba(28,28,28,0.75);
+    -moz-box-shadow: 1px 1px 2px 0px rgba(28,28,28,0.75);
+ 	box-shadow: 1px 1px 2px 0px rgba(28,28,28,0.75);
+	transition: 0.2s;
+	outline: none;
+}
+
+.at-signup-link
+{
+    text-align: right;
+}
+.at-signin-link
+{
+    text-align: right;
+}
+
+#at-signUp
+{
+	margin-left: 0.25em;
+}
+
+.at-link
+{
+	background-color: $black;
+	color: white;
+	border-width: 0px;
+	border: 1px solid white;
+	border-radius: 5px;
+	padding: 0.3em 0.75em 0.3em 0.75em;
+	transition: 0.2s;
+	cursor: pointer;
+	outline: none;
+}
+
+.at-link:focus, .at-link:active, .at-link:hover
+{
+	color: $primary-red !important;
+	border: 1px solid $primary-red;
+	-webkit-box-shadow: 1px 1px 2px 0px rgba(28,28,28,0.75);
+    -moz-box-shadow: 1px 1px 2px 0px rgba(28,28,28,0.75);
+ 	box-shadow: 1px 1px 2px 0px rgba(28,28,28,0.75);
+	transition: 0.2s;
+}

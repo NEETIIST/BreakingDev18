@@ -15,12 +15,12 @@ Template.footer.events({
 	"click #lang-PT": function(){
 		console.log("here");
 		TAPi18n.setLanguage("pt");
-		//T9n.setLanguage("pt-PT");
+		T9n.setLanguage("pt-PT");
 	},
 	"click #lang-EN": function(){
 		console.log("there");
 		TAPi18n.setLanguage("en");
-		//T9n.setLanguage("en");
+		T9n.setLanguage("en");
 	},
 });
 

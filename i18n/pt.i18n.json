@@ -86,6 +86,16 @@
 	"contact-company": "A sua empresa:",
 	"contact-phone": "O seu telemóvel:",
 	"contact-mail": "O seu e-mail:",
-	"contact-success": "A sua mensagem foi enviada com sucesso, espere ouvir de nós muito em breve!"
+	"contact-success": "A sua mensagem foi enviada com sucesso, espere ouvir de nós muito em breve!",
+
+	// Verify Email
+	"verify-success":"Obrigado por verificar o seu e-mail",
+
+	// Reset Password
+	"rp_form": "Alterar Password",
+	"rp_password": "Password",
+	"rp_password_again": "Password (novamente)",
+	"rp_submit": "Alterar",
+	"rp_success": "A sua password foi alterada com sucesso!"
 
 }

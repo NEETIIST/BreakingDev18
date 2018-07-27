@@ -9,6 +9,9 @@ import '../../ui/pages/faq/faq.js';
 import '../../ui/pages/adminpanel/adminpanel.js';
 import '../../ui/pages/dashboard/dashboard.js';
 import '../../ui/pages/contact/contact.js';
+import '../../ui/pages/login/login.js';
+import '../../ui/pages/signup/signup.js';
+import '../../ui/pages/resetPassword/resetPassword.js';
 import '../../ui/pages/not-found/not-found.js';
 
 // Set up all routes in the app
@@ -34,10 +37,13 @@ FlowRouter.route('/admin', {
 });
 
 FlowRouter.route('/dashboard', {
-  name: 'Dashboard',
-  action() {
-    BlazeLayout.render('dashboard');
-  },
+    name: 'Dashboard',
+    action() {
+        if ( Meteor.userId() )
+            BlazeLayout.render('dashboard');
+        else
+            FlowRouter.go("Login");
+    },
 });
 
 FlowRouter.route('/contact', {
@@ -47,8 +53,62 @@ FlowRouter.route('/contact', {
   },
 });
 
+FlowRouter.route('/login', {
+    name: 'Login',
+    action() {
+        if ( Meteor.userId() )
+            FlowRouter.go("Dashboard");
+        else
+            BlazeLayout.render('login');
+    },
+});
+
+FlowRouter.route('/signup', {
+    name: 'SignUp',
+    action() {
+        if ( Meteor.userId() )
+            FlowRouter.go("Dashboard");
+        else
+            BlazeLayout.render('signup');
+    },
+});
+
 FlowRouter.notFound = {
   action() {
     BlazeLayout.render('App_body', { main: 'App_notFound' });
   },
 };
+
+// Accounts Routing
+
+FlowRouter.route('/logout',{
+    name: 'logout',
+    action(){
+        AccountsTemplates.logout();
+        FlowRouter.redirect('/login');
+    },
+});
+
+FlowRouter.route( '/verify-email/:token', {
+    name: 'verify-email',
+    action( params ) {
+        Accounts.verifyEmail( params.token, ( error ) =>{
+            if ( error ) {
+                alert( error.reason, 'danger' );
+            } else {
+                alert( TAPi18n.__('verify-success'), 'success' );
+                FlowRouter.go( '/login' );
+            }
+        });
+    }
+});
+
+FlowRouter.route( '/reset-password/:token', {
+    name: 'reset-password',
+    action( params ) {
+      AccountsTemplates.paramToken = params.token ;
+      BlazeLayout.render('resetPassword');
+    }
+});
+
+AccountsTemplates.configureRoute

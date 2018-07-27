@@ -1,21 +1,21 @@
-<template name="login">
+<template name="logged">
     {{#if userLogged}}
         <div class="row justify-content-center align-items-center m-0 cp">
-            <div class="col-12 px-1 menu-hover mr-2">
-                <p class="fs-3 fw-6 px-2 mb-1 flh-1">Tomás Jacob</p>
-                <p class="fs-1 fw-4 px-2 mb-1 mt-0 flh-1">Staff</p>
+            <div class="col-12 px-1 menu-hover mr-2" id="goDashboard">
+                <p class="fs-3 fw-6 px-2 mb-1 flh-1">{{username}}</p>
+                <p class="fs-1 fw-4 px-2 mb-1 mt-0 flh-1">Team</p>
             </div>
         </div>
     {{else}}
     	<div class="row justify-content-center align-items-center m-0 cp">
             <div class="col-12 px-1">
-                <span class="f-white menu-hover fs-2 fw-4 p-1 px-2 my-2">{{_ "menu-login"}}</span>
+                <span class="f-white menu-hover fs-2 fw-4 p-1 px-2 my-2" id="menu-login">{{_ "menu-login"}}</span>
             </div>
         </div>
         <div class="spacer-4"></div>
         <div class="row justify-content-center align-items-center m-0 cp">
             <div class="col-12 px-1">
-                <span class="f-white menu-hover fs-2 fw-4 p-1 px-2 my-2">{{_ "menu-signup"}}</span>
+                <span class="f-white menu-hover fs-2 fw-4 p-1 px-2 my-2" id="menu-signup">{{_ "menu-signup"}}</span>
             </div>
         </div>
 	{{/if}}

@@ -1,5 +1,5 @@
-<template name="contact">
-
+<template name="login">
+	
 	<div class="row justify-content-start align-items-center m-0"> 
         <div class="col-3 offset-9 position-fixed d-block d-md-none" style="top: 0; right:0; z-index: 10">
             <div class="row justify-content-start align-items-center m-0 vh-15">
@@ -11,26 +11,12 @@
                 </div>
             </div> 
         </div>
-        <div class="col-lg-10 col-md-9 col-12 px-0" id="landing-content">
-            <div class="row justify-content-center align-items-start m-0 black vh-100">
-                <div class="col-10 p-0 text-left f-white">
-                    <div class="spacer-4"></div>
-                    <span class="f-white fs-6 fw-6">{{_ "contact-title"}}</span>
-                    <hr class="red f-red" style="height:2px;border:none;" >
-                    <p class="f-white fs-2 fw-4">{{_ "contact-desc"}}</p>
-                    <div class="spacer-4"></div>
-                    {{#autoForm collection=Contact id="contactForm" type="method" template="nothing" meteormethod="sponsorContact" validation="blur"}}
-						<fieldset>
-							{{> afQuickField name="name" class="form-input" autocomplete="off"}}
-							{{> afQuickField name="company" class="form-input" autocomplete="off"}}
-							{{> afQuickField name="phone" class="form-input" autocomplete="off"}}
-							{{> afQuickField name="email" class="form-input" autocomplete="off"}}
-						</fieldset>
-						<button type="submit" class="form-submit cp my-3" style="float:right">{{_ "contact-submit"}}</button>
-					{{/autoForm}}
-					<div class="spacer-4"></div>
-                </div>
-            </div>
+        <div class="col-lg-10 col-md-9 col-12 px-0">
+        	<div class="row justify-content-center align-items-center m-0 vh-100 black f-white"> 
+        		<div class="col-10 col-md-8 text-left">
+        			{{> atForm}}
+        		</div>
+        	</div>
         </div>
         <div class="col-12 col-lg-2 col-md-3 p-0 d-md-block position-fixed offset-lg-10 offset-md-9" id="menu-col">
             <div class="row justify-content-center align-items-center m-0 vh-20">
@@ -61,11 +47,8 @@
 
 </template>
 
-
 <!--
 
-
-
-
+{{> atForm}}
 
 -->
