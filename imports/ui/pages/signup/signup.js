@@ -31,3 +31,39 @@ Template.signup.events({
 	},
 	
 });
+
+Template.signupRoles.onRendered(function(){
+	var self = this;
+	self.autorun(function(){
+		if ( userHasRole(Meteor.userId()))
+		{
+			FlowRouter.go("Dashboard");	
+		}
+	});
+	
+});
+
+Template.signupRoles.events({
+	'click #signup-dev': function(){
+		if ( Meteor.userId() )
+			Meteor.call('registerDev');
+		FlowRouter.go("Dashboard");
+	},
+	'click #signup-volunteer': function(){
+		if ( Meteor.userId() )
+			Roles.addUsersToRoles(Meteor.userId(), 'volunteer');
+	},
+})
+
+// Helper Functions
+function userHasRole(id){
+    if ( Roles.userIsInRole( id,"dev") )
+        return true;
+    if ( Roles.userIsInRole( id,"volunteer") )
+        return true;
+    if ( Roles.userIsInRole( id,"staff") )
+        return true;
+    if ( Roles.userIsInRole( id,"sponsor") )
+        return true;
+    return false;
+}

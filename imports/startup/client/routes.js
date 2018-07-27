@@ -69,7 +69,18 @@ FlowRouter.route('/signup', {
         if ( Meteor.userId() )
             FlowRouter.go("Dashboard");
         else
-            BlazeLayout.render('signup');
+            BlazeLayout.render('signup', {signup_content:"signupForm"});
+    },
+});
+
+FlowRouter.route('/signup/roles', {
+    name: 'SignUpRoles',
+    action() {
+        //console.log( userHasRole(Meteor.userId()));
+        if ( !Meteor.userId() )
+            FlowRouter.go("SignUp");
+        else
+            BlazeLayout.render('signup', {signup_content:"signupRoles"});
     },
 });
 
@@ -106,9 +117,8 @@ FlowRouter.route( '/verify-email/:token', {
 FlowRouter.route( '/reset-password/:token', {
     name: 'reset-password',
     action( params ) {
-      AccountsTemplates.paramToken = params.token ;
-      BlazeLayout.render('resetPassword');
+        AccountsTemplates.paramToken = params.token ;
+        BlazeLayout.render('resetPassword');
     }
 });
 
-AccountsTemplates.configureRoute

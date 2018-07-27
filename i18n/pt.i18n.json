@@ -96,6 +96,16 @@
 	"rp_password": "Password",
 	"rp_password_again": "Password (novamente)",
 	"rp_submit": "Alterar",
-	"rp_success": "A sua password foi alterada com sucesso!"
+	"rp_success": "A sua password foi alterada com sucesso!",
+
+	// Signup Page and Roles
+	"signup-title": "Qual é o teu papel?",
+	"signup-desc": "Há várias maneiras de participar no BreakingDev, escolhe a tua:",
+	"signup-dev": "Partipante",
+	"signup-dev-desc": "Cria a tua equipa e desenvolve a tua ideia.",
+	"signup-volunteer": "Voluntário",
+	"signup-volunteer-desc": "Vêm ajudar-nos a organizar o BreakingDev.",
+	"signup-sponsor": "Patrocinadores",
+	"signup-staff": "Staff"
 
 }

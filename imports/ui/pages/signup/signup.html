@@ -12,11 +12,7 @@
             </div> 
         </div>
         <div class="col-lg-10 col-md-9 col-12 px-0">
-        	<div class="row justify-content-center align-items-center m-0 vh-100 black f-white"> 
-        		<div class="col-10 col-md-8 text-left">
-        			{{> atForm state="signUp"}}
-        		</div>
-        	</div>
+            {{> Template.dynamic template=signup_content}}
         </div>
         <div class="col-12 col-lg-2 col-md-3 p-0 d-md-block position-fixed offset-lg-10 offset-md-9" id="menu-col">
             <div class="row justify-content-center align-items-center m-0 vh-20">
@@ -42,6 +38,48 @@
                     {{> footer}}
                 </div>
             </div>
+        </div>
+    </div>
+
+</template>
+
+<template name="signupForm">
+
+    <div class="row justify-content-center align-items-center m-0 vh-100 black f-white"> 
+        <div class="col-10 col-md-8 text-left">
+            {{> atForm state="signUp"}}
+        </div>
+    </div>
+        
+</template>
+
+<template name="signupRoles">
+    
+    <div class="row justify-content-center align-items-center m-0 vh-30 black f-white">
+        <div class="col-10 col-md-10 text-center">
+        <span class="f-white fs-6 fw-6">{{_ "signup-title"}}</span>
+            <hr class="red f-red" style="height:2px;border:none;" >
+            <p class="f-white fs-3 fw-4">{{_ "signup-desc"}}</p>
+        </div>
+    </div>
+    <div class="row justify-content-center align-items-center m-0 vh-50 black f-white">
+        <div class="col-5 col-md-4 text-center">
+            <img class="square-icon my-2" src="/icons/Web.png"/>
+            <p class="f-white fs-1 fw-4">{{_ "signup-dev-desc"}}</p>
+            <p class="f-white fs-2 fw-4 form-submit cp" id="signup-dev">{{_ "signup-dev"}}</p>
+        </div>
+        <div class="col-5 col-md-4 text-center">
+            <img class="square-icon my-2" src="/icons/Web.png"/>
+            <p class="f-white fs-1 fw-4">{{_ "signup-volunteer-desc"}}</p>
+            <p class="f-white fs-2 fw-4 form-submit cp" id="signup-dev">{{_ "signup-volunteer"}}</p>
+        </div>
+    </div>
+    <div class="row justify-content-center align-items-center m-0 vh-20 black f-white">
+        <div class="col-5 col-md-4 text-center">
+            <p class="f-white fs-2 fw-4 form-submit cp" id="signup-sponsor">{{_ "signup-sponsor"}}</p>
+        </div>
+        <div class="col-5 col-md-4 text-center">
+            <p class="f-white fs-2 fw-4 form-submit cp" id="signup-staff">{{_ "signup-staff"}}</p>
         </div>
     </div>
 

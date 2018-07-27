@@ -2,6 +2,7 @@
 
 import '/imports/startup/server';
 import '/imports/startup/both';
+import './publish.js';
 
 
 Meteor.methods({

@@ -57,9 +57,13 @@ AccountsTemplates.addFields([
 
 AccountsTemplates.configure({
 	onSubmitHook: ( error, state ) => {
-		if ( !error && (state === 'signIn' || state === 'signUp') ) {
+		if ( !error && (state === 'signIn') ) {
 			// login successful, route to index
 			FlowRouter.redirect("/dashboard");
+		}
+		else if ( !error && ( state === 'signUp') ) {
+			// signup successful, route to roles
+			FlowRouter.redirect("/signup/roles");
 		}
 	},
 	onLogoutHook: ( error, state ) => {
