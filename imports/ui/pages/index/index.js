@@ -1,7 +1,7 @@
 import './index.html';
 
-//import '../../components/hello/hello.js';
-//import '../../components/info/info.js';
+import '../../components/sidebar/login.js';
+import '../../components/sidebar/footer.js';
 
 Template.index.onCreated(function () {
 	this.menuActive = new ReactiveVar( 0 );
