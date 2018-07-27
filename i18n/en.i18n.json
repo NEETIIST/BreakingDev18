@@ -1,3 +1,90 @@
 {
-	"hello": "Hey there"
+	// Landing Page
+	"landing-1-title": "O que é o BreakingDev?",
+	"landing-1-desc": "O BreakingDev é o maior hackathon univesitário de Lisboa. Durante 48 horas, alunos das principais faculdades de Lisboa e de todo o país juntam-se para desenvolver uma ideia ou projeto que tenham, num ambiente descontraído e informal, onde ainda podem ganhar prémios!",
+	"landing-1-video": "Ainda não estás convencido?",
+	"landing-1-video-link": "Vê aqui o nosso aftermovie da edição de 2017.",
+
+	"landing-2-title": "Como posso participar?",
+	"landing-2-participant": "É muito simples, junta-te um grupo de 2 a 4 amigos e escolhe uma das nossas categorias em baixo para participares. Faz a tua incrição e vem passar o fim de semana connosco.",
+	"landing-2-volunteer": "Se achas que programar não é pra ti mas queres participar na mesma no BreakingDev podes sempre juntar-te ao nosso programa de voluntariado.",
+	"landing-2-account": "Em qualquer dos casos, basta criares conta no nosso site e seguir os passos.",
+
+	"landing-3-title": "Categorias",
+	"landing-3-web-title": "Web",
+	"landing-3-web-sponsor": "by Sponsor",
+	"landing-3-web-desc": "Google, Facebook, Github, ... Hoje em dia é impossível fugir as aplicações web, portanto se HTML e Javascript não te assustam, esta pode ser a categoria pra ti.",
+	"landing-3-games-title": "Jogos",
+	"landing-3-games-sponsor": "by Sponsor",
+	"landing-3-games-desc": "Se os jogos são a tua paixão, vem fazer um jogo para qualquer plataforma, em qualquer formato, sobre qualquer tema, todas as ideias valem!",
+	"landing-3-awards-soon": "Fica atento às nossas redes sociais enquanto anunciamos os nossos prémios",
+
+	"landing-4-title": "Challenges",
+	"landing-4-challenges": "Os Challenges são prémios extra para reconhecer as melhores equipas em diversas áreas",
+	"landing-4-aplus-title": "A+ Challenge",
+	"landing-4-aplus-sponsor": "by Sponsor",
+	"landing-4-aplus-desc": "O projeto com mais valor para a comunidade académica",
+	"landing-4-crowd-title": "Crowd Award",
+	"landing-4-crowd-sponsor": "by Sponsor",
+	"landing-4-crowd-desc": "Para a equipa preferida dos participantes ao longo do fim-de-semana",
+	"landing-4-innovation-title": "Innovation",
+	"landing-4-innovation-sponsor": "by Sponsor",
+	"landing-4-innovation-desc": "Ao projeto mais inovador de todas as equipas participantes",
+	"landing-4-awards-soon": "Fica atento às nossas redes sociais enquanto anunciamos os nossos prémios",
+
+	"landing-5-title": "Tens dúvidas?",
+	"landing-5-desc": "Se ainda não estás esclarecido sobre como o BreakingDev funciona,",
+	"landing-5-faq" : "Acede aqui às nossas FAQ's",
+
+	"landing-6-organization": "Uma organização:",
+	"landing-6-support": "Com o apoio:",
+
+	"footer-sponsor": "Seja um patrocinador",
+	"footer-sourcecode": "Source-code no Github",
+	"footer-tools": "Feito com ",
+
+	// Sidebar Menu
+	"menu-start": "Início",
+	"menu-participate": "Participar",
+	"menu-categories": "Categorias",
+	"menu-challenges": "Challenges",
+	"menu-sponsors": "Patrocinadores",
+	"menu-login": "Login",
+	"menu-signup": "Criar Conta",
+	"menu-goindex": "Homepage",
+	"menu-faqs": "FAQ's",
+
+	// FAQ Page
+	"faq-title": "Frequently Asked Questions",
+	"faq-desc": "Encontra nesta página toda a informação relativa ao BreakingDev!",
+	"faq-sec-1": "Secção 1",
+	"faq-1-q": "Pergunta 1:",
+	"faq-1-a": "Resposta 1",
+	"faq-2-q": "Pergunta 2:",
+	"faq-2-a": "Resposta 2",
+	"faq-3-q": "Pergunta 3:",
+	"faq-3-a": "Resposta 3",
+	"faq-4-q": "Pergunta 4:",
+	"faq-4-a": "Resposta 4",
+	"faq-sec-2": "Secção 2",
+	"faq-5-q": "Pergunta 5:",
+	"faq-5-a": "Resposta 5",
+	"faq-6-q": "Pergunta 6:",
+	"faq-6-a": "Resposta 6",
+	"faq-7-q": "Pergunta 7:",
+	"faq-7-a": "Resposta 7",
+	"faq-8-q": "Pergunta 8:",
+	"faq-8-a": "Resposta 8",
+	"faq-9-q": "Pergunta 9:",
+	"faq-9-a": "Resposta 9",
+
+	// Sponsor Contact
+	"contact-title": "Seja um patrocinador do BreakingDev",
+	"contact-desc": "A sua empresa pode participar no BreakingDev sendo um dos nossos patrocinadores. Um dos nossos objetivos passa por atrair ao evento profissionais da área para uma experiência única de contacto entre os alunos participantes, trabalhadores e empresas. Deixe o seu contacto em baixo e nós iremos entrar em contacto consigo o mais depressa possível.",
+	"contact-submit": "Enviar",
+	"contact-name": "O seu nome:",
+	"contact-company": "A sua empresa:",
+	"contact-phone": "O seu telemóvel:",
+	"contact-mail": "O seu e-mail:",
+	"contact-success": "A sua mensagem foi enviada com sucesso, espere ouvir de nós muito em breve!"
 }

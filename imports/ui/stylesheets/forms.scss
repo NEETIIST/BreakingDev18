@@ -1,0 +1,37 @@
+.form-input
+{
+	background-color: $black;
+	color: white;
+	border-bottom: 1px solid white !important;
+	border-width: 0px;
+	width: 100%;
+	transition: 0.2s;
+}
+
+.form-input:focus, .form-input:active, .form-input:hover
+{
+	border-bottom: 1px solid $primary-red !important;
+	outline: none;
+	transition: 0.2s;
+}
+
+.form-submit
+{
+	background-color: $black;
+	color: white;
+	border-width: 0px;
+	border: 1px solid white;
+	border-radius: 5px;
+	padding: 0.3em 0.75em 0.3em 0.75em;
+	transition: 0.2s;
+}
+
+.form-submit:focus, .form-submit:active, .form-submit:hover
+{
+	color: $primary-red;
+	border: 1px solid $primary-red;
+	-webkit-box-shadow: 1px 1px 2px 0px rgba(28,28,28,0.75);
+    -moz-box-shadow: 1px 1px 2px 0px rgba(28,28,28,0.75);
+ 	box-shadow: 1px 1px 2px 0px rgba(28,28,28,0.75);
+	transition: 0.2s;
+}

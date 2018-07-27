@@ -33,7 +33,6 @@ fourseven:scss
 
 mizzao:jquery-ui
 session
-tap:i18n
 bigu:waypoints
 meteortoys:allthings
 
@@ -44,3 +43,10 @@ useraccounts:flow-routing
 accounts-password
 alanning:roles
 dynamic-import@0.1.1
+aldeed:autoform
+
+# Translations
+tap:i18n
+softwarerero:accounts-t9n
+gildaspk:simpleschema-tapi18n-labels
+gwendall:autoform-i18n

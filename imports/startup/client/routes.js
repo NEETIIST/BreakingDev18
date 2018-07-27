@@ -8,6 +8,7 @@ import '../../ui/pages/index/index.js';
 import '../../ui/pages/faq/faq.js';
 import '../../ui/pages/adminpanel/adminpanel.js';
 import '../../ui/pages/dashboard/dashboard.js';
+import '../../ui/pages/contact/contact.js';
 import '../../ui/pages/not-found/not-found.js';
 
 // Set up all routes in the app

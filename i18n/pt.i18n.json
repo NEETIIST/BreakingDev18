@@ -1,4 +1,5 @@
 {
+	// Landing Page
 	"landing-1-title": "O que é o BreakingDev?",
 	"landing-1-desc": "O BreakingDev é o maior hackathon univesitário de Lisboa. Durante 48 horas, alunos das principais faculdades de Lisboa e de todo o país juntam-se para desenvolver uma ideia ou projeto que tenham, num ambiente descontraído e informal, onde ainda podem ganhar prémios!",
 	"landing-1-video": "Ainda não estás convencido?",
@@ -42,6 +43,7 @@
 	"footer-sourcecode": "Source-code no Github",
 	"footer-tools": "Feito com ",
 
+	// Sidebar Menu
 	"menu-start": "Início",
 	"menu-participate": "Participar",
 	"menu-categories": "Categorias",
@@ -52,6 +54,7 @@
 	"menu-goindex": "Homepage",
 	"menu-faqs": "FAQ's",
 
+	// FAQ Page
 	"faq-title": "Frequently Asked Questions",
 	"faq-desc": "Encontra nesta página toda a informação relativa ao BreakingDev!",
 	"faq-sec-1": "Secção 1",
@@ -73,5 +76,16 @@
 	"faq-8-q": "Pergunta 8:",
 	"faq-8-a": "Resposta 8",
 	"faq-9-q": "Pergunta 9:",
-	"faq-9-a": "Resposta 9"
+	"faq-9-a": "Resposta 9",
+
+	// Sponsor Contact
+	"contact-title": "Seja um patrocinador do BreakingDev",
+	"contact-desc": "A sua empresa pode participar no BreakingDev sendo um dos nossos patrocinadores. Um dos nossos objetivos passa por atrair ao evento profissionais da área para uma experiência única de contacto entre os alunos participantes, trabalhadores e empresas. Deixe o seu contacto em baixo e nós iremos entrar em contacto consigo o mais depressa possível.",
+	"contact-submit": "Enviar",
+	"contact-name": "O seu nome:",
+	"contact-company": "A sua empresa:",
+	"contact-phone": "O seu telemóvel:",
+	"contact-mail": "O seu e-mail:",
+	"contact-success": "A sua mensagem foi enviada com sucesso, espere ouvir de nós muito em breve!"
+
 }
