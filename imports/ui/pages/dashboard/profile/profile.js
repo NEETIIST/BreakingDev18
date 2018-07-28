@@ -24,3 +24,24 @@ Template.dash_profile_add.helpers({
     	return Devs;
   	},
 });
+
+Template.dash_profile_edit.helpers({
+	Devs(){
+    	return Devs;
+  	},
+  	currentDev(){
+  		return Devs.findOne({"user":Meteor.userId()});
+  	},
+});
+
+AutoForm.addHooks(['addDev'],{
+    onSuccess: function(formType, result) {
+      	alert(TAPi18n.__('devs-add-success'));
+    }
+});
+
+AutoForm.addHooks(['editDev'],{
+    onSuccess: function(formType, result) {
+      	alert(TAPi18n.__('devs-edit-success'));
+    }
+});

@@ -40,21 +40,24 @@ DevsSchema = new SimpleSchema({
 	bio: {
 	    type: String,
 	    autoform: {
-	      	rows: 4
+	      	rows: 4,
+	      	placeholder: TAPi18n.__('devs-bio-desc')
 	    },
 	    label: TAPi18n.__('devs-bio'),
 	},
 	skills: {
 		type: String,
 		autoform: {
-	  		rows: 2
+	  		rows: 2,
+	  		placeholder: TAPi18n.__('devs-skills-desc')
 		},
 		label: TAPi18n.__('devs-skills'),
 	},
 	interest: {
 		type: String,
 		autoform: {
-  			rows: 2
+  			rows: 2,
+  			placeholder: TAPi18n.__('devs-interest-desc')
 		},
 		label: TAPi18n.__('devs-interest'),
 	},

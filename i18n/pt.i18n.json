@@ -109,5 +109,27 @@
 	"signup-staff": "Staff",
 
 	// Devs Collection
-	"devs-name": "Nome"
+	"devs-user": "Utilizador",
+	"devs-name": "Nome",
+	"devs-age": "Idade",
+	"devs-college": "Universidade / Faculdade",
+	"devs-course": "Curso",
+	"devs-bio": "Biografia",
+	"devs-bio-desc": "Uma pequena descrição sobre ti",
+	"devs-skills": "Skills",
+	"devs-skills-desc": "Uma pequena descrição dos teus skills, como linguagens de programação, etc...",
+	"devs-interest": "Interesses",
+	"devs-interest-desc": "Uma pequena descrição do que tu gostas de fazer e do que interessa",
+
+	// Dashboard
+	"dash-overview": "Dashboard",
+	"dash-profile": "Perfil",
+
+	// Dashboard Profile Add/Edit
+	"dash-profile-add": "Adicionar Informação",
+	"dash-profile-edit": "Alterar Informação",
+	"devs-add-success": "Informação adicionada com sucesso!",
+	"devs-edit-success": "Informação alterada com sucesso!",
+	"profile-submit-add": "Adicionar",
+	"profile-submit-edit": "Alterar"
 }
