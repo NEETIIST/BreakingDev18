@@ -1,6 +1,6 @@
 {
 	// Landing Page
-	"landing-1-title": "What is BreakingDev?",
+	"landing-1-title": "O que é o BreakingDev?",
 	"landing-1-desc": "O BreakingDev é o maior hackathon univesitário de Lisboa. Durante 48 horas, alunos das principais faculdades de Lisboa e de todo o país juntam-se para desenvolver uma ideia ou projeto que tenham, num ambiente descontraído e informal, onde ainda podem ganhar prémios!",
 	"landing-1-video": "Ainda não estás convencido?",
 	"landing-1-video-link": "Vê aqui o nosso aftermovie da edição de 2017.",
@@ -86,5 +86,28 @@
 	"contact-company": "A sua empresa:",
 	"contact-phone": "O seu telemóvel:",
 	"contact-mail": "O seu e-mail:",
-	"contact-success": "A sua mensagem foi enviada com sucesso, espere ouvir de nós muito em breve!"
+	"contact-success": "A sua mensagem foi enviada com sucesso, espere ouvir de nós muito em breve!",
+
+	// Verify Email
+	"verify-success":"Obrigado por verificar o seu e-mail",
+
+	// Reset Password
+	"rp_form": "Alterar Password",
+	"rp_password": "Password",
+	"rp_password_again": "Password (novamente)",
+	"rp_submit": "Alterar",
+	"rp_success": "A sua password foi alterada com sucesso!",
+
+	// Signup Page and Roles
+	"signup-title": "Qual é o teu papel?",
+	"signup-desc": "Há várias maneiras de participar no BreakingDev, escolhe a tua:",
+	"signup-dev": "Partipante",
+	"signup-dev-desc": "Cria a tua equipa e desenvolve a tua ideia.",
+	"signup-volunteer": "Voluntário",
+	"signup-volunteer-desc": "Vêm ajudar-nos a organizar o BreakingDev.",
+	"signup-sponsor": "Patrocinadores",
+	"signup-staff": "Staff",
+
+	// Devs Collection
+	"devs-name": "Nome"
 }

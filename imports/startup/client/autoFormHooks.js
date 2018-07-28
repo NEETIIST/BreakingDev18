@@ -4,3 +4,5 @@ AutoForm.addHooks(['contactForm'],{
         FlowRouter.go("/");
     }
 });
+
+AutoForm.debug();

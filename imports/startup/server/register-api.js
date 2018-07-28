@@ -5,3 +5,6 @@ import '../../api/links/server/publications.js';
 
 import '../../api/contact/methods.js';
 import '../../api/contact/server/publications.js';
+
+import '../../api/devs/methods.js';
+import '../../api/devs/server/publications.js';

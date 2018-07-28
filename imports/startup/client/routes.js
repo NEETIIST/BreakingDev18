@@ -42,7 +42,23 @@ FlowRouter.route('/dashboard', {
 	name: 'Dashboard',
 	action() {
 		if ( Meteor.userId() )
-			BlazeLayout.render('dashboard');
+		{
+			Session.set("dash_activeMenu","dash_overview");
+			BlazeLayout.render('dashboard', {dash_content:"dash_overview"});
+		}
+		else
+			FlowRouter.go("Login");
+	},
+});
+
+FlowRouter.route('/dashboard/dev/profile', {
+	name: 'DevProfile',
+	action() {
+		if ( Meteor.userId() )
+		{
+			Session.set("dash_activeMenu","dash_profile");
+			BlazeLayout.render('dashboard', {dash_content:"dash_profile"});
+		}
 		else
 			FlowRouter.go("Login");
 	},

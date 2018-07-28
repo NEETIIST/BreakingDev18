@@ -1,0 +1,34 @@
+<template name="dash_profile">
+	<div class="row justify-content-center align-items-center m-0 black vh-100">
+		<div class="col-10 text-left f-white">
+			{{#if hasProfile}}
+				<div class="spacer-4"></div>
+				<span class="f-white fs-6 fw-6">{{_ "dash-profile-edit"}}</span>
+                <hr class="red f-red" style="height:2px;border:none;" >
+
+                <div class="spacer-4"></div>
+			{{else}}
+				<div class="spacer-4"></div>
+				<span class="f-white fs-6 fw-6">{{_ "dash-profile-add"}}</span>
+                <hr class="red f-red" style="height:2px;border:none;" >
+                {{> dash_profile_add}}
+                <div class="spacer-4"></div>
+			{{/if}}
+		</div>
+	</div>
+</template>
+
+<template name="dash_profile_add">
+	{{#autoForm collection=Devs id="addDev" type="method" template="nothing" meteormethod="createDev" validation="browser"}}
+		<fieldset>
+			{{> afQuickField name="name" class="form-input" autocomplete="off"}}
+			{{> afQuickField name="age" class="form-input" autocomplete="off"}}
+			{{> afQuickField name="college" class="form-input" autocomplete="off"}}
+			{{> afQuickField name="course" class="form-input" autocomplete="off"}}
+			{{> afQuickField name="bio" class="form-input" autocomplete="off"}}
+			{{> afQuickField name="skills" class="form-input" autocomplete="off"}}
+			{{> afQuickField name="interest" class="form-input" autocomplete="off"}}
+		</fieldset>
+		<button type="submit" class="form-submit cp my-3" style="float:right">{{_ "profile-submit-add"}}</button>
+	{{/autoForm}}
+</template>

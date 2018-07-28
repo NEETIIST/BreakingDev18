@@ -106,6 +106,8 @@
 	"signup-volunteer": "Voluntário",
 	"signup-volunteer-desc": "Vêm ajudar-nos a organizar o BreakingDev.",
 	"signup-sponsor": "Patrocinadores",
-	"signup-staff": "Staff"
+	"signup-staff": "Staff",
 
+	// Devs Collection
+	"devs-name": "Nome"
 }
