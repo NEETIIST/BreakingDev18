@@ -1,11 +1,13 @@
-import './dashboard.html';
+import './volunteerpanel.html';
 
-Template.dashboard.onRendered(function(){
+Template.volunteerPanel.onRendered(function(){
+	//BlazeLayout.render('adminPanel', {ap_content:"ap_overview"});
+	//Session.set("ap_activeMenu","ap_overview");
 	var self = this;
 	self.autorun(function(){
 		if ( Roles.userIsInRole(Meteor.userId(), "staff") )
 		{
-			FlowRouter.go("AdminPanel");	
+			FlowRouter.go("AdminPanel");
 		}
 		else if ( Roles.userIsInRole(Meteor.userId(), "sponsor") )
 		{
@@ -13,11 +15,11 @@ Template.dashboard.onRendered(function(){
 		}
 		else if ( Roles.userIsInRole(Meteor.userId(), "volunteer") )
 		{
-			FlowRouter.go("VolunteerPanel");
+			// Accepted
 		}
 		else if ( Roles.userIsInRole(Meteor.userId(), "dev") )
 		{
-			//Aprovado
+			FlowRouter.go("Dashboard");
 		}
 	});
-});
+})
