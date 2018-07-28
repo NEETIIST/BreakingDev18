@@ -2,6 +2,7 @@ import './dashboard.html';
 
 import './overview/overview.js';
 import './profile/profile.js';
+import './team/team.js';
 
 Template.dashboard.onRendered(function(){
 	var self = this;
@@ -46,5 +47,13 @@ Template.dashboard.events({
 
 	"click #dash_profile": function(){
 		FlowRouter.go("DevProfile");
+	},
+
+	"click #dash_team": function(){
+		FlowRouter.go("DevTeam");
+	},
+
+	"click #dash_logout": function(){
+		FlowRouter.go("Logout");
 	},
 })

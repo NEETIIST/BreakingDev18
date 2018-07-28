@@ -64,6 +64,19 @@ FlowRouter.route('/dashboard/dev/profile', {
 	},
 });
 
+FlowRouter.route('/dashboard/dev/team', {
+	name: 'DevTeam',
+	action() {
+		if ( Meteor.userId() )
+		{
+			Session.set("dash_activeMenu","dash_team");
+			BlazeLayout.render('dashboard', {dash_content:"dash_team"});
+		}
+		else
+			FlowRouter.go("Login");
+	},
+});
+
 FlowRouter.route('/dashboard/sponsor', {
 	name: 'SponsorPanel',
   	action() {
@@ -125,7 +138,7 @@ FlowRouter.notFound = {
 // Accounts Routing
 
 FlowRouter.route('/logout',{
-	name: 'logout',
+	name: 'Logout',
 	action(){
 		AccountsTemplates.logout();
 		FlowRouter.redirect('/login');

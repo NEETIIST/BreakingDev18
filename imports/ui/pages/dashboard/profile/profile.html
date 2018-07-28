@@ -1,28 +1,50 @@
 <template name="dash_profile">
-	<div class="row justify-content-center align-items-center m-0 black vh-100">
+	<div class="row justify-content-center align-items-start m-0 black vh-100">
 		<div class="col-10 text-left f-white">
 			{{#if Template.subscriptionsReady}}
+				<div class="spacer-8"></div>
 				{{#if hasProfile}}
-					<div class="spacer-4"></div>
-					<span class="f-white fs-6 fw-6">{{_ "dash-profile-edit"}}</span>
-	                <hr class="red f-red" style="height:2px;border:none;" >
-					{{> dash_profile_edit}}
-	                <div class="spacer-4"></div>
+					{{#if editProfile}}
+						<span class="f-white fs-6 fw-6">{{_ "dash-profile-edit"}}</span>
+						<button class="form-submit cp mt-2 mb-0" style="float:right" id="profile-edit-cancel">
+							{{_ "profile-edit-cancel"}}
+						</button>
+						<hr class="red f-red" style="height:2px;border:none;" >
+						{{> dash_profile_edit}}
+					{{else}}
+						<span class="f-white fs-6 fw-6">{{_ "dash-profile-show"}}</span>
+						<button class="form-submit cp mt-2 mb-0" style="float:right" id="profile-edit">
+							{{_ "profile-edit"}}
+						</button>
+    					<hr class="red f-red" style="height:2px;border:none;" >
+    					<div class="spacer-4"></div>
+    					{{#with currentDev}}
+	    					<p class="f-white fs-4 fw-6 mb-0">{{name}} 
+	    						<span class="fw-4">({{username this.user}})</span>
+							</p>
+	    					<p class="f-white fs-3 fw-4 mb-1">{{college}} - {{course}}</p>
+	    					<div class="spacer-4"></div>
+	    					<p class="f-white fs-3 fw-4 mb-1">{{bio}}</p>
+	    					<div class="spacer-2"></div>
+	    					<p class="f-white fs-3 fw-4 mb-1">{{interest}}</p>
+	    					<div class="spacer-2"></div>
+	    					<p class="f-white fs-3 fw-4 mb-1">{{skills}}</p>
+    					{{/with}}
+					{{/if}}
 				{{else}}
-					<div class="spacer-4"></div>
-					<span class="f-white fs-6 fw-6">{{_ "dash-profile-add"}}</span>
-	                <hr class="red f-red" style="height:2px;border:none;" >
 	                {{> dash_profile_add}}
-	                <div class="spacer-4"></div>
 				{{/if}}
 			{{else}}
 				<i class="fas fa-circle-o-notch fa-spin fa-3x fa-fw f-white"></i>
 			{{/if}}
+			<div class="spacer-4"></div>
 		</div>
 	</div>
 </template>
 
 <template name="dash_profile_add">
+	<span class="f-white fs-6 fw-6">{{_ "dash-profile-add"}}</span>
+    <hr class="red f-red" style="height:2px;border:none;" >
 	{{#autoForm collection=Devs id="addDev" type="method" template="nothing" meteormethod="createDev" validation="browser"}}
 		<fieldset>
 			{{> afQuickField name="name" class="form-input" autocomplete="off"}}

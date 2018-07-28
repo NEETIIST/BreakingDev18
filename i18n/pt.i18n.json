@@ -124,12 +124,17 @@
 	// Dashboard
 	"dash-overview": "Dashboard",
 	"dash-profile": "Perfil",
+	"dash-team": "Equipa",
+	"dash-logout": "Logout",
 
 	// Dashboard Profile Add/Edit
 	"dash-profile-add": "Adicionar Informação",
 	"dash-profile-edit": "Alterar Informação",
+	"dash-profile-show": "As minhas informações",
 	"devs-add-success": "Informação adicionada com sucesso!",
 	"devs-edit-success": "Informação alterada com sucesso!",
 	"profile-submit-add": "Adicionar",
-	"profile-submit-edit": "Alterar"
+	"profile-edit": "Alterar",
+	"profile-edit-cancel": "Cancelar",
+	"profile-submit-edit": "Confirmar Alterações"
 }

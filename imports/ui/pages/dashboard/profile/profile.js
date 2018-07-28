@@ -7,13 +7,33 @@ Template.dash_profile.onRendered(function(){
 	self.autorun(function(){
 		self.subscribe("devs.own");
 	});
+	this.editProfile = new ReactiveVar( false );
 })
 
 Template.dash_profile.helpers({
 	hasProfile(){
-    	return (Devs.find().count() > 0);
-  	},
+		return (Devs.find().count() > 0);
+	},
+	editProfile(){
+		return Template.instance().editProfile.get();
+	},
+	currentDev(){
+		return Devs.findOne({"user":Meteor.userId()});
+	},
+	username(id)
+	{
+		return Meteor.users.findOne({"_id":id}).username;
+	}
 });
+
+Template.dash_profile.events({
+	'click #profile-edit': function(){
+		Template.instance().editProfile.set(true);	
+	},
+	'click #profile-edit-cancel': function(){
+		Template.instance().editProfile.set(false);	
+	}
+})
 
 Template.dash_profile_add.onRendered(function() {
 	
@@ -21,27 +41,27 @@ Template.dash_profile_add.onRendered(function() {
 
 Template.dash_profile_add.helpers({
 	Devs(){
-    	return Devs;
-  	},
+		return Devs;
+	},
 });
 
 Template.dash_profile_edit.helpers({
 	Devs(){
-    	return Devs;
-  	},
-  	currentDev(){
-  		return Devs.findOne({"user":Meteor.userId()});
-  	},
+		return Devs;
+	},
+	currentDev(){
+		return Devs.findOne({"user":Meteor.userId()});
+	},
 });
 
 AutoForm.addHooks(['addDev'],{
-    onSuccess: function(formType, result) {
-      	alert(TAPi18n.__('devs-add-success'));
-    }
+	onSuccess: function(formType, result) {
+		alert(TAPi18n.__('devs-add-success'));
+	}
 });
 
 AutoForm.addHooks(['editDev'],{
-    onSuccess: function(formType, result) {
-      	alert(TAPi18n.__('devs-edit-success'));
-    }
+	onSuccess: function(formType, result) {
+		alert(TAPi18n.__('devs-edit-success'));
+	}
 });
