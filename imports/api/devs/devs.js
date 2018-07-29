@@ -15,8 +15,7 @@ DevsSchema = new SimpleSchema({
 		type: String,
 		label: TAPi18n.__('devs-user'), 
 		autoform: {
-        	type: "hidden",
-        	label: false
+        	omit:true,
     	},
     	optional: true,
     	//unique: true,
@@ -76,7 +75,11 @@ DevsSchema = new SimpleSchema({
 		optional:true,
 		label: TAPi18n.__('devs-linkedin'),
 	},
-	
+	team: {
+		type: String,
+		optional:true,
+		autoform: { omit:true },
+	}
 });
 
 Devs.attachSchema( DevsSchema ); 

@@ -6,12 +6,11 @@ import './teams/teams.js';
 Template.adminPanel.onRendered(function(){
 	var self = this;
 	self.autorun(function(){
-		console.log("here");
-		console.log(Roles.userIsInRole(Meteor.userId(), "staff"));
 		if ( Roles.userIsInRole(Meteor.userId(), "staff") )
 		{
 			self.subscribe("users.all");
 			self.subscribe("roles.all");
+			self.subscribe("teams.all");
 			BlazeLayout.render('adminPanel', {ap_content:"ap_overview"});
 			Session.set("ap_activeMenu","ap_overview");
 		}

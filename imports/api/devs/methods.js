@@ -14,6 +14,7 @@ Meteor.methods({
 			check([doc.age], [Number]);
 
 			doc.user = this.userId;
+			doc.team = null;
 			Devs.insert(doc);
 
 			console.log("Created dev associated with user: " + doc.user);
@@ -23,7 +24,7 @@ Meteor.methods({
 	editDev: function(doc)
 	{
 		let dev = Devs.findOne({"_id":doc._id});
-
+		console.log(doc.modifier);
 		// User must own the profile it's updating
 		if ( this.userId != dev.user )
 			throw new Meteor.Error('not-owner', "User doesn't own this profile");
@@ -31,6 +32,6 @@ Meteor.methods({
 		{
 			Devs.update(doc._id,doc.modifier);
 		}
-	}
+	},
 
 });
