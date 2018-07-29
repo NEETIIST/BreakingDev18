@@ -120,5 +120,6 @@ Template.index.events({
 	        	scrollTop: $("#landing-"+newopt).offset().top + dir
 	    	}, 1000);
 		}
+		$("html").css({ "overflow-y":"scroll" });
 	},
 });
