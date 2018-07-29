@@ -8,6 +8,7 @@ Template.contact.onCreated(function () {
 
 Template.contact.onRendered( function(){
 	window.scrollTo(0,0);
+	$("html").css({ "overflow-y":"scroll" });
 })
 
 Template.contact.helpers({

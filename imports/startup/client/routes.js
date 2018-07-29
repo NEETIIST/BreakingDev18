@@ -34,7 +34,10 @@ FlowRouter.route('/faq', {
 FlowRouter.route('/admin', {
 	name: 'AdminPanel',
   	action() {
-		BlazeLayout.render('adminPanel');
+  		if ( Meteor.userId() )
+			BlazeLayout.render('adminPanel');
+		else
+			FlowRouter.go("Login");
   	},
 });
 
@@ -80,14 +83,20 @@ FlowRouter.route('/dashboard/dev/team', {
 FlowRouter.route('/dashboard/sponsor', {
 	name: 'SponsorPanel',
   	action() {
-		BlazeLayout.render('sponsorPanel');
+		if ( Meteor.userId() )
+			BlazeLayout.render('sponsorPanel');
+		else
+			FlowRouter.go("Login");
   	},
 });
 
 FlowRouter.route('/dashboard/volunteer', {
 	name: 'VolunteerPanel',
   	action() {
-		BlazeLayout.render('volunteerPanel');
+		if ( Meteor.userId() )
+			BlazeLayout.render('sponsorPanel');
+		else
+			FlowRouter.go("Login");
   	},
 });
 

@@ -4,6 +4,7 @@ import './overview/overview.js';
 import './teams/teams.js';
 
 Template.adminPanel.onRendered(function(){
+	$("html").css({ "overflow-y":"scroll" });
 	var self = this;
 	self.autorun(function(){
 		if ( Roles.userIsInRole(Meteor.userId(), "staff") )

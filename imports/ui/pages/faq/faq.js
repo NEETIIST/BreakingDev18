@@ -6,6 +6,7 @@ Template.faq.onCreated(function () {
 
 Template.faq.onRendered( function(){
 	
+	$("html").css({ "overflow-y":"scroll" });
 	window.scrollTo(0,0);
 
 	var temp = Template.instance()
@@ -22,7 +23,6 @@ Template.faq.onRendered( function(){
 			temp.menuActive.set(2);
 		},
 	});
-	/*
 	var w3 = new Waypoint({
 		element: document.getElementById("landing-3"),
 		handler: function(direction) {
@@ -41,8 +41,6 @@ Template.faq.onRendered( function(){
 			temp.menuActive.set(5);
 		},
 	});
-	*/
-
 })
 
 Template.faq.helpers({
@@ -98,7 +96,6 @@ Template.faq.events({
 		// Close Mobile just in case
 		if ( $(window)[0].outerWidth < 768)
 		{
-			console.log("here");
 			$("#close-menu").hide("fade", 200, function(){
 				$("#menu-col").hide("slide", {direction:"right"}, 1000, function(){
 					$("#open-menu").show("fade",200, function(){

@@ -5,6 +5,7 @@ import './profile/profile.js';
 import './team/team.js';
 
 Template.dashboard.onRendered(function(){
+	$("html").css({ "overflow-y":"scroll" });
 	var self = this;
 	self.autorun(function(){
 		if ( Roles.userIsInRole(Meteor.userId(), "staff") )

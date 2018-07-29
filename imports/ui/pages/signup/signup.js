@@ -2,7 +2,8 @@ import './signup.html'
 
 Template.signup.onRendered( function(){
 	window.scrollTo(0,0);
-	$("#menu-signup").toggleClass("menu-active menu-hover")
+	$("#menu-signup").toggleClass("menu-active menu-hover");
+	$("html").css({ "overflow-y":"scroll" });
 })
 
 Template.signup.helpers({

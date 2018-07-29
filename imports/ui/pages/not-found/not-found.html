@@ -1,11 +1,12 @@
 <template name="App_notFound">
-  <div id="not-found">
-    <div class="not-found-image">
-      <img src="/img/404.svg" alt="" />
+	<div class="row justify-content-center align-items-center m-0 black vh-100"> 
+       	<div class="col-10 text-left">
+       		<span class="f-white fs-6 fw-6">{{_ "404-title"}}</span>
+            <hr class="red f-red" style="height:2px;border:none;" >
+            <p class="f-white fs-3 fw-4">{{_ "404-desc"}}</p>
+           	<a href="/">
+            	<button class="at-btn">{{_ "404-goback"}}</button>
+            </a>
+       	</div>
     </div>
-    <div class="not-found-title">
-      <h1>Sorry, that page doesn't exist</h1>
-      <a href="/" class="gotohomepage">Go to home</a>
-    </div>
-  </div>
 </template>

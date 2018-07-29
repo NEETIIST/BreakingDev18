@@ -13,7 +13,7 @@
         </div>
         <div class="col-lg-10 col-md-9 col-12 px-0" id="landing-content">
             <div class="row justify-content-center align-items-center m-0 black vh-90 scrl-controller" id="landing-0">
-                <div class="col-lg-8 col-10">
+                <div class="col-lg-12 col-12">
                     <img class="img-fluid" src="/logos/landingBDev.png"/>
                 </div>
             </div>
@@ -42,9 +42,12 @@
                     <hr class="red f-red" style="height:2px;border:none;" >
                     <p class="f-white fs-3 fw-4">{{_ "landing-2-participant"}}</p>
                     <p class="f-white fs-3 fw-4">{{_ "landing-2-volunteer"}}</p>
+                    <p class="f-white fs-3 fw-4">{{_ "landing-2-soon"}}</p>
+                    <!--
                     <span class="f-white fs-3 fw-4 cp hvr-white-to-red">
                         <a href="#">{{_ "landing-2-account"}}</a>
                     </span>
+                    -->
                     <div class="spacer-4"></div>
                 </div>
             </div>
@@ -59,7 +62,9 @@
                             <img class="square-icon" src="icons/Web.png"/>
                             <p class="f-white fs-4 fw-6 text-center">
                                 {{_ "landing-3-web-title"}}
+                                <!--
                                 <a href="#"><span class="fw-4 hvr-white-to-red cp">{{_ "landing-3-web-sponsor"}}</span></a>
+                                -->
                             </p>
                             <p class="f-white fs-3 fw-4 text-justify">{{_ "landing-3-web-desc"}}</p>
                         </div>
@@ -67,7 +72,9 @@
                             <img class="square-icon" src="icons/Jogos.png"/>
                             <p class="f-white fs-4 fw-6 text-center">
                                 {{_ "landing-3-games-title"}}
+                                <!--
                                 <a href="#"><span class="fw-4 hvr-white-to-red cp">{{_ "landing-3-games-sponsor"}}</span></a>
+                                -->
                             </p>
                             <p class="f-white fs-3 fw-4 text-justify">{{_ "landing-3-games-desc"}}</p>
                         </div>
@@ -89,7 +96,9 @@
                             <img class="square-icon" src="icons/A+.png"/>
                             <p class="f-white fs-4 fw-6 text-center mt-2">
                                 {{_ "landing-4-aplus-title"}}
+                                <!--
                                 <a href="#"><span class="fw-4 hvr-white-to-red cp">{{_ "landing-4-aplus-sponsor"}}</span></a>
+                                -->
                             </p>
                             <p class="f-white fs-3 fw-4 text-justify">{{_ "landing-4-aplus-desc"}}</p>
                         </div>
@@ -97,7 +106,9 @@
                             <img class="square-icon" src="icons/Crowd.png"/>
                             <p class="f-white fs-4 fw-6 text-center mt-2">
                                 {{_ "landing-4-crowd-title"}}
+                                <!--
                                 <a href="#"><span class="fw-4 hvr-white-to-red cp">{{_ "landing-4-crowd-sponsor"}}</span></a>
+                                -->
                             </p>
                             <p class="f-white fs-3 fw-4 text-justify">{{_ "landing-4-crowd-desc"}}</p>
                         </div>
@@ -135,15 +146,36 @@
             <div class="row justify-content-center align-items-center m-0 black vh-50 scrl-controller" id="landing-6">
                 <div class="col-10 p-0 text-right">
                     <div class="spacer-4"></div>
-                    <div class="row justify-content-center align-items-start">
-                        <div class="col-4 text-center">
-                            <span class="f-white fs-3 fw-4 text-left">{{_ "landing-6-organization"}}</span>
+                    <div class="row justify-content-start align-items-end">
+                        <div class="col-6 col-md-4 px-md-3 my-2 text-left">
+                            <span class="f-white fs-3 fw-4">{{_ "landing-6-sponsor"}}</span>
+                            <a href="#" target="_blank">
+                                <img class="img-fluid" src="/logos/Olisipo.png" title="Olisipo"/>
+                            </a>
                         </div>
-                        <div class="col-4 text-center">
-                            <span class="f-white fs-3 fw-4 text-left">{{_ "landing-6-support"}}</span>
+                        <div class="col-6 col-md-4 px-md-3 my-2 text-left">
+                            <a href="#" target="_blank">
+                                <img class="img-fluid" src="/logos/PrimeIT.png" title="Prime IT"/>
+                            </a>
                         </div>
-                        <div class="col-4 text-center">
-                            .
+                        <div class="col-6 col-md-4 px-md-3 my-2 text-left">
+                            <a href="#" target="_blank">
+                                <img class="img-fluid" src="/logos/Smart.png" title="Smart Consulting"/>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row justify-content-start align-items-end">
+                        <div class="col-6 col-md-4 px-md-3 my-2 text-left">
+                            <span class="f-white fs-3 fw-4">{{_ "landing-6-organization"}}</span>
+                            <a href="https://neeti.tecnico.ulisboa.pt" target="_blank">
+                                <img class="img-fluid" src="/logos/NEETI.png" title="Núcleo de Estudantes de Engenharia de Telecomunicações e Informática"/>
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-4 px-md-3 my-2 text-left">
+                            <span class="f-white fs-3 fw-4">{{_ "landing-6-support"}}</span>
+                            <a href="https://tecnico.ulisboa.pt" target="_blank">
+                                <img class="img-fluid" src="/logos/IST.png" title="Instituto Superior Técnico"/>
+                            </a>
                         </div>
                     </div>
                     <hr class="red f-red" style="height:2px;border:none;">
@@ -154,17 +186,18 @@
                             </a>
                         </div>
                         <div class="col-4 text-center f-white">
-                            <a href="#" target="_blank" class="hvr-white-to-red">
+                            <a href="https://github.com/NEETIIST/BreakingDev18" target="_blank" class="hvr-white-to-red">
                                 <span class="fs-1 fw-4">{{_ "footer-sourcecode"}}</span>
                             </a>
                         </div>
                         <div class="col-4 text-center">
                             <span class="f-white fs-1 fw-4">{{_ "footer-tools"}}
-                                <a href="#" target="_blank" class="hvr-white-to-red">Meteor </a>& 
-                                <a href="#" target="_blank" class="hvr-white-to-red">Bootstrap</a>
+                                <a href="http://meteor.com" target="_blank" class="hvr-white-to-red">Meteor </a>& 
+                                <a href="https://getbootstrap.com" target="_blank" class="hvr-white-to-red">Bootstrap</a>
                             </span>
                         </div>
                     </div>
+                    <div class="spacer-4"></div>
                 </div>
             </div>
         </div>

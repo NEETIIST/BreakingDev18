@@ -4,6 +4,7 @@ Template.resetPassword.onRendered( function(){
 	window.scrollTo(0,0);
 	$("#menu-signup").removeClass("menu-active").addClass("menu-hover");
 	$("#menu-login").removeClass("menu-active").addClass("menu-hover");
+	$("html").css({ "overflow-y":"scroll" });
 
 	if (AccountsTemplates.paramToken) {
   		Session.set('resetPassword', AccountsTemplates.paramToken);

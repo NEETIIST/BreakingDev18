@@ -3,6 +3,7 @@ import './login.html'
 Template.login.onRendered( function(){
 	window.scrollTo(0,0);
 	$("#menu-login").toggleClass("menu-active menu-hover")
+	$("html").css({ "overflow-y":"scroll" });
 })
 
 Template.login.helpers({

@@ -20,7 +20,7 @@ Meteor.methods({
     Email.send({
       to: "neeti.isttagus@gmail.com",
       from: doc.email,
-      subject: "BreakingDev - Informação sobre Patrocínio [TESTE]",
+      subject: "BreakingDev - Informação sobre Patrocínio",
       text: "A empresa " + doc.company + " quer mais informação sobre os pacotes de patrocínio do BreakingDev. \nO contacto foi feito pelo/a Sr(a) " + doc.name + ", com o email: " + doc.email +" e com o telefone: " + doc.phone +" ." ,
     });
   },

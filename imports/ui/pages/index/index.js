@@ -10,6 +10,7 @@ Template.index.onCreated(function () {
 Template.index.onRendered( function(){
 	
 	window.scrollTo(0,0);
+	$("html").css({ "overflow-y":"scroll" });
 	
 	var temp = Template.instance()
 
@@ -49,7 +50,6 @@ Template.index.onRendered( function(){
 			temp.menuActive.set(6);
 		},
 	});
-	
 
 })
 
@@ -85,7 +85,7 @@ Template.index.events({
 
   	'click #scroll-landing': function(){
     	$('html, body').animate({
-        	scrollTop: $("#landing-1").offset().top 
+        	scrollTop: $("#landing-1").offset().top + 1
     	}, 1000);
 	},
 	
