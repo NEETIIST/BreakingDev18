@@ -50,10 +50,12 @@ Template.signupRoles.events({
 			Meteor.call('registerDev');
 		FlowRouter.go("Dashboard");
 	},
+	/*
 	'click #signup-volunteer': function(){
 		if ( Meteor.userId() )
 			Roles.addUsersToRoles(Meteor.userId(), 'volunteer');
 	},
+	*/
 })
 
 // Helper Functions

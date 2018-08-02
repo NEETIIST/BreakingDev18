@@ -12,7 +12,7 @@ Teams.allow({
 
 TeamsSchema = new SimpleSchema({
 	number: {
-		type: String,
+		type: Number,
 		autoform: { omit:true },
     	optional: true,
 	},
@@ -69,7 +69,12 @@ TeamsSchema = new SimpleSchema({
 		type: Date,
 		autoform: { omit:true },
 		optional: true,
-	}
+	},
+	abandoned: {
+		type: Boolean,
+		autoform: { omit:true },
+		optional: true,
+	},
 });
 
 Teams.attachSchema( TeamsSchema ); 

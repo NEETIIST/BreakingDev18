@@ -4,27 +4,36 @@ import './overview/overview.js';
 import './profile/profile.js';
 import './team/team.js';
 
+import { Teams } from '/imports/api/teams/teams.js';
+import { Devs } from '/imports/api/devs/devs.js';
+
 Template.dashboard.onRendered(function(){
 	$("html").css({ "overflow-y":"scroll" });
 	var self = this;
 	self.autorun(function(){
-		if ( Roles.userIsInRole(Meteor.userId(), "staff") )
+		if ( Meteor.userId() )
 		{
-			FlowRouter.go("dashboard");	
+			if ( Roles.userIsInRole(Meteor.userId(), "staff") )
+			{
+				FlowRouter.go("dashboard");	
+			}
+			else if ( Roles.userIsInRole(Meteor.userId(), "sponsor") )
+			{
+				FlowRouter.go("SponsorPanel");
+			}
+			else if ( Roles.userIsInRole(Meteor.userId(), "volunteer") )
+			{
+				FlowRouter.go("VolunteerPanel");
+			}
+			else if ( Roles.userIsInRole(Meteor.userId(), "dev") )
+			{
+				self.subscribe("devs.own");
+				self.subscribe("teams.own");
+			}
+			// Get a way to redirect users with no role out of here
 		}
-		else if ( Roles.userIsInRole(Meteor.userId(), "sponsor") )
-		{
-			FlowRouter.go("SponsorPanel");
-		}
-		else if ( Roles.userIsInRole(Meteor.userId(), "volunteer") )
-		{
-			FlowRouter.go("VolunteerPanel");
-		}
-		else if ( Roles.userIsInRole(Meteor.userId(), "dev") )
-		{
-			self.subscribe("devs.own");
-			self.subscribe("teams.own");
-		}
+		else
+			FlowRouter.go("Login");
 	});
 });
 
@@ -37,6 +46,10 @@ Template.dashboard.helpers({
 			return "menu-active";
 		else
 			return "menu-hover";
+	},
+	userHasProfile(){
+		let dev = Devs.findOne({"user":Meteor.userId()});
+		return ( dev != undefined );
 	},
 })
 

@@ -6,7 +6,7 @@ Meteor.publish('teams.own', function(){
 	//let dev = Devs.findOne({'user':this.userId});
 	//let team = Teams.find({ $or: [{"captain": this.userId},{}] })
 	// Must also return teams the user is a member of
-	return Teams.find({"captain": this.userId});
+	return Teams.find({"captain": this.userId, "abandoned":false});
 });
 
 //Admin Use

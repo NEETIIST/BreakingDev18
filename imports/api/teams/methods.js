@@ -11,17 +11,21 @@ Meteor.methods({
 		// User must be a Dev
 		if ( ! Roles.userIsInRole(this.userId, "dev") )
 			throw new Meteor.Error('not-dev', "User is not a dev, can't create this type of profile");
+		// User must be have a profile
+		if ( dev == undefined )
+			throw new Meteor.Error('no-profile', "User doesn't have a profile yet");
 		// Current user must not be on a team already
 		else if ( dev.team != null )
 			throw new Meteor.Error('already-on-team', "User already is on a team, can't create another one");
 		else
 		{
-			doc.number = Teams.find().count()+1;
+			doc.number = parseInt(Teams.find().count()+1);
 			doc.captain = this.userId;
 			doc.validated = false;
 			doc.pending = false;
 			doc.registration = null;
 			doc.members = [];
+			doc.abandoned = false;
 			let newTeam = Teams.insert(doc);
 			
 			// Associate Captain with this team
@@ -31,12 +35,15 @@ Meteor.methods({
 		}
 	},
 
-	destroyTeam: function()
+	disableTeam: function()
 	{
 		let user = Meteor.users.findOne({"_id":this.userId});
 		let dev = Devs.findOne({"user":this.userId});
-		let team = Teams.findOne({"captain": this.userId});
+		let team = Teams.findOne({"captain": this.userId, "abandoned":false});
 
+		// User must have a profile
+		if ( dev == undefined )
+			throw new Meteor.Error('no-profile', "User doesn't have a profile yet");
 		// User must be the captain of the team
 			// This is assured by finding the team the user belongs to, if none, it's not captain
 			if ( team == undefined )
@@ -46,10 +53,11 @@ Meteor.methods({
 			throw new Meteor.Error('team-not-empty', "Team still has other users");
 		else
 		{
-			// Dissociate user from this team 
+			// Dissociate team from the user 
 			Devs.update(dev._id, {'$set':{ team: null }} );
-			// Good to be disabled
-			// To Do
+			// Disable Team
+			Teams.update(team._id,{'$set':{abandoned:true}});
+			console.log("Disabled team: " +team._id);
 		}
 	}
 

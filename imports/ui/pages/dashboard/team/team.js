@@ -12,6 +12,14 @@ Template.dash_team.onRendered(function(){
 	});
 });
 
+Template.dash_team.helpers({
+	userHasProfile(){
+		let dev = Devs.findOne({"user":Meteor.userId()});
+		return ( dev != undefined );
+	},
+});
+
+
 // Team Manage
 Template.dash_team_manage.helpers({
 	hasTeam(){
@@ -24,6 +32,14 @@ Template.dash_team_manage.helpers({
 		if ( team != undefined )
 			return ( team.captain == Meteor.userId() );
 	},
+	onlyMember(){
+		console.log("here");
+		let dev = Devs.findOne({"user":Meteor.userId()});
+		let team = Teams.findOne({"_id":dev.team});
+		console.log(team);
+		if ( team != undefined )
+			return ( team.members.length == 0 );
+	},
 });
 
 Template.dash_team_manage.events({
@@ -32,6 +48,18 @@ Template.dash_team_manage.events({
 	},
 	'click #dash-team-add': function(){
 		FlowRouter.go("DevTeamAdd")
+	},
+	'click #dash-team-delete': function(){
+		if ( confirm(TAPi18n.__('team-delete-confirm')) )
+		{
+			Meteor.call("disableTeam", function (err, data) {
+	            if(err){
+	                console.log("err : " + err);
+	            }else{
+	                alert(TAPi18n.__('team-delete-success'));
+	            }
+        	});
+		}
 	},
 })
 

@@ -2,7 +2,11 @@
 	<div class="row justify-content-center align-items-center m-0 black vh-100">
 		<div class="col-10 text-left f-white">
 			{{#if Template.subscriptionsReady}}
-				{{> Template.dynamic template=team_option}}
+				{{#if userHasProfile}}
+					{{> Template.dynamic template=team_option}}
+				{{else}}
+					<span class="f-white fs-3 fw-4">{{_ "dash-team-noprofile"}}</span>
+				{{/if}}
 			{{else}}
 				<p>Loading</p>
 			{{/if}}
@@ -14,7 +18,7 @@
 	<div class="row justify-content-center align-items-center m-0">
 		{{#if hasTeam}}
 			{{#if isCaptain}}
-				<div class="col-5 dashboard-opt p-3" id="dash-team-edit">
+				<div class="col-10 col-md-5 dashboard-opt p-3 m-3" id="dash-team-edit">
 					<div class="row justify-content-center align-items-center m-0 vh-20">
 						<div class="col-4 text-center">
 							<i class="fas fa-users-cog fa-3x"></i>
@@ -27,6 +31,21 @@
 						</div>
 					</div>
 				</div>
+				{{#if onlyMember}}
+					<div class="col-10 col-md-5 dashboard-opt p-3 m-3" id="dash-team-delete">
+						<div class="row justify-content-center align-items-center m-0 vh-20">
+							<div class="col-4 text-center">
+								<i class="fas fa-ban fa-3x"></i>
+							</div>
+							<div class="col-8 text-center">
+								<span class="f-white fs-3 fw-4">{{_ "dash-team-delete"}}</span>
+							</div>
+							<div class="col-12 text-left">
+								<span class="f-white fs-1 fw-4">{{_ "dash-team-delete-desc"}}</span>
+							</div>
+						</div>
+					</div>
+				{{/if}}
 				<!--
 				<p>Is Captain</p>
 				
@@ -41,7 +60,7 @@
 			<p>Can leave team</p>
 			-->
 		{{else}}
-			<div class="col-5 dashboard-opt p-3" id="dash-team-add">
+			<div class="col-10 col-md-5 dashboard-opt p-3 m-3" id="dash-team-add">
 				<div class="row justify-content-center align-items-center m-0 vh-20">
 					<div class="col-4 text-center">
 						<i class="fas fa-users fa-3x"></i>
