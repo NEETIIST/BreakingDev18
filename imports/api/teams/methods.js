@@ -21,6 +21,7 @@ Meteor.methods({
 			doc.validated = false;
 			doc.pending = false;
 			doc.registration = null;
+			doc.members = [];
 			let newTeam = Teams.insert(doc);
 			
 			// Associate Captain with this team
@@ -29,5 +30,27 @@ Meteor.methods({
 			console.log("Created team #" + doc.number + " , by the user: "+doc.captain);
 		}
 	},
+
+	destroyTeam: function()
+	{
+		let user = Meteor.users.findOne({"_id":this.userId});
+		let dev = Devs.findOne({"user":this.userId});
+		let team = Teams.findOne({"captain": this.userId});
+
+		// User must be the captain of the team
+			// This is assured by finding the team the user belongs to, if none, it's not captain
+			if ( team == undefined )
+				throw new Meteor.Error('not-captain', "User is not a team captain");
+		// Team must be empty of members
+		if ( team.members.length != 0)
+			throw new Meteor.Error('team-not-empty', "Team still has other users");
+		else
+		{
+			// Dissociate user from this team 
+			Devs.update(dev._id, {'$set':{ team: null }} );
+			// Good to be disabled
+			// To Do
+		}
+	}
 
 });

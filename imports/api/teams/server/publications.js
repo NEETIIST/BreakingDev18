@@ -2,10 +2,11 @@ import { Meteor } from 'meteor/meteor';
 import { Teams } from '../teams.js';
 import { Devs } from '/imports/api/devs/devs.js';
 
-// Team the current user is associated with (soft check)
 Meteor.publish('teams.own', function(){
-	let dev = Devs.findOne({'user':this.userId});
-	return Teams.find({"_id":dev.team});
+	//let dev = Devs.findOne({'user':this.userId});
+	//let team = Teams.find({ $or: [{"captain": this.userId},{}] })
+	// Must also return teams the user is a member of
+	return Teams.find({"captain": this.userId});
 });
 
 //Admin Use

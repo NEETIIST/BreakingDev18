@@ -1,0 +1,18 @@
+.dashboard-opt
+{
+	border: 1px solid white;
+	border-radius: 0.5em;
+	cursor: pointer;
+	color: white;
+	transition: 0.2s;
+}
+
+.dashboard-opt:hover
+{
+	border: 1px solid $primary-red;
+	-webkit-box-shadow: 2px 2px 2px 0px rgba(28,28,28,1);
+    -moz-box-shadow: 2px 2px 2px 0px rgba(28,28,28,1); 
+	box-shadow: 2px 2px 2px 0px rgba(28,28,28,1);
+	color: $primary-red;
+	transition: 0.2s;
+}

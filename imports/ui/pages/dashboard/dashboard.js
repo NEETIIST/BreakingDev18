@@ -22,9 +22,8 @@ Template.dashboard.onRendered(function(){
 		}
 		else if ( Roles.userIsInRole(Meteor.userId(), "dev") )
 		{
-			//self.subscribe("users.all");
-			//self.subscribe("roles.all");
-			
+			self.subscribe("devs.own");
+			self.subscribe("teams.own");
 		}
 	});
 });

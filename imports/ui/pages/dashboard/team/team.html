@@ -1,14 +1,75 @@
 <template name="dash_team">
-	<div class="row justify-content-center align-items-start m-0 black vh-100">
+	<div class="row justify-content-center align-items-center m-0 black vh-100">
 		<div class="col-10 text-left f-white">
-			{{> dash_team_edit}}
+			{{#if Template.subscriptionsReady}}
+				{{> Template.dynamic template=team_option}}
+			{{else}}
+				<p>Loading</p>
+			{{/if}}
 		</div>
 	</div>
 </template>
 
+<template name="dash_team_manage">
+	<div class="row justify-content-center align-items-center m-0">
+		{{#if hasTeam}}
+			{{#if isCaptain}}
+				<div class="col-5 dashboard-opt p-3" id="dash-team-edit">
+					<div class="row justify-content-center align-items-center m-0 vh-20">
+						<div class="col-4 text-center">
+							<i class="fas fa-users-cog fa-3x"></i>
+						</div>
+						<div class="col-8 text-center">
+							<span class="f-white fs-3 fw-4">{{_ "dash-team-edit"}}</span>
+						</div>
+						<div class="col-12 text-left">
+							<span class="f-white fs-1 fw-4">{{_ "dash-team-edit-desc"}}</span>
+						</div>
+					</div>
+				</div>
+				<!--
+				<p>Is Captain</p>
+				
+				<p>Can edit team</p>
+				<p>Can confirm signup</p>
+				<p>Can destroy team if only user</p>
+				-->
+			{{/if}}
+			<!--
+			<p>Has team</p>
+			<p>Can see team info</p>
+			<p>Can leave team</p>
+			-->
+		{{else}}
+			<div class="col-5 dashboard-opt p-3" id="dash-team-add">
+				<div class="row justify-content-center align-items-center m-0 vh-20">
+					<div class="col-4 text-center">
+						<i class="fas fa-users fa-3x"></i>
+					</div>
+					<div class="col-8 text-center">
+						<span class="f-white fs-3 fw-4">{{_ "dash-team-add"}}</span>
+					</div>
+					<div class="col-12 text-left">
+						<span class="f-white fs-1 fw-4">{{_ "dash-team-add-desc"}}</span>
+					</div>
+				</div>
+			</div>
+			<!--
+			<p>Has no team, so</p>
+			<p>Find team</p>
+			<p>Add Team</p>
+			-->
+		{{/if}}
+	</div>
+</template>
+
 <template name="dash_team_add">
-	<span class="f-white fs-6 fw-6">{{_ "dash-team-add"}}</span>
-    <hr class="red f-red" style="height:2px;border:none;" >
+	<div class="row justify-content-center align-items-start m-0">
+		<div class="col-12 text-left p-0">
+			<span class="f-white fs-6 fw-6">{{_ "dash-team-add"}}</span>
+		</div>
+	</div>
+	<hr class="red f-red" style="height:2px;border:none;" >
 	{{#autoForm collection=Teams id="addTeam" type="method" template="nothing" meteormethod="createTeam" validation="browser"}}
 		<fieldset>
 			{{> afQuickField name="team_name" class="form-input" autocomplete="off"}}
@@ -22,8 +83,19 @@
 </template>
 
 <template name="dash_team_edit">
-	<span class="f-white fs-6 fw-6">{{_ "dash-team-edit"}}</span>
-    <hr class="red f-red" style="height:2px;border:none;" >
+	<div class="row justify-content-center align-items-start m-0">
+		<div class="col-12 text-left p-0 col-md-9">
+			<span class="f-white fs-6 fw-6">{{_ "dash-team-edit"}}</span>
+		</div>
+		<div class="col-12 text-left p-0 mt-2 mb-1 col-md-3 text-md-right mb-md-0 mt-md-0">
+			<a href="/dashboard/dev/team">
+				<button class="form-submit cp mt-2 mb-0">
+					{{_ "profile-team-cancel"}}
+				</button>
+			</a>
+		</div>
+	</div>
+	<hr class="red f-red" style="height:2px;border:none;" >
 	{{#autoForm collection=Teams doc=ownTeam id="addTeam" type="method-update" template="nothing" meteormethod="editTeam" validation="browser"}}
 		<fieldset>
 			{{> afQuickField name="team_name" class="form-input" autocomplete="off"}}
@@ -32,6 +104,6 @@
 			{{> afQuickField name="idea" class="form-input" autocomplete="off"}}
 			{{> afQuickField name="skills" class="form-input" autocomplete="off"}}
 		</fieldset>
-		<button type="submit" class="form-submit cp my-3" style="float:right">{{_ "team-submit-add"}}</button>
+		<button type="submit" class="form-submit cp my-3" style="float:right">{{_ "team-submit-edit"}}</button>
 	{{/autoForm}}
 </template>

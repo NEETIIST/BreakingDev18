@@ -73,7 +73,33 @@ FlowRouter.route('/dashboard/dev/team', {
 		if ( Meteor.userId() )
 		{
 			Session.set("dash_activeMenu","dash_team");
-			BlazeLayout.render('dashboard', {dash_content:"dash_team"});
+			BlazeLayout.render('dashboard', {dash_content:"dash_team", team_option:"dash_team_manage"});
+		}
+		else
+			FlowRouter.go("Login");
+	},
+});
+
+FlowRouter.route('/dashboard/dev/team/edit', {
+	name: 'DevTeamEdit',
+	action() {
+		if ( Meteor.userId() )
+		{
+			Session.set("dash_activeMenu","dash_team");
+			BlazeLayout.render('dashboard', {dash_content:"dash_team", team_option:"dash_team_edit"});
+		}
+		else
+			FlowRouter.go("Login");
+	},
+});
+
+FlowRouter.route('/dashboard/dev/team/add', {
+	name: 'DevTeamAdd',
+	action() {
+		if ( Meteor.userId() )
+		{
+			Session.set("dash_activeMenu","dash_team");
+			BlazeLayout.render('dashboard', {dash_content:"dash_team", team_option:"dash_team_add"});
 		}
 		else
 			FlowRouter.go("Login");

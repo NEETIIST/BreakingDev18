@@ -5,7 +5,7 @@ AccountsTemplates.configure({
 	// Behavior
 	confirmPassword: true,
 	enablePasswordChange: true,
-	forbidClientAccountCreation: true,
+	forbidClientAccountCreation: false,
 	overrideLoginErrors: true,
 	sendVerificationEmail: true,
 	lowercaseUsername: false,

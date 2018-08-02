@@ -2,3 +2,5 @@ node_modules/
 public/cdn/
 
 settings\.json
+
+package\.tar\.gz
