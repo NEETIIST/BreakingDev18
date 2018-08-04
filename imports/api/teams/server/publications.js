@@ -4,9 +4,18 @@ import { Devs } from '/imports/api/devs/devs.js';
 
 Meteor.publish('teams.own', function(){
 	//let dev = Devs.findOne({'user':this.userId});
-	//let team = Teams.find({ $or: [{"captain": this.userId},{}] })
+	//let team = Teams.find({ $or: [{"captain": this.userId},{ "members": this.userId }], {"abandoned":false});
 	// Must also return teams the user is a member of
-	return Teams.find({"captain": this.userId, "abandoned":false});
+	//return Teams.find({"captain": this.userId, "abandoned":false});	
+	return Teams.find({$and:[{ $or: [{"captain": this.userId},{ "members": this.userId }]},{"abandoned":false}]});
+});
+
+Meteor.publish('teams.visitor', function(number){
+	return Teams.find({"number": parseInt(number), "abandoned":false},{ fields: Teams.publicFields });
+});
+
+Meteor.publish('teams.available', function(){
+	return Teams.find({$where: "this.members.length < 3","abandoned":false,"pending":false,"validated":false},{ fields: Teams.publicFields });
 });
 
 //Admin Use

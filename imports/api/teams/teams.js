@@ -47,7 +47,7 @@ TeamsSchema = new SimpleSchema({
 		allowedValues: ['Gaming', 'Web'],
 		autoform:{
 			type:"select",
-			options: function(){return[{label:"Web",value:"Web"},{label:"Gaming",value:"Gaming"}]}
+			options: function(){return[{label:TAPi18n.__('teams-web'),value:"Web"},{label:TAPi18n.__('teams-gaming'),value:"Gaming"}]}
 		},
 		label: TAPi18n.__('teams-category'),
 	},
@@ -75,6 +75,22 @@ TeamsSchema = new SimpleSchema({
 		autoform: { omit:true },
 		optional: true,
 	},
+	password: {
+		type: String,
+		autoform: { omit:true },
+		optional: true,
+	},
 });
 
 Teams.attachSchema( TeamsSchema ); 
+
+Teams.publicFields = {
+	number: 1,
+	team_name:1,
+	captain:1,
+	members:1,
+	project_name:1,
+	idea:1,
+	category:1,
+	skills:1
+};

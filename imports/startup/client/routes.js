@@ -106,6 +106,58 @@ FlowRouter.route('/dashboard/dev/team/add', {
 	},
 });
 
+FlowRouter.route('/dashboard/dev/team/invite', {
+	name: 'DevTeamInvite',
+	action() {
+		if ( Meteor.userId() )
+		{
+			Session.set("dash_activeMenu","dash_team");
+			BlazeLayout.render('dashboard', {dash_content:"dash_team", team_option:"dash_team_invite"});
+		}
+		else
+			FlowRouter.go("Login");
+	},
+});
+
+FlowRouter.route('/dashboard/dev/team/find', {
+	name: 'DevTeamFind',
+	action() {
+		if ( Meteor.userId() )
+		{
+			Session.set("dash_activeMenu","dash_team");
+			BlazeLayout.render('dashboard', {dash_content:"dash_team", team_option:"dash_team_find"});
+		}
+		else
+			FlowRouter.go("Login");
+	},
+});
+
+FlowRouter.route('/dashboard/dev/team/join', {
+	name: 'DevTeamJoin',
+	action() {
+		if ( Meteor.userId() )
+		{
+			Session.set("dash_activeMenu","dash_team");
+			BlazeLayout.render('dashboard', {dash_content:"dash_team", team_option:"dash_team_join"});
+		}
+		else
+			FlowRouter.go("Login");
+	},
+});
+
+FlowRouter.route('/dashboard/dev/team/join/:number', {
+	name: 'DevTeamJoin',
+	action() {
+		if ( Meteor.userId() )
+		{
+			Session.set("dash_activeMenu","dash_team");
+			BlazeLayout.render('dashboard', {dash_content:"dash_team", team_option:"dash_team_join"});
+		}
+		else
+			FlowRouter.go("Login");
+	},
+});
+
 FlowRouter.route('/dashboard/sponsor', {
 	name: 'SponsorPanel',
   	action() {

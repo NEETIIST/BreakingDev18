@@ -3,6 +3,8 @@ import { Devs } from '/imports/api/devs/devs.js';
 
 Meteor.methods({
 
+	// To-Do: Teams can't be edited after validation
+
 	createTeam: function(doc){
 
 		let user = Meteor.users.findOne({"_id":this.userId});
@@ -26,6 +28,7 @@ Meteor.methods({
 			doc.registration = null;
 			doc.members = [];
 			doc.abandoned = false;
+			doc.password = generateNewPassword();
 			let newTeam = Teams.insert(doc);
 			
 			// Associate Captain with this team
@@ -59,6 +62,136 @@ Meteor.methods({
 			Teams.update(team._id,{'$set':{abandoned:true}});
 			console.log("Disabled team: " +team._id);
 		}
-	}
+	},
+
+	editTeam: function(doc)
+	{
+		let team = Teams.findOne({"_id":doc._id});
+		//console.log(doc.modifier);
+		// User must own the profile it's updating
+		if ( this.userId != team.captain )
+			throw new Meteor.Error('not-captain', "User is not the team captain");
+		// Team must not be validated or pending
+		if ( team.validated == true || team.pending == true)
+			throw new Meteor.Error('team-already-signup', "Team already is up for validation or validated already, you can't join");
+		
+		Teams.update(doc._id,doc.modifier);
+	},
+
+	joinTeam: function( pass )
+	{
+		// Password already uniquely identifies the team, so the user only needs a correct password to join a team
+		let team = Teams.findOne({"password": pass});
+		let dev = Devs.findOne({"user":this.userId});
+
+		// User must have a profile
+		if ( dev == undefined )
+			throw new Meteor.Error('no-profile', "User doesn't have a profile yet");
+		// User must not be in a team already
+		if ( dev.team != null )
+			throw new Meteor.Error('already-on-team', "User already is on a team, can't join another one");
+		// Password must match to a team
+		if ( team == undefined )
+			throw new Meteor.Error('wrong-password', "That password doesn't match any team");
+		// Team must not be full
+		if ( team.members.length >= 3)
+			throw new Meteor.Error('team-full', "Team is already full");
+		// Team must not be validated or pending
+		if ( team.validated == true || team.pending == true)
+			throw new Meteor.Error('team-already-signup', "Team already is up for validation or validated already, you can't join");
+		// Team must not be abandoned
+		if ( team.abandoned == true)
+			throw new Meteor.Error('team-not-exist', "Team no longer exists");
+
+		let newMembers = team.members ;
+		newMembers.push(this.userId);
+		Teams.update(team._id,{'$set':{members:newMembers}});
+		
+		// Associate user with this team
+		Devs.update(dev._id, {'$set':{ team: team._id }} );
+	},
+
+	leaveTeam: function(){
+		// Find Team the user belongs, if not found, it's not in a team
+		let team = Teams.findOne({"members": this.userId});
+		let dev = Devs.findOne({"user":this.userId});
+
+		// User must have a profile
+		if ( dev == undefined )
+			throw new Meteor.Error('no-profile', "User doesn't have a profile yet");
+		// User Can't be the captain
+		if ( team.captain == this.userId )
+			throw new Meteor.Error('captain-cant-leave', "The team captain can't leave the team");
+		// Team must not be validated or pending
+		if ( team.validated == true || team.pending == true)
+			throw new Meteor.Error('team-already-signup', "Team already is up for validation or validated already, you can't join");
+		// Team must not be abandoned
+		if ( team.abandoned == true)
+			throw new Meteor.Error('team-not-exist', "Team no longer exists");
+
+		let newMembers = team.members ;
+		var search_term = this.userId;
+		for (var i=newMembers.length-1; i>=0; i--) {
+			if (newMembers[i] === search_term) {
+			    newMembers.splice(i, 1);
+			}
+		}
+		Teams.update(team._id,{'$set':{members:newMembers}});
+		// Associate user with this team
+		Devs.update(dev._id, {'$set':{ team: null }} );
+	},
+
+	inviteToOwnTeam: function(mail){
+
+		let user = Meteor.users.findOne({"_id":this.userId});
+		let dev = Devs.findOne({"user":this.userId});
+		let team = Teams.findOne({"captain": this.userId, "abandoned":false});
+
+		// User must have a profile
+		if ( dev == undefined )
+			throw new Meteor.Error('no-profile', "User doesn't have a profile yet");
+		// User must be the captain of the team
+		// This is assured by finding the team the user belongs to, if none, it's not the captain
+		if ( team == undefined )
+			throw new Meteor.Error('not-captain', "User is not a team captain");
+		// Team must not be full
+		if ( team.members.length >= 3)
+			throw new Meteor.Error('team-full', "Team is already full");
+
+		this.unblock();
+
+		let userMail = user.emails[0].address;
+		let userName = dev.name;
+		let userTeam = team.team_name;
+		let rootLink = process.env.ROOT_URL ;
+		let teamLink = process.env.ROOT_URL + "dashboard/dev/team/join/"+ team.number;
+		let teamPassword =  team.password;
+
+        Email.send({
+            to: mail,
+            from: "noreply@breakingdev.pt",
+            subject: "BreakingDev - Convite para equipa",
+            html: "Olá!<br>Este email está a ser enviado em nome do "+ userName + " ( "+ userMail + " ),"+
+            	  " e é um convite para te juntares à equipa <strong>"+ userTeam +"</strong> no BreakingDev!<br><br>"+
+            	  "Se ainda não tiveres conta criada no nosso site, podes criar em: <a href='"+
+            	  rootLink+"signup' target='_blank'>"+rootLink+"signup</a><br><br>"+
+            	  "Se já tiveres uma conta criada e com a informação de perfil preenchida, basta acederes a: "+
+            	  "<a href='"+teamLink+"' target='_blank'>"+teamLink+"</a> e usares a seguinte password: <strong>"+
+            	  teamPassword+"</strong> .<br><br>Se tiveres alguma duvida envia nos um email para: "+
+            	  "<a href='mailto:breakingdev@neeti.tecnico.ulisboa.pt' target='_blank'>breakingdev@neeti.tecnico.ulisboa.pt</a>."  ,
+        });        
+
+	},
 
 });
+
+function generateNewPassword(){
+	// Generates 6 digit alphanumeric pass not used in any other team
+	let pass = Math.random().toString(36).substring(7);
+	let team = Teams.find({"password":pass});
+	//console.log(team.count());
+	if ( team.count() == 0)
+		return pass;
+	else
+		generateNewPassword();
+}
