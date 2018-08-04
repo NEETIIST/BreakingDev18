@@ -41,6 +41,10 @@ TeamsSchema = new SimpleSchema({
 	idea: {
 		type: String,
 		label: TAPi18n.__('teams-idea'),
+		autoform: {
+  			rows: 2,
+  			placeholder: TAPi18n.__('teams-idea-desc')
+		},
 	},
 	category: {
 		type: String,
@@ -54,6 +58,10 @@ TeamsSchema = new SimpleSchema({
 	skills: {
 		type: String,
 		label: TAPi18n.__('teams-skills'),
+		autoform: {
+  			rows: 2,
+  			placeholder: TAPi18n.__('teams-skills-desc')
+		},
 	},
 	validated: {
 		type: Boolean,

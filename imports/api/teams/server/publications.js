@@ -14,6 +14,15 @@ Meteor.publish('teams.visitor', function(number){
 	return Teams.find({"number": parseInt(number), "abandoned":false},{ fields: Teams.publicFields });
 });
 
+Meteor.publish('teams.visitor.id', function(id){
+	return Teams.find({"_id": id, "abandoned":false},{ fields: Teams.publicFields });
+});
+
+Meteor.publish('teams.visitor.username', function(username){
+	let userId = Meteor.users.findOne({"username":username})._id;
+	return Teams.find({$and:[{ $or: [{"captain": userId},{ "members": userId }]},{"abandoned":false}]},{ fields: Teams.publicFields });
+});
+
 Meteor.publish('teams.available', function(){
 	return Teams.find({$where: "this.members.length < 3","abandoned":false,"pending":false,"validated":false},{ fields: Teams.publicFields });
 });

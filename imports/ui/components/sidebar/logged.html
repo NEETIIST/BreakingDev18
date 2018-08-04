@@ -3,7 +3,18 @@
         <div class="row justify-content-center align-items-center m-0 cp">
             <div class="col-12 px-1 menu-hover mr-2" id="goDashboard">
                 <p class="fs-3 fw-6 px-2 mb-1 flh-1">{{username}}</p>
-                <p class="fs-1 fw-4 px-2 mb-1 mt-0 flh-1">Team</p>
+                {{#if isDev}}
+                    {{#if hasTeam}}
+                        {{#with team}}
+                            <p class="fs-1 fw-4 px-2 mb-1 mt-0 flh-1">{{team_name}}</p>
+                        {{/with}}
+                    {{else}}
+                        <p class="fs-1 fw-4 px-2 mb-1 mt-0 flh-1">{{_ "menu-no-team"}}</p>
+                    {{/if}}
+                {{/if}}
+                {{#if isStaff}}
+                    <p class="fs-1 fw-4 px-2 mb-1 mt-0 flh-1">{{_ "menu-staff"}}</p>
+                {{/if}}
             </div>
         </div>
     {{else}}

@@ -55,6 +55,10 @@
 	"menu-signup": "Criar Conta",
 	"menu-goindex": "Homepage",
 	"menu-faqs": "FAQ's",
+	"menu-no-team": "Sem Equipa",
+	"menu-staff": "Staff",
+	"menu-volunteer": "Voluntário",
+	"menu-sponsor": "Patrocinador",
 
 	// Sponsor Contact
 	"contact-title": "Seja um patrocinador do BreakingDev",
@@ -98,6 +102,7 @@
 	"devs-skills-desc": "Uma pequena descrição dos teus skills, como linguagens de programação, etc...",
 	"devs-interest": "Interesses",
 	"devs-interest-desc": "Uma pequena descrição do que tu gostas de fazer e do que interessa",
+	"devs-team": "Equipa",
 
 	// Dashboard
 	"dash-overview": "Dashboard",
@@ -126,10 +131,13 @@
 	"dash-team-add-success": "Equipa criada com sucesso, podes ver as informações da equipa e convidar amigos na secção Equipa do Dashboard.",
 	"dash-team-find": "Encontra uma equipa",
 	"dash-team-find-desc": "Procura entre as equipas inscritas e fala com o capitão para te juntares a uma.",
-	"dash-team-find-desc-long": "Procura entre as equipas disponíveis e envia um email ao capitão para te juntares à equipa. Explica as tuas razões e como é que podes contribuir. Se o capitão te aprovar, ele responde-te com a password da equipa!",
+	"dash-team-find-desc-long": "Procura entre as equipas disponíveis e envia um email ao capitão para te juntares à equipa. Ele vai ver as tuas informações de perfil e se estiver interessado envia-te um e-mail.",
 	"dash-team-find-request": "Enviar e-mail ao capitão",
+	"dash-team-find-request-confirm": "Vais enviar ao capitão um pedido de adesão com um link para o teu perfil, garante que todos os dados lá estão corretos. Queres enviar?",
+	"dash-team-find-request-success": "Pedido de adesão enviado com sucesso",
 	"dash-team-find-join": "Juntar-te à equipa",
 	"dash-team-find-cancel": "Voltar atrás",
+	"dash-team-find-seemore": "Ver toda a Informação",
 	"dash-team-join": "Junta-te a uma equipa",
 	"dash-team-join-desc": "Se já te foi dada uma password, junta-te aqui à tua nova equipa.",
 	"dash-team-join-password": "Password",
@@ -167,10 +175,14 @@
 	"teams-category" : "Categoria",
 	"teams-project-name" : "Nome do Projeto",
 	"teams-idea" : "Ideia",
+	"teams-idea-desc" : "Uma breve descrição da tua ideia",
 	"teams-skills" : "Skills",
+	"teams-skills-desc" : "Algumas das linguagens de programação ou ferramentas que vão usar",
 	"teams-members" : "Membros",
 	"teams-web": "Web",
 	"teams-gaming": "Jogos",
+	"teams-captain": "Capitão",
+	"teams-member": "Membro",
 
 	//404
 	"404-title": "Página Não Encontrada",

@@ -19,7 +19,7 @@
 	<div class="row justify-content-center align-items-center m-0">
 		{{#if hasTeam}}
 			{{#with team}}
-				<div class="col-10 col-md-11 p-0">
+				<div class="col-12 col-md-12 p-0">
 					<div class="row justify-content-start align-items-center m-0 vh-20">
 						<div class="col-2 text-left p-0">
 							{{#if isWeb this}}
@@ -30,7 +30,9 @@
 						</div>
 						<div class="col-9 text-left ml-3">
 							<p class="f-white fs-3 fw-6 mb-1">{{team_name}}<span class="fw-4"> - "{{project_name}}"</span></p>
+							<!--
 							<p class="f-white fs-2 fw-4 mb-1 flh-2">{{idea}}</p>
+							-->
 							<p class="f-white fs-2 fw-4 mb-0 flh-2">{{skills}}</p>
 						</div>
 					</div>
@@ -281,7 +283,9 @@
 							</div>
 							<div class="col-12 text-left pt-3">
 								<p class="f-white fs-3 fw-4 mb-1 flh-2">"{{project_name}}"</p>
+								<!--
 								<p class="f-white fs-2 fw-4 mb-1 flh-2">{{idea}}</p>
+								-->
 								<p class="f-white fs-2 fw-4 mb-1 flh-2">{{skills}}</p>
 							</div>
 						</div>
@@ -344,10 +348,15 @@
 					</div>
 					<div class="col-10 text-left pt-3">
 						<p class="f-white fs-3 fw-4 mb-1 flh-2">"{{project_name}}"</p>
+						<!--
 						<p class="f-white fs-2 fw-4 mb-1 flh-2">{{idea}}</p>
+						-->
 						<p class="f-white fs-2 fw-4 mb-1 flh-2">{{skills}}</p>
 					</div>
 					<div class="col-2 text-center pt-3">
+						<a href="/team/{{number}}">
+							<i class="fas fa-search hvr-white-to-red cp fs-3 my-2" title='{{_ "dash-team-find-seemore"}}'></i>
+						</a>
 						<i class="far fa-envelope hvr-white-to-red cp fs-3 my-2" id="dash-team-find-request" title='{{_ "dash-team-find-request"}}'></i>
 						<a href="/dashboard/dev/team/join/{{number}}">
 							<i class="fas fa-user-plus hvr-white-to-red cp fs-3 my-2" title='{{_ "dash-team-find-join"}}'></i>

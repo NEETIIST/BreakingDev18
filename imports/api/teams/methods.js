@@ -183,6 +183,46 @@ Meteor.methods({
 
 	},
 
+	applyToTeam: function(number){
+
+		let user = Meteor.users.findOne({"_id":this.userId});
+		let dev = Devs.findOne({"user":this.userId});
+		let team = Teams.findOne({"number": number, "abandoned":false});
+
+		// User must have a profile
+		if ( dev == undefined )
+			throw new Meteor.Error('no-profile', "User doesn't have a profile yet");
+		// User must not have a team
+		if ( dev.team != undefined )
+			throw new Meteor.Error('already-on-team', "User already has a team");
+		// Team must exist
+		if ( team == undefined )
+			throw new Meteor.Error('team-not-exist', "Team no longer exists");
+		// Team must not be full
+		if ( team.members.length >= 3)
+			throw new Meteor.Error('team-full', "Team is already full");
+		// Team must not be validated or pending
+		if ( team.validated == true || team.pending == true)
+			throw new Meteor.Error('team-already-signup', "Team already is up for validation or validated already, you can't join");
+
+		this.unblock();
+
+		let targetUser = Meteor.users.findOne({"_id":team.captain});
+		let targetMail = targetUser.emails[0].address;
+
+		let requestingMail = user.emails[0].address;
+		let requestingUrl = process.env.ROOT_URL+"dev/"+user.username ;
+
+        Email.send({
+            to: targetMail,
+            from: requestingMail,
+            subject: "BreakingDev - Pedido para aderir à tua equipa",
+            html: "Olá!<br><br>Estás a receber este email porque és capitão da equipa <strong>"+team.team_name+"</strong> no BreakingDev.<br>"+
+            "O utilizador <strong>"+user.username+"</strong> gostava de fazer parte da tua equipa. A escolha é tua, e se precisares de mais informações, basta responderes a este email e falar diretamente com o <strong>"+dev.name+"</strong>.<br><br>"+
+            "Podes visitar o perfil com todas as informações aqui: <a href='"+requestingUrl+"' target='_blank'>"+requestingUrl+"</a> ."  ,
+        });
+    },
+
 });
 
 function generateNewPassword(){

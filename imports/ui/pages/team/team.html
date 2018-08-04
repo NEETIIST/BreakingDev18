@@ -1,0 +1,110 @@
+<template name="team_profile">
+	
+	<div class="row justify-content-start align-items-center m-0"> 
+        <div class="col-3 offset-9 position-fixed d-block d-md-none" style="top: 0; right:0; z-index: 10">
+            <div class="row justify-content-start align-items-center m-0 vh-15">
+                <div class="col-12 text-center" id="open-menu">
+                    <i class="fas f-white fa-bars cp fa-2x menu-icon"></i>
+                </div>
+                <div class="col-12 text-center" id="close-menu" style="display:none">
+                    <i class="fas f-white fa-times cp fa-2x menu-icon"></i>
+                </div>
+            </div> 
+        </div>
+        <div class="col-lg-10 col-md-9 col-12 px-0" id="landing-content">
+            <div class="row justify-content-center align-items-start m-0 vh-100 black">
+            	<div class="col-10 text-left p-0">
+            		<div class="spacer-8"></div>
+            		{{#if Template.subscriptionsReady}}
+            			{{#with team}}
+            				<div class="row justify-content-start align-items-center m-0 py-2">
+            					<div class="col-3 col-md-2 text-left p-0 p-md-1">
+            						{{#if isWeb this}}
+										<img class="img-fluid" src="/icons/Web.png" title="{{_'teams-web'}}"/>
+									{{else}}
+										<img class="img-fluid" src="/icons/Jogos.png" title="{{_'teams-gaming'}}"/>
+									{{/if}}
+            					</div>
+            					<div class="col-9 col-md-10 text-left">
+	                    			<span class="f-white fs-6 fw-6 mb-0">{{team_name}}  </span>
+	            					<span class="f-white fs-4 fw-4 mb-0">( #{{number}} ) </span>
+	                    		</div>
+	                    	</div>
+	                    	<hr class="red f-red" style="height:2px;border:none;" >
+	                    	<div class="row justify-content-start align-items-start m-0 py-2">
+	                    		<div class="col-2 col-md-1 text-left">
+	                    			<i class="f-white fa-fw far fa-lightbulb fs-5" title="{{_ 'teams-project-name'}}"></i>
+	                    		</div>
+	                    		<div class="col-10 col-md-11 text-left">
+	                    			<span class="f-white fs-3 fw-4 mb-0">{{project_name}}</span>
+	                    		</div>
+	                    	</div>
+	                    	<div class="row justify-content-center align-items-start m-0 my-2 py-2">
+	                    		<div class="col-2 col-md-1 text-left">
+	                    			<i class="f-white fa-fw fas fa-quote-left fs-5" title="{{_ 'teams-idea'}}"></i>
+	                    		</div>
+	                    		<div class="col-10 col-md-11 text-left">
+	                    			<span class="f-white fs-3 fw-4 mb-0">{{idea}}</span>
+	                    		</div>
+	                    	</div>
+	                    	<div class="row justify-content-center align-items-start m-0 my-2 py-2">
+	                    		<div class="col-2 col-md-1 text-left">
+	                    			<i class="f-white fa-fw fas fa-laptop-code fs-5" title="{{_ 'teams-skills'}}"></i>
+	                    		</div>
+	                    		<div class="col-10 col-md-11 text-left">
+	                    			<span class="f-white fs-2 fw-4 mb-0">{{skills}}</span>
+	                    		</div>
+	                    	</div>
+	                    	<div class="spacer-2"></div>
+	                    	<div class="row justify-content-start align-items-center m-0 py-2">
+	                    		<div class="col-12 col-md-3 text-left f-white my-2">
+	                    			<a href="/dev/{{captain.username}}" class="hvr-white-to-red cp">
+		                    			<i class="fa-fw fas fa-user-tie fs-5 mr-3" title="{{_ 'teams-captain'}}"></i>
+		                    			<span class="fs-2 fw-4 mb-0">{{captain.username}}</span>
+		                    		</a>
+	                    		</div>
+	                    		{{#each member}}
+		                    		<div class="col-12 col-md-3 text-left f-white my-2">
+		                    			<a href="/dev/{{this.username}}" class="hvr-white-to-red cp">
+			                    			<i class="fa-fw fas fa-user fs-5 mr-3" title="{{_ 'teams-member'}}"></i>
+			                    			<span class="fs-2 fw-4 mb-0">{{this.username}}</span>
+			                    		</a>
+		                    		</div>
+		                    	{{/each}}
+	                    	</div>
+	                    	<div class="spacer-6"></div>
+	                    {{/with}}
+            		{{else}}
+            			<p>Loading</p>
+            		{{/if}}
+            	</div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-2 col-md-3 p-0 d-md-block position-fixed offset-lg-10 offset-md-9" id="menu-col">
+            <div class="row justify-content-center align-items-center m-0 vh-20">
+                <div class="col-10 col-md-12 text-md-right text-left">
+                    <div class="spacer-4"></div>
+                    {{> logged}}
+                </div>
+            </div>
+            <div class="row justify-content-center align-items-center m-0 vh-60">
+                <div class="col-10 col-md-12 text-md-right text-left">
+                	<div class="row justify-content-center align-items-center m-0 cp">
+                        <div class="col-12 px-1">
+                            <span class="f-white fs-2 fw-4 menu-hover p-1 px-2 my-2" id="menu-goindex">
+                                {{_ "menu-goindex"}}
+                            </span>
+                        </div>
+                    </div>                    
+                    <div class="spacer-8"></div>
+                </div>
+            </div>
+            <div class="row justify-content-center align-items-center m-0 vh-20">
+                <div class="col-10 text-center f-white">
+                    {{> footer}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</template>

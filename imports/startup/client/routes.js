@@ -14,6 +14,8 @@ import '../../ui/pages/signup/signup.js';
 import '../../ui/pages/volunteerpanel/volunteerpanel.js';
 import '../../ui/pages/sponsorpanel/sponsorpanel.js';
 import '../../ui/pages/resetPassword/resetPassword.js';
+import '../../ui/pages/dev/dev.js';
+import '../../ui/pages/team/team.js';
 import '../../ui/pages/not-found/not-found.js';
 
 // Set up all routes in the app
@@ -213,6 +215,20 @@ FlowRouter.route('/signup/roles', {
 			FlowRouter.go("SignUp");
 		else
 			BlazeLayout.render('signup', {signup_content:"signupRoles"});
+	},
+});
+
+FlowRouter.route('/dev/:username', {
+	name: 'DevProfileDisplay',
+	action() {
+		BlazeLayout.render('dev_profile');
+	},
+});
+
+FlowRouter.route('/team/:number', {
+	name: 'TeamDisplay',
+	action() {
+		BlazeLayout.render('team_profile');
 	},
 });
 

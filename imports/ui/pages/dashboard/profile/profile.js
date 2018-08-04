@@ -57,11 +57,13 @@ Template.dash_profile_edit.helpers({
 AutoForm.addHooks(['addDev'],{
 	onSuccess: function(formType, result) {
 		alert(TAPi18n.__('devs-add-success'));
+		FlowRouter.go("Dashboard");
 	}
 });
 
 AutoForm.addHooks(['editDev'],{
 	onSuccess: function(formType, result) {
 		alert(TAPi18n.__('devs-edit-success'));
+		FlowRouter.go("Dashboard");
 	}
 });

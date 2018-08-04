@@ -254,7 +254,18 @@ Template.dash_team_find.helpers({
 
 Template.dash_team_find.events({
 	'click #dash-team-find-request': function(e, tmp){
-		//prompt("")
-		console.log(this);
+		var confirm = window.confirm(TAPi18n.__('dash-team-find-request-confirm'));
+		if ( confirm )
+		{
+			// Meteor Call Processing
+		    Meteor.call("applyToTeam", this.number, function (err, data) {
+	            if(err){
+	                alert("Error: " + err);
+	            }else{
+	                alert(TAPi18n.__('dash-team-find-request-success'));
+	                FlowRouter.go("DevTeam");
+	            }
+	    	});
+		}
 	},
 });
