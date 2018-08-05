@@ -37,7 +37,23 @@ FlowRouter.route('/admin', {
 	name: 'AdminPanel',
   	action() {
   		if ( Meteor.userId() )
-			BlazeLayout.render('adminPanel');
+  		{
+			BlazeLayout.render('adminPanel', {ap_content:"ap_overview"});
+			Session.set("ap_activeMenu","ap_overview");
+		}
+		else
+			FlowRouter.go("Login");
+  	},
+});
+
+FlowRouter.route('/admin/teams', {
+	name: 'AdminTeams',
+  	action() {
+  		if ( Meteor.userId() )
+  		{
+			BlazeLayout.render('adminPanel', {ap_content:"ap_teams"});
+			Session.set("ap_activeMenu","ap_teams");
+		}
 		else
 			FlowRouter.go("Login");
   	},

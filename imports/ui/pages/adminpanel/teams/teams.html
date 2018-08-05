@@ -1,3 +1,47 @@
 <template name="ap_teams">
-	<p class="f-white">Lorem Teams</p>
+    <div class="row justify-content-center align-items-start m-0">
+    	<div class="col-10 p-0">
+    		<div class="spacer-4"></div>
+    		<p class="f-white fs-6 fw-6 mb-0 flh-2">{{_ "ap-teams"}}</p>
+    		<hr class="red f-red" style="height:2px;border:none;">
+    		{{#each team}}
+	    		<div class="row justify-content-start align-items-center team-list mx-0 my-3">
+	    			<div class="col-3 col-md-1 text-left">
+	    				{{#if isWeb this}}
+							<img class="team-cat my-1" src="/icons/Web.png"/>
+						{{else}}
+							<img class="team-cat my-1" src="/icons/Jogos.png"/>
+						{{/if}}
+	    			</div>
+	    			<div class="col-2 col-md-2 text-center fs-3">
+	    				{{#if validated}}
+	    					<i class="fas fa-check f-green" title="{{_ 'ap-teams-validated'}}"></i>
+	    					<i class="fas fa-calendar f-white ml-2" title="{{date}}"></i>
+	    				{{/if}}
+	    				{{#if pending}}
+	    					<i class="fas fa-exclamation-triangle f-yellow" title="{{_ 'ap-teams-pending'}}"></i>
+	    					<i class="fas fa-calendar f-white ml-2" title="{{date}}"></i>
+	    				{{/if}}
+	    			</div>
+	    			<div class="col-7 col-md-3 text-left">
+	    				<p class="f-white fs-2 fw-4 mb-0">{{team_name}}</p>
+	    			</div>
+	    			<div class="col-7 col-md-4 text-left order-2 order-md-1">
+	    				<p class="f-white fs-2 fw-4 mb-0">{{project_name}}</p>
+	    			</div>
+	    			<div class="col-5 col-md-2 text-left text-md-center fs-3 order-1 order-md-2">
+	    				<a href="/team/{{number}}">
+	    					<i class="fas fa-search hvr-white-to-red cp mx-1" title="{{_ 'ap-teams-seemore'}}"></i>
+	    				</a>
+	    				{{#if pending}}
+	    					<i class="fas fa-check hvr-white-to-red cp mx-1" id="validate-team" title="{{_ 'ap-teams-validate'}}"></i>
+	    				{{/if}}
+	    				{{#if validated}}
+	    					<i class="fas fa-times hvr-white-to-red cp mx-1" id="unvalidate-team" title="{{_ 'ap-teams-unvalidate'}}"></i>
+	    				{{/if}}
+	    			</div>
+	    		</div>
+	    	{{/each}}
+    	</div>
+    </div>
 </template>

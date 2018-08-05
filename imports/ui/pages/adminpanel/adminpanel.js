@@ -12,8 +12,6 @@ Template.adminPanel.onRendered(function(){
 			self.subscribe("users.all");
 			self.subscribe("roles.all");
 			self.subscribe("teams.all");
-			BlazeLayout.render('adminPanel', {ap_content:"ap_overview"});
-			Session.set("ap_activeMenu","ap_overview");
 		}
 		else if ( Roles.userIsInRole(Meteor.userId(), "sponsor") )
 		{
@@ -42,13 +40,11 @@ Template.adminPanel.helpers({
 
 Template.adminPanel.events({
 	"click #ap_overview": function(){
-		BlazeLayout.render('adminPanel', {ap_content:"ap_overview"});
-		Session.set("ap_activeMenu","ap_overview");
+		FlowRouter.go("AdminPanel");
 	},
 
 	"click #ap_teams": function(){
-		BlazeLayout.render('adminPanel', {ap_content:"ap_teams"});
-		Session.set("ap_activeMenu","ap_teams");
+		FlowRouter.go("AdminTeams");
 	},
 
 	"click #ap_logout": function(){

@@ -178,6 +178,19 @@
 	"dash-team-validated": "Inscrição Confirmada",
 	"dash-team-validated-desc": "A tua equipa está confirmada no BreakingDev!",
 
+	// Admin Panel
+	"ap-overview": "Overview",
+	"ap-teams": "Equipas",
+	"ap-teams-validate": "Validar Inscrição",
+	"ap-teams-validate-success": "Inscrição confirmada com sucesso",
+	"ap-teams-unvalidate": "Cancelar Inscrição",
+	"ap-teams-unvalidate-success": "Inscrição cancelada.",
+	"ap-teams-validated": "Inscrição Confirmada",
+	"ap-teams-pending": "Inscrição Pendente",
+	"ap-teams-seemore":"Página da Equipa",
+	"ap-teams-registration": "Data da Inscrição",
+	"ap-devs": "Participantes",
+
 	// Teams Collection
 	"teams-team-name": "Nome da Equipa",
 	"teams-category" : "Categoria",

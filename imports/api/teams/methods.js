@@ -263,9 +263,9 @@ Meteor.methods({
 			// Team must have less than 4 members (Captain already counts as one)
 			else if ( team.members.length > 3 )
 				throw new Meteor.Error('team-overfilled', "Team has too many members");
-			// Team must not be validated or pending already
-			else if ( team.validated == true || team.pending == true)
-				throw new Meteor.Error('team-already-signup', "Team already is up for validation or validated already, you can't do it again");
+			// Team must not be validated
+			else if ( team.validated == true )
+				throw new Meteor.Error('team-already-signup', "Team already is validated.");
 			else
 				Teams.update(team._id,{'$set':{pending:false,validated:true}});
     	}
@@ -286,7 +286,7 @@ Meteor.methods({
 			if ( team == undefined )
 				throw new Meteor.Error('no-team', "No such team");
 			else
-				Teams.update(team._id,{'$set':{pending:false,validated:false}});
+				Teams.update(team._id,{'$set':{pending:false,validated:false,registration:null}});
     	}
     	else
     	{

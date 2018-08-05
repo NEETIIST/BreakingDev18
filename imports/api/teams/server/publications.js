@@ -29,11 +29,6 @@ Meteor.publish('teams.available', function(){
 
 //Admin Use
 Meteor.publish('teams.all', function(){
-	/*
-	if (Roles.userIsInRole( this.userId, 'admin'))
+	if (Roles.userIsInRole( this.userId, 'staff'))
 		return Teams.find();
-	else
-		return 0 ;
-	*/
-	return Teams.find();
 });
