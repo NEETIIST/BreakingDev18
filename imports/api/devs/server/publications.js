@@ -8,7 +8,15 @@ Meteor.publish('devs.own', function(){
 
 Meteor.publish('devs.username.visitor', function(username){
 	var user = Meteor.users.findOne({"username":username});
-	return Devs.find({"user":user._id});
+	return Devs.find({"user":user._id},{ fields: Devs.publicFields });
+})
+
+Meteor.publish('devs.username.admin', function(username){
+	if ( Roles.userIsInRole(this.userId, "staff") )
+	{
+		var user = Meteor.users.findOne({"username":username});
+		return Devs.find({"user":user._id});
+	}
 })
 
 //Admin Use

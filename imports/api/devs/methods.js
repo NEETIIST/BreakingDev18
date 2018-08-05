@@ -60,7 +60,11 @@ Meteor.methods({
 		{
 			this.unblock();
 
-			let targetEmail = Meteor.users.findOne({"username":user}).emails[0].address;
+			let targetUser = Meteor.users.findOne({"username":user});
+			if ( targetUser == undefined )
+				throw new Meteor.Error('not-found-user', "Can't find that user");
+
+			let targetEmail = targetUser.emails[0].address;
 
 			if ( targetEmail == undefined )
 				throw new Meteor.Error('not-found-email', "Can't find an email to send");

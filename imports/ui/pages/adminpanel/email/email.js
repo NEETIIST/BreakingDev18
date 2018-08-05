@@ -16,7 +16,7 @@ Template.ap_email.events({
 	 
 	    // Get value from form element
 	    const target = event.target;
-	    const user = FlowRouter.getParam('username');
+	    const user = target.user.value;
 	    const s = target.subject.value;
 	    const m = target.message.value;
 	 

@@ -103,6 +103,10 @@
 	"devs-interest": "Interesses",
 	"devs-interest-desc": "Uma pequena descrição do que tu gostas de fazer e do que interessa",
 	"devs-team": "Equipa",
+	"devs-phone": "Telemóvel",
+	"devs-food": "Restrições Alimentares",
+	"devs-food-desc": "Se tiveres algumas alergias ou preferências alimentares, diz-nos aqui.",
+	"devs-email": "E-Mail",
 
 	// Dashboard
 	"dash-overview": "Dashboard",

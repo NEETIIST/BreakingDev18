@@ -10,6 +10,8 @@ Template.dev_profile.onRendered(function(){
 		self.subscribe('users.username', username);
 		self.subscribe('devs.username.visitor', username);
 		self.subscribe('teams.visitor.username', username);
+		if ( Roles.userIsInRole(Meteor.userId(), "staff") )
+			self.subscribe('devs.username.admin', username);
 	});
 	window.scrollTo(0,0);
 });
@@ -30,7 +32,14 @@ Template.dev_profile.helpers({
 		var userId = Meteor.users.findOne({"username":FlowRouter.getParam('username')})._id;
 		if ( Devs.findOne({"user":userId}).team != null )
 			return Teams.findOne();
-	}
+	},
+	adminInfo(){
+		return ( Roles.userIsInRole(Meteor.userId(), "staff") )
+	},
+	email(){
+		if (Roles.userIsInRole( Meteor.userId(), 'staff'))
+			return Meteor.users.findOne({"username":FlowRouter.getParam('username')}).emails[0].address;
+	},
 });
 
 Template.dev_profile.events({

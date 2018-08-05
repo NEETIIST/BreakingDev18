@@ -36,6 +36,10 @@ DevsSchema = new SimpleSchema({
 		type: String,
 		label: TAPi18n.__('devs-course'),
 	},
+	phone: {
+		type: Number,
+		label: TAPi18n.__('devs-phone'),
+	},
 	bio: {
 	    type: String,
 	    autoform: {
@@ -59,6 +63,14 @@ DevsSchema = new SimpleSchema({
   			placeholder: TAPi18n.__('devs-interest-desc')
 		},
 		label: TAPi18n.__('devs-interest'),
+	},
+	food: {
+		type: String,
+		autoform: {
+  			placeholder: TAPi18n.__('devs-food-desc')
+		},
+		label: TAPi18n.__('devs-food'),
+		optional: true,
 	},
 	github: {
 		type: String,
@@ -89,3 +101,17 @@ DevsSchema = new SimpleSchema({
 });
 
 Devs.attachSchema( DevsSchema ); 
+
+Devs.publicFields = {
+	user:1,
+	name:1,
+	college:1,
+	course:1,
+	bio:1,
+	skills:1,
+	interest:1,
+	team:1,
+	github:1,
+	twitter:1,
+	linkedin:1,
+};

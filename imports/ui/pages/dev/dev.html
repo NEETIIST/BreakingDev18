@@ -34,7 +34,29 @@
 		                    	{{/if}}
 	                    	</div>
 	                    	<hr class="red f-red" style="height:2px;border:none;" >
-	                    	<div class="row justify-content-start align-items-start m-0 py-2">
+	                    	{{#if adminInfo}}
+	                    		<div class="row justify-content-start align-items-start m-0 py-2">
+		                    		<div class="col-2 col-md-1 text-left my-2">
+		                    			<i class="f-white fa-fw fas fa-mobile-alt fs-5 mr-3" title="{{_ 'devs-phone'}}"></i>
+		                    		</div>
+		                    		<div class="col-10 col-md-3 text-left my-2">
+		                    			<span class="f-white fs-3 fw-4 mb-0">{{phone}}</span>
+		                    		</div>
+		                    		<div class="col-2 col-md-1 text-left my-2">
+		                    			<i class="f-white fa-fw fas fa-male fs-5 mr-3" title="{{_ 'devs-age'}}"></i>
+		                    		</div>
+		                    		<div class="col-10 col-md-2 text-left my-2">
+		                    			<span class="f-white fs-3 fw-4 mb-0">{{age}}</span>
+		                    		</div>
+		                    		<div class="col-2 col-md-1 text-left my-2">
+		                    			<i class="f-white fa-fw fas fa-at fs-5 mr-3" title="{{_ 'devs-email'}}"></i>
+		                    		</div>
+		                    		<div class="col-10 col-md-4 text-left my-2">
+		                    			<span class="f-white fs-3 fw-4 mb-0">{{email}}</span>
+		                    		</div>
+		                    	</div>
+	                    	{{/if}}
+	                    	<div class="row justify-content-start align-items-start m-0 my-2 py-2">
 	                    		<div class="col-2 col-md-1 text-left">
 	                    			<i class="f-white fa-fw fas fa-school fs-5" title="{{_ 'devs-college'}}"></i>
 	                    		</div>
@@ -74,6 +96,16 @@
 	                    			<span class="f-white fs-2 fw-4 mb-0">{{skills}}</span>
 	                    		</div>
 	                    	</div>
+	                    	{{#if adminInfo}}
+	                    		<div class="row justify-content-center align-items-start m-0 my-2 py-2">
+		                    		<div class="col-2 col-md-1 text-left">
+		                    			<i class="f-white fa-fw fas fa-fish fs-5" title="{{_ 'devs-food'}}"></i>
+		                    		</div>
+		                    		<div class="col-10 col-md-11 text-left">
+		                    			<span class="f-white fs-2 fw-4 mb-0">{{food}}</span>
+		                    		</div>
+		                    	</div>
+	                    	{{/if}}
 	                    {{/with}}
             		{{else}}
             			<p>Loading</p>

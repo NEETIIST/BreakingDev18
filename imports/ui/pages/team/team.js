@@ -27,8 +27,7 @@ Template.team_profile.helpers({
 	member(){
 		let team = Teams.findOne();
 		return Meteor.users.find({"_id":{$in:team.members}});
-	}
-
+	},
 });
 
 Template.team_profile.events({

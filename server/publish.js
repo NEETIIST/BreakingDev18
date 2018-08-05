@@ -2,16 +2,15 @@ import { Teams } from '/imports/api/teams/teams.js';
 
 //Admin User
 Meteor.publish("users.all", function () {
-	/*
-    if (Roles.userIsInRole( this.userId, 'admin'))
+    if (Roles.userIsInRole( this.userId, 'staff'))
 		return Meteor.users.find();
-	else
-		return 0 ;*/
-	return Meteor.users.find();
 });
 
 Meteor.publish("users.username", function(username){
-	return Meteor.users.find({"username":username},{fields:{"username":1}} );
+	if (Roles.userIsInRole( this.userId, 'staff'))
+		return Meteor.users.find({"username":username},{fields:{"username":1,"emails":1}} );
+	else
+		return Meteor.users.find({"username":username},{fields:{"username":1}} );
 });
 
 Meteor.publish("users.team",function(number){
