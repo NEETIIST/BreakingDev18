@@ -169,6 +169,14 @@
 	"dash-team-leave-desc": "Se já não queres participar nesta equipa, podes abandoná-la.",
 	"dash-team-leave-confirm": "Tens a certeza que queres sair desta equipa? Podes sempre voltar a entrar com a mesma password.",
 	"dash-team-leave-success": "Equipa abandonada com sucesso. Volta à secção Equipa do Dashboard para voltares a juntar-te ou criar uma nova equipa.",
+	"dash-team-validate": "Validar Inscrição",
+	"dash-team-validate-desc": "Quando a tua equipa estiver pronta, podes confirmar a tua inscrição.",
+	"dash-team-validate-confirm": "Vais agora inscrever a tua equipa. Não vais poder convidar mais pessoas para a tua equipa, nem alterar a vossa informação. Queres confirmar a inscrição?",
+	"dash-team-validate-success": "A tua inscrição e da tua equipa está agora pendente e vai ser aprovada pela organização muito em breve. Podes ir confirmando o estado no Dashboard.",
+	"dash-team-pending": "Inscrição Pendente",
+	"dash-team-pending-desc": "A inscrição da tua equipa está à espera de ser confirmada pela organização. Mantem-te atento.",
+	"dash-team-validated": "Inscrição Confirmada",
+	"dash-team-validated-desc": "A tua equipa está confirmada no BreakingDev!",
 
 	// Teams Collection
 	"teams-team-name": "Nome da Equipa",

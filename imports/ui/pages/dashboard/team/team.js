@@ -47,6 +47,23 @@ Template.dash_team_manage.helpers({
 	isWeb(team){
 		return ( team.category == "Web");
 	},
+	teamReady(){
+		let dev = Devs.findOne({"user":Meteor.userId()});
+		let team = Teams.findOne({"_id":dev.team});
+		// If team has at least 2 members
+		if ( team.members.length >= 1 )
+			return true;
+	},
+	teamPending(){
+		let dev = Devs.findOne({"user":Meteor.userId()});
+		let team = Teams.findOne({"_id":dev.team});
+		return team.pending;
+	},
+	teamValidated(){
+		let dev = Devs.findOne({"user":Meteor.userId()});
+		let team = Teams.findOne({"_id":dev.team});
+		return team.validated;
+	}
 });
 
 Template.dash_team_manage.events({
@@ -85,6 +102,18 @@ Template.dash_team_manage.events({
 	                console.log("err : " + err);
 	            }else{
 	                alert(TAPi18n.__('dash-team-leave-success'));
+	            }
+        	});
+		}
+	},
+	'click #dash-team-validate': function(){
+		if ( confirm(TAPi18n.__('dash-team-validate-confirm')) )
+		{
+			Meteor.call("signupTeam", function (err, data) {
+	            if(err){
+	                console.log("err : " + err);
+	            }else{
+	                alert(TAPi18n.__('dash-team-validate-success'));
 	            }
         	});
 		}

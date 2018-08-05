@@ -39,70 +39,111 @@
 					<hr class="red f-red" style="height:2px;border:none;" >
 				</div>
 			{{/with}}
-			{{#if isCaptain}}
-				<div class="col-10 col-md-5 dashboard-opt p-3 m-3" id="dash-team-edit">
+			{{#if teamValidated}}
+				<div class="col-10 col-md-6 dashboard-warning p-3 m-3">
 					<div class="row justify-content-center align-items-center m-0 vh-20">
 						<div class="col-4 text-center">
-							<i class="fas fa-users-cog fa-3x"></i>
+							<i class="f-green fas fa-check fa-3x"></i>
 						</div>
 						<div class="col-8 text-center">
-							<span class="f-white fs-3 fw-4">{{_ "dash-team-edit"}}</span>
+							<span class="f-white fs-3 fw-4">{{_ "dash-team-validated"}}</span>
 						</div>
 						<div class="col-12 text-left">
-							<span class="f-white fs-1 fw-4">{{_ "dash-team-edit-desc"}}</span>
+							<span class="f-white fs-1 fw-4">{{_ "dash-team-validated-desc"}}</span>
 						</div>
 					</div>
 				</div>
-				<div class="col-10 col-md-5 dashboard-opt p-3 m-3" id="dash-team-invite">
-					<div class="row justify-content-center align-items-center m-0 vh-20">
-						<div class="col-4 text-center">
-							<i class="fas fa-user-plus fa-3x"></i>
-						</div>
-						<div class="col-8 text-center">
-							<span class="f-white fs-3 fw-4">{{_ "dash-team-invite"}}</span>
-						</div>
-						<div class="col-12 text-left">
-							<span class="f-white fs-1 fw-4">{{_ "dash-team-invite-desc"}}</span>
-						</div>
-					</div>
-				</div>
-				{{#if onlyMember}}
-					<div class="col-10 col-md-5 dashboard-opt p-3 m-3" id="dash-team-delete">
+			{{else}}
+				{{#if teamPending}}
+					<div class="col-10 col-md-6 dashboard-warning p-3 m-3">
 						<div class="row justify-content-center align-items-center m-0 vh-20">
 							<div class="col-4 text-center">
-								<i class="fas fa-ban fa-3x"></i>
+								<i class="f-yellow fas fa-exclamation-triangle fa-3x"></i>
 							</div>
 							<div class="col-8 text-center">
-								<span class="f-white fs-3 fw-4">{{_ "dash-team-delete"}}</span>
+								<span class="f-white fs-3 fw-4">{{_ "dash-team-pending"}}</span>
 							</div>
 							<div class="col-12 text-left">
-								<span class="f-white fs-1 fw-4">{{_ "dash-team-delete-desc"}}</span>
+								<span class="f-white fs-1 fw-4">{{_ "dash-team-pending-desc"}}</span>
 							</div>
 						</div>
 					</div>
+				{{else}}
+					{{#if isCaptain}}
+						<div class="col-10 col-md-5 dashboard-opt p-3 m-3" id="dash-team-edit">
+							<div class="row justify-content-center align-items-center m-0 vh-20">
+								<div class="col-4 text-center">
+									<i class="fas fa-users-cog fa-3x"></i>
+								</div>
+								<div class="col-8 text-center">
+									<span class="f-white fs-3 fw-4">{{_ "dash-team-edit"}}</span>
+								</div>
+								<div class="col-12 text-left">
+									<span class="f-white fs-1 fw-4">{{_ "dash-team-edit-desc"}}</span>
+								</div>
+							</div>
+						</div>
+						<div class="col-10 col-md-5 dashboard-opt p-3 m-3" id="dash-team-invite">
+							<div class="row justify-content-center align-items-center m-0 vh-20">
+								<div class="col-4 text-center">
+									<i class="fas fa-user-plus fa-3x"></i>
+								</div>
+								<div class="col-8 text-center">
+									<span class="f-white fs-3 fw-4">{{_ "dash-team-invite"}}</span>
+								</div>
+								<div class="col-12 text-left">
+									<span class="f-white fs-1 fw-4">{{_ "dash-team-invite-desc"}}</span>
+								</div>
+							</div>
+						</div>
+						{{#if teamReady}}
+							<div class="col-10 col-md-5 dashboard-opt p-3 m-3" id="dash-team-validate">
+								<div class="row justify-content-center align-items-center m-0 vh-20">
+									<div class="col-4 text-center">
+										<i class="fas fa-check fa-3x"></i>
+									</div>
+									<div class="col-8 text-center">
+										<span class="f-white fs-3 fw-4">{{_ "dash-team-validate"}}</span>
+									</div>
+									<div class="col-12 text-left">
+										<span class="f-white fs-1 fw-4">{{_ "dash-team-validate-desc"}}</span>
+									</div>
+								</div>
+							</div>
+						{{/if}}
+						{{#if onlyMember}}
+							<div class="col-10 col-md-5 dashboard-opt p-3 m-3" id="dash-team-delete">
+								<div class="row justify-content-center align-items-center m-0 vh-20">
+									<div class="col-4 text-center">
+										<i class="fas fa-ban fa-3x"></i>
+									</div>
+									<div class="col-8 text-center">
+										<span class="f-white fs-3 fw-4">{{_ "dash-team-delete"}}</span>
+									</div>
+									<div class="col-12 text-left">
+										<span class="f-white fs-1 fw-4">{{_ "dash-team-delete-desc"}}</span>
+									</div>
+								</div>
+							</div>
+						{{/if}}
+					{{else}}
+						<div class="col-10 col-md-5 dashboard-opt p-3 m-3" id="dash-team-leave">
+							<div class="row justify-content-center align-items-center m-0 vh-20">
+								<div class="col-4 text-center">
+									<i class="fas fa-ban fa-3x"></i>
+								</div>
+								<div class="col-8 text-center">
+									<span class="f-white fs-3 fw-4">{{_ "dash-team-leave"}}</span>
+								</div>
+								<div class="col-12 text-left">
+									<span class="f-white fs-1 fw-4">{{_ "dash-team-leave-desc"}}</span>
+								</div>
+							</div>
+						</div>
+					{{/if}}		
 				{{/if}}
-				<!--
-				<p>Is Captain</p>
-				
-				<p>Can edit team</p>
-				<p>Can confirm signup</p>
-				<p>Can destroy team if only user</p>
-				-->
-			{{else}}
-				<div class="col-10 col-md-5 dashboard-opt p-3 m-3" id="dash-team-leave">
-					<div class="row justify-content-center align-items-center m-0 vh-20">
-						<div class="col-4 text-center">
-							<i class="fas fa-ban fa-3x"></i>
-						</div>
-						<div class="col-8 text-center">
-							<span class="f-white fs-3 fw-4">{{_ "dash-team-leave"}}</span>
-						</div>
-						<div class="col-12 text-left">
-							<span class="f-white fs-1 fw-4">{{_ "dash-team-leave-desc"}}</span>
-						</div>
-					</div>
-				</div>
 			{{/if}}
+			
 			<!--
 			<p>Has team</p>
 			<p>Can see team info</p>
