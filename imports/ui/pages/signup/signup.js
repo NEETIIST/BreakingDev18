@@ -56,6 +56,12 @@ Template.signupRoles.events({
 			Roles.addUsersToRoles(Meteor.userId(), 'volunteer');
 	},
 	*/
+	'click #signup-staff': function(){
+		var pass = prompt("Password");
+		if ( Meteor.userId() )
+			Meteor.call('registerStaff', pass);
+		FlowRouter.go("AdminPanel");
+	},
 })
 
 // Helper Functions

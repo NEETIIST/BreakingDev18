@@ -6,7 +6,15 @@
                 {{#if isDev}}
                     {{#if hasTeam}}
                         {{#with team}}
-                            <p class="fs-1 fw-4 px-2 mb-1 mt-0 flh-1">{{team_name}}</p>
+                            <p class="fs-1 fw-4 px-2 mb-1 mt-0 flh-1">
+                                {{#if validated}}
+                                    <i class="fas fa-check mr-1"></i>
+                                {{/if}}
+                                {{#if pending}}
+                                    <i class="fas fa-exclamation-triangle mr-1"></i>
+                                {{/if}}
+                                {{team_name}}
+                            </p>
                         {{/with}}
                     {{else}}
                         <p class="fs-1 fw-4 px-2 mb-1 mt-0 flh-1">{{_ "menu-no-team"}}</p>

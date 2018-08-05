@@ -243,7 +243,8 @@ Meteor.methods({
 			throw new Meteor.Error('team-already-signup', "Team already is up for validation or validated already, you can't do it again");
 		else
 		{
-			Teams.update(team._id,{'$set':{pending:true}});
+			var date = new Date();
+			Teams.update(team._id,{'$set':{pending:true,registration:date}});
 		}
     },
 

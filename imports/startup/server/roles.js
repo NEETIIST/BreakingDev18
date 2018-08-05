@@ -11,15 +11,22 @@ Meteor.methods({
         }
     },
 
-    makeAdmin: function(id){
-        if ( Roles.userIsInRole( this.userId, 'admin') )
+    registerStaff: function(password){
+        if ( password = Meteor.settings.adminPassword )
         {
-            Roles.addUsersToRoles(id, 'admin');
+            Roles.addUsersToRoles(this.userId, 'staff');
+        }
+    },
+
+    makeAdmin: function(id){
+        if ( Roles.userIsInRole( this.userId, 'staff') )
+        {
+            Roles.addUsersToRoles(id, 'staff');
         }
     },
 
     removeAdmin: function(id){
-        if ( Roles.userIsInRole( this.userId, 'admin') )
+        if ( Roles.userIsInRole( this.userId, 'staff') )
         {
             Roles.setUserRoles(id, [], '');
         }

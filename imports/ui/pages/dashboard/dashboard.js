@@ -15,7 +15,7 @@ Template.dashboard.onRendered(function(){
 		{
 			if ( Roles.userIsInRole(Meteor.userId(), "staff") )
 			{
-				FlowRouter.go("dashboard");	
+				FlowRouter.go("AdminPanel");	
 			}
 			else if ( Roles.userIsInRole(Meteor.userId(), "sponsor") )
 			{

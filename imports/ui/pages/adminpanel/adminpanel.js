@@ -50,4 +50,8 @@ Template.adminPanel.events({
 		BlazeLayout.render('adminPanel', {ap_content:"ap_teams"});
 		Session.set("ap_activeMenu","ap_teams");
 	},
+
+	"click #ap_logout": function(){
+		FlowRouter.go("Logout");
+	},
 })
