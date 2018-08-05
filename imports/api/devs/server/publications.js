@@ -13,8 +13,6 @@ Meteor.publish('devs.username.visitor', function(username){
 
 //Admin Use
 Meteor.publish('devs.all', function(){
-	if (Roles.userIsInRole( this.userId, 'admin'))
+	if (Roles.userIsInRole( this.userId, 'staff'))
 		return Devs.find();
-	else
-		return 0 ;
 });

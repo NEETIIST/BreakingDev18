@@ -15,6 +15,7 @@ Meteor.methods({
 
 			doc.user = this.userId;
 			doc.team = null;
+			doc.payment = false;
 			Devs.insert(doc);
 
 			console.log("Created dev associated with user: " + doc.user);
@@ -31,6 +32,24 @@ Meteor.methods({
 		else
 		{
 			Devs.update(doc._id,doc.modifier);
+		}
+	},
+
+	confirmPayment: function(id)
+	{
+		if (Roles.userIsInRole(this.userId, "staff"))
+		{
+			let dev = Devs.findOne({"_id":id});
+			Devs.update(dev._id, {'$set':{ payment: true }});
+		}
+	},
+
+	cancelPayment: function(id)
+	{
+		if (Roles.userIsInRole(this.userId, "staff"))
+		{
+			let dev = Devs.findOne({"_id":id});
+			Devs.update(dev._id, {'$set':{ payment: false }});
 		}
 	},
 

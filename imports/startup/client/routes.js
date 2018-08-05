@@ -59,6 +59,19 @@ FlowRouter.route('/admin/teams', {
   	},
 });
 
+FlowRouter.route('/admin/devs', {
+	name: 'AdminDevs',
+  	action() {
+  		if ( Meteor.userId() )
+  		{
+			BlazeLayout.render('adminPanel', {ap_content:"ap_devs"});
+			Session.set("ap_activeMenu","ap_devs");
+		}
+		else
+			FlowRouter.go("Login");
+  	},
+});
+
 FlowRouter.route('/dashboard', {
 	name: 'Dashboard',
 	action() {

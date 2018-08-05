@@ -79,7 +79,13 @@ DevsSchema = new SimpleSchema({
 		type: String,
 		optional:true,
 		autoform: { omit:true },
-	}
+	},
+	payment:
+	{
+		type: Boolean,
+		optional:true,
+		autoform: { omit:true },
+	},
 });
 
 Devs.attachSchema( DevsSchema ); 

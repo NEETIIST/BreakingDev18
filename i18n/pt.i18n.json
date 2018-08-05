@@ -190,6 +190,12 @@
 	"ap-teams-seemore":"Página da Equipa",
 	"ap-teams-registration": "Data da Inscrição",
 	"ap-devs": "Participantes",
+	"ap-devs-confirm-payment": "Confirmar Pagamento",
+	"ap-devs-confirm-payment-success": "Pagamento Confirmado com Sucesso",
+	"ap-devs-cancel-payment": "Cancelar Pagamento",
+	"ap-devs-cancel-payment-success": "Pagamento Confirmado com Sucesso",
+	"ap-devs-seemore": "Ver Perfil",
+	"ap-devs-confirmed": "Confirmado",
 
 	// Teams Collection
 	"teams-team-name": "Nome da Equipa",

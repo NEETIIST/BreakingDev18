@@ -2,6 +2,7 @@ import './adminpanel.html';
 
 import './overview/overview.js';
 import './teams/teams.js';
+import './devs/devs.js';
 
 Template.adminPanel.onRendered(function(){
 	$("html").css({ "overflow-y":"scroll" });
@@ -41,6 +42,10 @@ Template.adminPanel.helpers({
 Template.adminPanel.events({
 	"click #ap_overview": function(){
 		FlowRouter.go("AdminPanel");
+	},
+
+	"click #ap_devs": function(){
+		FlowRouter.go("AdminDevs");
 	},
 
 	"click #ap_teams": function(){
