@@ -21,52 +21,15 @@
 	    				{{else}}
 	    					<i class="fas fa-user-check mr-1 cp hvr-white-to-red" title="{{_ 'ap-devs-confirm-payment'}}" id="confirm-payment"></i>
 	    				{{/if}}
+	    				<a href="/admin/email/{{username}}">
+    						<i class="fas fa-envelope hvr-white-to-red cp mx-2 cp" title="{{_ 'ap-devs-email'}}"></i>
+    					</a>
 	    				<a href="/dev/{{username}}">
     						<i class="fas fa-search hvr-white-to-red cp mx-1 cp" title="{{_ 'ap-devs-seemore'}}"></i>
     					</a>
 	    			</div>
 	    		</div>
     		{{/each}}
-    		<!--
-    		{{#each team}}
-	    		<div class="row justify-content-start align-items-center team-list mx-0 my-3">
-	    			<div class="col-3 col-md-1 text-left">
-	    				{{#if isWeb this}}
-							<img class="team-cat my-1" src="/icons/Web.png"/>
-						{{else}}
-							<img class="team-cat my-1" src="/icons/Jogos.png"/>
-						{{/if}}
-	    			</div>
-	    			<div class="col-2 col-md-2 text-center fs-3">
-	    				{{#if validated}}
-	    					<i class="fas fa-check f-green" title="{{_ 'ap-teams-validated'}}"></i>
-	    					<i class="far fa-calendar-alt f-white ml-2" title="{{date}}"></i>
-	    				{{/if}}
-	    				{{#if pending}}
-	    					<i class="fas fa-exclamation-triangle f-yellow" title="{{_ 'ap-teams-pending'}}"></i>
-	    					<i class="far fa-calendar-alt f-white ml-2" title="{{date}}"></i>
-	    				{{/if}}
-	    			</div>
-	    			<div class="col-7 col-md-3 text-left">
-	    				<p class="f-white fs-2 fw-4 mb-0">(#{{number}}) <span class="fw-6">{{team_name}}</span></p>
-	    			</div>
-	    			<div class="col-7 col-md-4 text-left order-2 order-md-1">
-	    				<p class="f-white fs-2 fw-4 mb-0">{{project_name}}</p>
-	    			</div>
-	    			<div class="col-5 col-md-2 text-left text-md-center fs-3 order-1 order-md-2">
-	    				<a href="/team/{{number}}">
-	    					<i class="fas fa-search hvr-white-to-red cp mx-1" title="{{_ 'ap-teams-seemore'}}"></i>
-	    				</a>
-	    				{{#if pending}}
-	    					<i class="fas fa-check hvr-white-to-red cp mx-1" id="validate-team" title="{{_ 'ap-teams-validate'}}"></i>
-	    				{{/if}}
-	    				{{#if validated}}
-	    					<i class="fas fa-times hvr-white-to-red cp mx-1" id="unvalidate-team" title="{{_ 'ap-teams-unvalidate'}}"></i>
-	    				{{/if}}
-	    			</div>
-	    		</div>
-	    	{{/each}}
-	    	-->
     	</div>
     </div>
 </template>

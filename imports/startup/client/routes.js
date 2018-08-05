@@ -72,6 +72,32 @@ FlowRouter.route('/admin/devs', {
   	},
 });
 
+FlowRouter.route('/admin/email', {
+	name: 'AdminEmail',
+  	action() {
+  		if ( Meteor.userId() )
+  		{
+			BlazeLayout.render('adminPanel', {ap_content:"ap_email"});
+			Session.set("ap_activeMenu","ap_email");
+		}
+		else
+			FlowRouter.go("Login");
+  	},
+});
+
+FlowRouter.route('/admin/email/:username', {
+	name: 'AdminEmailByUser',
+  	action() {
+  		if ( Meteor.userId() )
+  		{
+			BlazeLayout.render('adminPanel', {ap_content:"ap_email"});
+			Session.set("ap_activeMenu","ap_email");
+		}
+		else
+			FlowRouter.go("Login");
+  	},
+});
+
 FlowRouter.route('/dashboard', {
 	name: 'Dashboard',
 	action() {

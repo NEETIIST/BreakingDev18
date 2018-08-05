@@ -31,7 +31,7 @@ Template.ap_devs.events({
 	        if(err){
 	            alert(err);
 	        }else{
-	            alert(TAPi18n.__('ap-devs-payment-confirm-success'));
+	            alert(TAPi18n.__('ap-devs-confirm-payment-success'));
 	        }
 		});
 	},
@@ -41,7 +41,7 @@ Template.ap_devs.events({
 	        if(err){
 	            alert(err);
 	        }else{
-	            alert(TAPi18n.__('ap-devs-payment-cancel-success'));
+	            alert(TAPi18n.__('ap-devs-cancel-payment-success'));
 	        }
 		});
 	},

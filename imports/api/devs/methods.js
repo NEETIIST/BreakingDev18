@@ -53,4 +53,27 @@ Meteor.methods({
 		}
 	},
 
+	sendDevEmail(user,subject,message)
+	{
+		// Admin Use Only
+		if ( Roles.userIsInRole(this.userId, "staff") )
+		{
+			this.unblock();
+
+			let targetEmail = Meteor.users.findOne({"username":user}).emails[0].address;
+
+			if ( targetEmail == undefined )
+				throw new Meteor.Error('not-found-email', "Can't find an email to send");
+			else
+			{
+				Email.send({
+		            to: targetEmail,
+		            from: "no-reply@breakingdev.pt",
+		            subject: subject,
+		            text: message ,
+		        });
+			}
+		}
+	}
+
 });

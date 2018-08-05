@@ -1,0 +1,33 @@
+<template name="ap_email">
+	<div class="row justify-content-center align-items-start m-0">
+    	<div class="col-10 p-0">
+    		<div class="spacer-4"></div>
+    		<p class="f-white fs-6 fw-6 mb-0 flh-2">{{_ "ap-email"}}</p>
+    		<hr class="red f-red" style="height:2px;border:none;">
+    		<div class="spacer-4"></div>
+    		<form id="ap-email">
+    			<div class="row justify-content-start align-items-start m-0">
+    				<div class="col-12 col-md-8 text-left p-0">
+    					<p class="f-white fs-2 fw-4 mb-1">{{_ "ap-email-user"}}</p>
+    					<input class="form-input mb-2" type="text" name="user" placeholder='{{_ "ap-email-user"}}'/>
+    				</div>
+    			</div>
+    			<div class="spacer-2"></div>
+    			<div class="row justify-content-start align-items-start m-0">
+    				<div class="col-12 col-md-8 text-left p-0">
+    					<p class="f-white fs-2 fw-4 mb-1">{{_ "ap-email-subject"}}</p>
+    					<input class="form-input mb-2" type="text" name="subject" placeholder='{{_ "ap-email-subject"}}'/>
+    				</div>
+    			</div>
+    			<div class="spacer-2"></div>
+		    	<div class="row justify-content-start align-items-start m-0">
+    				<div class="col-12 text-left p-0">
+    					<p class="f-white fs-2 fw-4 mb-1">{{_ "ap-email-message"}}</p>
+    					<textarea class="form-input mb-2" rows="4" type="text" name="message" placeholder="{{_ 'ap-email-message'}}"></textarea>
+    				</div>
+    			</div>
+		    	<button class="form-submit mx-0 my-3 cp">{{_ "ap-email-send"}}</button>
+			</form>
+    	</div>
+    </div>
+</template>

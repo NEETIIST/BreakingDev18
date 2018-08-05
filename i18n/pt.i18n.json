@@ -196,6 +196,14 @@
 	"ap-devs-cancel-payment-success": "Pagamento Confirmado com Sucesso",
 	"ap-devs-seemore": "Ver Perfil",
 	"ap-devs-confirmed": "Confirmado",
+	"ap-devs-email": "Enviar E-mail",
+	"ap-email":"E-mail",
+	"ap-email-email":"Endereço de e-mail",
+	"ap-email-subject": "Assunto",
+	"ap-email-message": "Mensagem",
+	"ap-email-send": "Enviar",
+	"ap-email-user": "Utilizador",
+	"ap-email-success": "E-mail enviado com sucesso",
 
 	// Teams Collection
 	"teams-team-name": "Nome da Equipa",
