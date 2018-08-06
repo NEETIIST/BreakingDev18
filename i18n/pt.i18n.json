@@ -127,6 +127,7 @@
 
 	// Dashboard Team
 	"dash-team-noteam": "Ainda não tens equipa. Junta-te a uma equipa, ou cria a tua própria e convida os teus amigos!",
+	"dash-team-noprofile": "Antes de poderes juntar-te ou criar uma equipa, diz nos só algumas informações sobre ti.",
 	"dash-team-add": "Cria uma equipa",
 	"dash-team-add-desc": "Cria a tua própria equipa e convida até 3 amigos para se juntarem.",
 	"dash-team-add-desc-long": "Ao criares a tua equipa, ficas nomeado o capitão. És o único que pode alterar as informações da equipa, e quando estiver pronta, podes confirmar a inscrição. Podes depois convidar até 3 amigos para se juntarem a ti.",

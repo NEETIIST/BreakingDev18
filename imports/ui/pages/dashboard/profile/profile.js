@@ -20,9 +20,12 @@ Template.dash_profile.helpers({
 	currentDev(){
 		return Devs.findOne({"user":Meteor.userId()});
 	},
-	username(id)
+	username()
 	{
-		return Meteor.users.findOne({"_id":id}).username;
+		return Meteor.users.findOne({"_id":Meteor.userId()}).username;
+	},
+	email(){
+		return Meteor.users.findOne({"_id":Meteor.userId()}).emails[0].address;
 	}
 });
 

@@ -23,11 +23,18 @@ Meteor.publish("users.team",function(number){
 	return Meteor.users.find({"_id":{$in: members}}, {fields:{"username":1}});
 });
 
+Meteor.publish("users.team.own",function(){
+	let team = Teams.findOne({$and:[{ $or: [{"captain": this.userId},{ "members": this.userId }]},{"abandoned":false}]});
+	let members = [];
+	members.push(team.captain);
+	team.members.forEach(function(m){
+		members.push(m);
+	})
+	return Meteor.users.find({"_id":{$in: members}}, {fields:{"username":1}});
+});
+
+
 Meteor.publish("roles.all", function () {
-	/*
-    if (Roles.userIsInRole( this.userId, 'admin'))
-		return Meteor.users.find();
-	else
-		return 0 ;*/
-	return Meteor.roles.find();
+    if (Roles.userIsInRole( this.userId, 'staff'))
+		return Meteor.roles.find();	
 });

@@ -18,18 +18,83 @@
 							</div>
 						</div>
 						<hr class="red f-red" style="height:2px;border:none;" >
-    					<div class="spacer-4"></div>
     					{{#with currentDev}}
-	    					<p class="f-white fs-4 fw-6 mb-0">{{name}} 
-	    						<span class="fw-4">({{username this.user}})</span>
-							</p>
-	    					<p class="f-white fs-3 fw-4 mb-1">{{college}} - {{course}}</p>
-	    					<div class="spacer-4"></div>
-	    					<p class="f-white fs-3 fw-4 mb-1">{{bio}}</p>
-	    					<div class="spacer-2"></div>
-	    					<p class="f-white fs-3 fw-4 mb-1">{{interest}}</p>
-	    					<div class="spacer-2"></div>
-	    					<p class="f-white fs-3 fw-4 mb-1">{{skills}}</p>
+							<div class="row justify-content-start align-items-start m-0 my-2 py-2">
+	                    		<div class="col-2 col-md-1 text-left">
+	                    			<i class="f-white fa-fw fas fa-user fs-5" title="{{_ 'devs-name'}}"></i>
+	                    		</div>
+	                    		<div class="col-10 col-md-11 text-left">
+	                    			<span class="f-white fs-3 fw-6 mb-0">{{name}}<span class="fw-4"> ({{username}})</span></span>
+	                    		</div>
+	                    	</div>
+	                    	<div class="row justify-content-start align-items-start m-0 py-2 my-2">
+	                    		<div class="col-2 col-md-1 text-left my-2">
+	                    			<i class="f-white fa-fw fas fa-mobile-alt fs-5 mr-3" title="{{_ 'devs-phone'}}"></i>
+	                    		</div>
+	                    		<div class="col-10 col-md-3 text-left my-2">
+	                    			<span class="f-white fs-3 fw-4 mb-0">{{phone}}</span>
+	                    		</div>
+	                    		<div class="col-2 col-md-1 text-left my-2">
+	                    			<i class="f-white fa-fw fas fa-male fs-5 mr-3" title="{{_ 'devs-age'}}"></i>
+	                    		</div>
+	                    		<div class="col-10 col-md-2 text-left my-2">
+	                    			<span class="f-white fs-3 fw-4 mb-0">{{age}}</span>
+	                    		</div>
+	                    		<div class="col-2 col-md-1 text-left my-2">
+	                    			<i class="f-white fa-fw fas fa-at fs-5 mr-3" title="{{_ 'devs-email'}}"></i>
+	                    		</div>
+	                    		<div class="col-10 col-md-4 text-left my-2">
+	                    			<span class="f-white fs-3 fw-4 mb-0">{{email}}</span>
+	                    		</div>
+	                    	</div>
+	    					<div class="row justify-content-start align-items-start m-0 my-2 py-2">
+	                    		<div class="col-2 col-md-1 text-left">
+	                    			<i class="f-white fa-fw fas fa-school fs-5" title="{{_ 'devs-college'}}"></i>
+	                    		</div>
+	                    		<div class="col-10 col-md-11 text-left">
+	                    			<span class="f-white fs-3 fw-4 mb-0">{{college}}</span>
+	                    		</div>
+	                    	</div>
+	                    	<div class="row justify-content-center align-items-start m-0 my-2 py-2">
+	                    		<div class="col-2 col-md-1 text-left">
+	                    			<i class="f-white fa-fw fas fa-graduation-cap fs-5" title="{{_ 'devs-course'}}"></i>
+	                    		</div>
+	                    		<div class="col-10 col-md-11 text-left">
+	                    			<span class="f-white fs-3 fw-4 mb-0">{{course}}</span>
+	                    		</div>
+	                    	</div>
+	                    	<div class="row justify-content-center align-items-start m-0 my-2 py-2">
+	                    		<div class="col-2 col-md-1 text-left">
+	                    			<i class="f-white fa-fw fas fa-quote-left fs-5" title="{{_ 'devs-bio'}}"></i>
+	                    		</div>
+	                    		<div class="col-10 col-md-11 text-left">
+	                    			<span class="f-white fs-2 fw-4 mb-0">{{bio}}</span>
+	                    		</div>
+	                    	</div>
+	                    	<div class="row justify-content-center align-items-start m-0 my-2 py-2">
+	                    		<div class="col-2 col-md-1 text-left">
+	                    			<i class="f-white fa-fw fas fa-theater-masks fs-5" title="{{_ 'devs-interest'}}"></i>
+	                    		</div>
+	                    		<div class="col-10 col-md-11 text-left">
+	                    			<span class="f-white fs-2 fw-4 mb-0">{{interest}}</span>
+	                    		</div>
+	                    	</div>
+	                    	<div class="row justify-content-center align-items-start m-0 my-2 py-2">
+	                    		<div class="col-2 col-md-1 text-left">
+	                    			<i class="f-white fa-fw fas fa-laptop-code fs-5" title="{{_ 'devs-skills'}}"></i>
+	                    		</div>
+	                    		<div class="col-10 col-md-11 text-left">
+	                    			<span class="f-white fs-2 fw-4 mb-0">{{skills}}</span>
+	                    		</div>
+	                    	</div>
+	                    	<div class="row justify-content-center align-items-start m-0 my-2 py-2">
+	                    		<div class="col-2 col-md-1 text-left">
+	                    			<i class="f-white fa-fw fas fa-fish fs-5" title="{{_ 'devs-food'}}"></i>
+	                    		</div>
+	                    		<div class="col-10 col-md-11 text-left">
+	                    			<span class="f-white fs-2 fw-4 mb-0">{{food}}</span>
+	                    		</div>
+	                    	</div>
     					{{/with}}
 					{{/if}}
 				{{else}}
