@@ -25,12 +25,21 @@ Meteor.publish("users.team",function(number){
 
 Meteor.publish("users.team.own",function(){
 	let team = Teams.findOne({$and:[{ $or: [{"captain": this.userId},{ "members": this.userId }]},{"abandoned":false}]});
-	let members = [];
-	members.push(team.captain);
-	team.members.forEach(function(m){
-		members.push(m);
-	})
-	return Meteor.users.find({"_id":{$in: members}}, {fields:{"username":1}});
+	//console.log(team);
+	if ( team != undefined )
+	{
+		let members = [];
+		members.push(team.captain);
+		if ( members != undefined )
+		{
+			team.members.forEach(function(m){
+				members.push(m);
+			})
+			return Meteor.users.find({"_id":{$in: members}}, {fields:{"username":1}});
+		}
+	}
+	else
+		return;
 });
 
 

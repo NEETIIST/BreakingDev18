@@ -17,7 +17,10 @@ Template.dash_overview.helpers({
 	},
 	hasTeam(){
 		let dev = Devs.findOne({"user":Meteor.userId()});
-		return ( dev.team != null );
+		if ( dev != undefined )
+			return ( dev.team != null );
+		else
+			return false;
 	},
 	dev(){
 		return Devs.findOne({"user":Meteor.userId()});
@@ -30,6 +33,7 @@ Template.dash_overview.helpers({
 	},
 	team(){
 		let dev = Devs.findOne({"user":Meteor.userId()});
-		return Teams.findOne({"_id":dev.team});
+		if ( dev != undefined )
+			return Teams.findOne({"_id":dev.team});
 	}
 });
