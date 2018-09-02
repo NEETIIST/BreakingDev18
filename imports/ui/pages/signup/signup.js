@@ -36,9 +36,20 @@ Template.signup.events({
 Template.signupRoles.onRendered(function(){
 	var self = this;
 	self.autorun(function(){
-		if ( userHasRole(Meteor.userId()))
+		if ( ! Meteor.userId() )
 		{
-			FlowRouter.go("Dashboard");	
+			FlowRouter.go("SignUp");	
+		}
+		else
+		{
+			if ( Roles.userIsInRole(Meteor.userId(), "nothing") )
+			{
+				FlowRouter.go("SignUpRoles");	
+			}
+			else if ( userHasRole(Meteor.userId()))
+			{
+				FlowRouter.go("Dashboard");	
+			}
 		}
 	});
 	
@@ -47,8 +58,15 @@ Template.signupRoles.onRendered(function(){
 Template.signupRoles.events({
 	'click #signup-dev': function(){
 		if ( Meteor.userId() )
-			Meteor.call('registerDev');
-		FlowRouter.go("Dashboard");
+		{
+			Meteor.call("registerDev", function (err, data) {
+	            if(err){
+	                console.log("err : " + err);
+	            }else{
+	                FlowRouter.go("Dashboard");
+	            }
+        	});
+		}
 	},
 	/*
 	'click #signup-volunteer': function(){
@@ -59,8 +77,15 @@ Template.signupRoles.events({
 	'click #signup-staff': function(){
 		var pass = prompt("Password");
 		if ( Meteor.userId() )
-			Meteor.call('registerStaff', pass);
-		FlowRouter.go("AdminPanel");
+		{
+			Meteor.call('registerStaff', pass, function (err, data) {
+	            if(err){
+	                console.log("err : " + err);
+	            }else{
+	                FlowRouter.go("AdminPanel");
+	            }
+        	});
+		}
 	},
 })
 

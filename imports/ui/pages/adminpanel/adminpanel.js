@@ -15,6 +15,10 @@ Template.adminPanel.onRendered(function(){
 			self.subscribe("roles.all");
 			self.subscribe("teams.all");
 		}
+		else if ( Roles.userIsInRole(Meteor.userId(), "nothing") )
+		{
+			FlowRouter.go("SignUpRoles");	
+		}
 		else if ( Roles.userIsInRole(Meteor.userId(), "sponsor") )
 		{
 			FlowRouter.go("SponsorPanel");

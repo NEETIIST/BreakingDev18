@@ -2,11 +2,13 @@ Meteor.methods({
 
     registerDev: function(){
         let id = this.userId;
-        if ( userHasRole(id) )
+        // Nothing is a role, but somehow it's working
+        if (  Roles.userIsInRole( this.userId, 'staff') ||  Roles.userIsInRole( this.userId, 'sponsor') ||  Roles.userIsInRole( this.userId, 'dev') ||  Roles.userIsInRole( this.userId, 'volunteer') )
             console.log("User "+ id +" already has a role");
         else
         {
             console.log("User "+ id +" is now a Dev");
+            Roles.removeUsersFromRoles( id, 'nothing' );
             Roles.addUsersToRoles(id, 'dev');
         }
     },

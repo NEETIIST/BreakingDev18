@@ -6,15 +6,15 @@
 	"landing-1-video-link": "Vê aqui o nosso aftermovie da edição de 2017.",
 
 	"landing-2-title": "Como posso participar?",
-	"landing-2-participant": "É muito simples, junta-te a um grupo de 2 a 4 amigos e escolhe uma das nossas categorias em baixo para participares. Faz a tua incrição e vem passar o fim de semana connosco.",
-	"landing-2-volunteer": "Se achas que programar não é pra ti mas queres participar na mesma no BreakingDev podes sempre juntar-te ao nosso programa de voluntariado.",
+	"landing-2-participant": "É muito simples, junta-te a um grupo de 2 a 4 amigos e escolhe uma das nossas categorias em baixo para participares. Faz a tua inscrição e vem passar o fim de semana connosco.",
+	"landing-2-volunteer": "Se achas que programar não é para ti mas queres participar à mesma no BreakingDev podes sempre juntar-te ao nosso programa de voluntariado.",
 	"landing-2-account": "Em qualquer dos casos, basta criares conta no nosso site e seguir os passos.",
 	"landing-2-soon": "Vamos abrir as inscrições muito em breve, mantém-te atento às nossas redes sociais",
 
 	"landing-3-title": "Categorias",
 	"landing-3-web-title": "Web",
 	"landing-3-web-sponsor": "by Sponsor",
-	"landing-3-web-desc": "Google, Facebook, Github, ... Hoje em dia é impossível fugir as aplicações web, portanto se HTML e Javascript não te assustam, esta pode ser a categoria pra ti.",
+	"landing-3-web-desc": "Google, Facebook, Github, ... Hoje em dia é impossível fugir as aplicações web, portanto se HTML e Javascript não te assustam, esta pode ser a categoria para ti.",
 	"landing-3-games-title": "Jogos",
 	"landing-3-games-sponsor": "by Sponsor",
 	"landing-3-games-desc": "Se os jogos são a tua paixão, vem fazer um jogo para qualquer plataforma, em qualquer formato, sobre qualquer tema, todas as ideias valem!",
@@ -31,6 +31,9 @@
 	"landing-4-innovation-title": "Innovation",
 	"landing-4-innovation-sponsor": "by Olisipo",
 	"landing-4-innovation-desc": "Ao projeto mais inovador de todas as equipas participantes",
+	"landing-4-pressure-title": "Under Pressure",
+	"landing-4-pressure-sponsor": "by PDMFC",
+	"landing-4-pressure-desc": "Para o projeto mais completo dentro das 48 horas da competição",
 	"landing-4-awards-soon": "Fica atento às nossas redes sociais enquanto anunciamos os nossos prémios",
 
 	"landing-5-title": "Tens dúvidas?",
@@ -106,6 +109,7 @@
 	"devs-phone": "Telemóvel",
 	"devs-food": "Restrições Alimentares",
 	"devs-food-desc": "Se tiveres algumas alergias ou preferências alimentares, diz-nos aqui.",
+	"devs-email": "E-Mail",
 
 	// Dashboard
 	"dash-overview": "Dashboard",
@@ -126,6 +130,7 @@
 
 	// Dashboard Team
 	"dash-team-noteam": "Ainda não tens equipa. Junta-te a uma equipa, ou cria a tua própria e convida os teus amigos!",
+	"dash-team-noprofile": "Antes de poderes juntar-te ou criar uma equipa, diz nos só algumas informações sobre ti.",
 	"dash-team-add": "Cria uma equipa",
 	"dash-team-add-desc": "Cria a tua própria equipa e convida até 3 amigos para se juntarem.",
 	"dash-team-add-desc-long": "Ao criares a tua equipa, ficas nomeado o capitão. És o único que pode alterar as informações da equipa, e quando estiver pronta, podes confirmar a inscrição. Podes depois convidar até 3 amigos para se juntarem a ti.",
@@ -232,7 +237,7 @@
 	"faq-desc": "Encontra nesta página toda a informação relativa ao BreakingDev!",
 	"faq-sec-1": "Essenciais",
 	"faq-1-q": "O que é o BreakingDev?",
-	"faq-1-a": "O BreakingDev é uma competição de programação em que tens 48 horas pra desenvolver a tua ideia.",
+	"faq-1-a": "O BreakingDev é uma competição de programação em que tens 48 horas para desenvolver a tua ideia.",
 	"faq-2-q": "Quando é o BreakingDev?",
 	"faq-2-a": "Este ano, acontece de 28 a 30 de Setembro",
 	"faq-3-q": "Onde é o BreakingDev?",

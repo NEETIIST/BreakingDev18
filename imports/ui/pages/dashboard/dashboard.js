@@ -13,7 +13,12 @@ Template.dashboard.onRendered(function(){
 	self.autorun(function(){
 		if ( Meteor.userId() )
 		{
-			if ( Roles.userIsInRole(Meteor.userId(), "staff") )
+			if ( Roles.userIsInRole(Meteor.userId(), "nothing") )
+			{
+				//console.log("here");
+				FlowRouter.go("SignUpRoles");	
+			}
+			else if ( Roles.userIsInRole(Meteor.userId(), "staff") )
 			{
 				FlowRouter.go("AdminPanel");	
 			}
