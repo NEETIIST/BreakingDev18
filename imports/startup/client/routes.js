@@ -72,6 +72,19 @@ FlowRouter.route('/admin/devs', {
   	},
 });
 
+FlowRouter.route('/admin/volunteers', {
+	name: 'AdminVolunteers',
+  	action() {
+  		if ( Meteor.userId() )
+  		{
+			BlazeLayout.render('adminPanel', {ap_content:"ap_volunteers"});
+			Session.set("ap_activeMenu","ap_volunteers");
+		}
+		else
+			FlowRouter.go("Login");
+  	},
+});
+
 FlowRouter.route('/admin/email', {
 	name: 'AdminEmail',
   	action() {
@@ -229,7 +242,23 @@ FlowRouter.route('/dashboard/volunteer', {
 	name: 'VolunteerPanel',
   	action() {
 		if ( Meteor.userId() )
-			BlazeLayout.render('sponsorPanel');
+		{
+			BlazeLayout.render('volunteerPanel', {vp_content:"vp_overview"});
+			Session.set("vp_activeMenu","vp_overview");
+		}
+		else
+			FlowRouter.go("Login");
+  	},
+});
+
+FlowRouter.route('/dashboard/volunteer/profile', {
+	name: 'VolunteerProfile',
+  	action() {
+		if ( Meteor.userId() )
+		{
+			BlazeLayout.render('volunteerPanel', {vp_content:"vp_profile"});
+			Session.set("vp_activeMenu","vp_profile");
+		}
 		else
 			FlowRouter.go("Login");
   	},

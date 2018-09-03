@@ -35,7 +35,6 @@ Template.dashboard.onRendered(function(){
 				self.subscribe("devs.own");
 				self.subscribe("teams.own");
 			}
-			// Get a way to redirect users with no role out of here
 		}
 		else
 			FlowRouter.go("Login");

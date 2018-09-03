@@ -4,6 +4,7 @@ import './overview/overview.js';
 import './teams/teams.js';
 import './devs/devs.js';
 import './email/email.js';
+import './volunteers/volunteers.js';
 
 Template.adminPanel.onRendered(function(){
 	$("html").css({ "overflow-y":"scroll" });
@@ -71,6 +72,10 @@ Template.adminPanel.events({
 
 	"click #ap_teams": function(){
 		FlowRouter.go("AdminTeams");
+	},
+
+	"click #ap_volunteers": function(){
+		FlowRouter.go("AdminVolunteers");
 	},
 
 	"click #ap_email": function(){

@@ -25,7 +25,7 @@ Meteor.methods({
 	editDev: function(doc)
 	{
 		let dev = Devs.findOne({"_id":doc._id});
-		console.log(doc.modifier);
+		//console.log(doc.modifier);
 		// User must own the profile it's updating
 		if ( this.userId != dev.user )
 			throw new Meteor.Error('not-owner', "User doesn't own this profile");

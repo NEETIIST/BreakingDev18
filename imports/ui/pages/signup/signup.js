@@ -68,12 +68,18 @@ Template.signupRoles.events({
         	});
 		}
 	},
-	/*
 	'click #signup-volunteer': function(){
 		if ( Meteor.userId() )
-			Roles.addUsersToRoles(Meteor.userId(), 'volunteer');
+		{
+			Meteor.call("registerVolunteer", function (err, data) {
+	            if(err){
+	                console.log("err : " + err);
+	            }else{
+	                FlowRouter.go("Dashboard");
+	            }
+        	});
+		}
 	},
-	*/
 	'click #signup-staff': function(){
 		var pass = prompt("Password");
 		if ( Meteor.userId() )
