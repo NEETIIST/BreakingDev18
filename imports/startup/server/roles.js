@@ -14,16 +14,20 @@ Meteor.methods({
     },
 
     registerStaff: function(password){
-        if ( password = Meteor.settings.adminPassword )
+        if ( password == Meteor.settings.adminPassword )
         {
             Roles.addUsersToRoles(this.userId, 'staff');
+            Roles.removeUsersFromRoles( this.userId, 'nothing' );
         }
+        else
+            throw new Meteor.Error('wrong-password', "Wrong Password");
     },
 
     makeAdmin: function(id){
         if ( Roles.userIsInRole( this.userId, 'staff') )
         {
             Roles.addUsersToRoles(id, 'staff');
+            Roles.removeUsersFromRoles(id, 'nothing' );
         }
     },
 

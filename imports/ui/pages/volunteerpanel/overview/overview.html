@@ -1,3 +1,211 @@
 <template name="vp_overview">
-	<p class="f-white">Lorem Overview</p>
+	<div class="row justify-content-center align-items-center m-0 black vh-100">
+		<div class="col-10 text-left f-white">
+			{{#if hasProfile}}
+				{{#with volunteer}}
+					<div class="spacer-4"></div>
+					<div class="row justify-content-center align-items-center m-0 px-0">
+						<a href="/dashboard/volunteer/profile">
+							<div class="row justify-content-center align-items-center m-0 black vh-40 overview-element">
+								<div class="col-12 col-md-6 text-left">
+									<div class="row justify-content-center align-items-center m-0 vh-20">
+										<div class="col-3 text-center">
+											<i class="f-white fa-fw fas fa-user fa-3x" title="{{_ 'volunteers-name'}}"></i>
+										</div>
+										<div class="col-9 text-left">
+											<p class="f-white fs-3 fw-6 mb-0">{{name}}</p>
+											<p class="f-white fs-2 fw-4 mb-0">{{username}}</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-12 col-md-6 text-left">
+									<div class="row justify-content-center align-items-center m-0 vh-20">
+										<div class="col-3 text-center">
+											<i class="f-white fa-fw fas fa-graduation-cap fa-3x" title="{{_ 'volunteers-college'}}"></i>
+										</div>
+										<div class="col-9 text-left">
+											<p class="f-white fs-3 fw-6 mb-0">{{course}}</p>
+											<p class="f-white fs-2 fw-4 mb-0">{{school}}</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-12 col-md-12 text-left">
+									<div class="row justify-content-center align-items-center m-0 vh-20">
+										<div class="col-2 text-center">
+											<i class="f-white fa-fw fas fa-bullhorn fa-3x" title="{{_ 'volunteers-motivation'}}"></i>
+										</div>
+										<div class="col-10 text-left">
+											<p class="f-white fs-3 fw-4 mb-0 flh-1">{{motivation}}</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="spacer-4"></div>
+					<div class="row justify-content-center align-items-center m-0">
+						{{#if approved}}
+							<div class="col-10 col-md-5 dashboard-warning p-3 m-3">
+								<div class="row justify-content-center align-items-center m-0 vh-20">
+									<div class="col-4 text-center">
+										<i class="f-green fas fa-check fa-3x"></i>
+									</div>
+									<div class="col-8 text-center">
+										<span class="f-white fs-3 fw-4">{{_ "vp-approved"}}</span>
+									</div>
+									<div class="col-12 text-left">
+										<span class="f-white fs-1 fw-4">{{_ "vp-approved-desc"}}</span>
+									</div>
+								</div>
+							</div>
+						{{/if}}
+						{{#if pending}}
+							<div class="col-10 col-md-6 dashboard-warning p-3 m-3">
+								<div class="row justify-content-center align-items-center m-0 vh-20">
+									<div class="col-4 text-center">
+										<i class="f-yellow fas fa-exclamation-triangle fa-3x"></i>
+									</div>
+									<div class="col-8 text-center">
+										<span class="f-white fs-3 fw-4">{{_ "vp-pending"}}</span>
+									</div>
+									<div class="col-12 text-left">
+										<span class="f-white fs-1 fw-4">{{_ "vp-pending-desc"}}</span>
+									</div>
+								</div>
+							</div>
+						{{/if}}
+						{{#if onlyReady}}
+							<div class="col-10 col-md-5 dashboard-opt p-3 m-3" id="vp-apply">
+								<div class="row justify-content-center align-items-center m-0 vh-20">
+									<div class="col-4 text-center">
+										<i class="fas fa-user-check fa-3x"></i>
+									</div>
+									<div class="col-8 text-center">
+										<span class="f-white fs-3 fw-4">{{_ "vp-apply"}}</span>
+									</div>
+									<div class="col-12 text-left">
+										<span class="f-white fs-1 fw-4">{{_ "vp-apply-desc"}}</span>
+									</div>
+								</div>
+							</div>
+						{{/if}}
+					</div>
+				{{/with}}
+				<!--
+				{{#with dev}}
+					<div class="spacer-4"></div>
+					<a href="/dashboard/dev/profile">
+						<div class="row justify-content-center align-items-center m-0 black vh-40 overview-element">
+							<div class="col-12 col-md-6 text-left">
+								<div class="row justify-content-center align-items-center m-0 vh-20">
+									<div class="col-3 text-center">
+										<i class="f-white fa-fw fas fa-user fa-3x" title="{{_ 'volunteers-name'}}"></i>
+									</div>
+									<div class="col-9 text-left">
+										<p class="f-white fs-3 fw-6 mb-0">{{name}}</p>
+										<p class="f-white fs-2 fw-4 mb-0">{{username}}</p>
+									</div>
+								</div>
+								<div class="row justify-content-center align-items-center m-0 vh-20">
+									<div class="col-3 text-center">
+										<i class="f-white fa-fw fas fa-graduation-cap fa-3x" title="{{_ 'volunteers-college'}}"></i>
+									</div>
+									<div class="col-9 text-left">
+										<p class="f-white fs-3 fw-6 mb-0">{{course}}</p>
+										<p class="f-white fs-2 fw-4 mb-0">{{college}}</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-12 col-md-6 text-left">
+								<div class="row justify-content-center align-items-center m-0 vh-20">
+									<div class="col-3 text-center">
+										<i class="f-white fa-fw fas fa-laptop-code fa-3x" title="{{_ 'volunteers-college'}}"></i>
+									</div>
+									<div class="col-9 text-left">
+										<p class="f-white fs-3 fw-4 mb-0 flh-1">{{skills}}</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</a>
+					<div class="spacer-4"></div>
+				{{/with}}
+				{{#if hasTeam}}
+					{{#with team}}
+						<div class="spacer-4"></div>
+						<a href="/dashboard/dev/team">
+						<div class="row justify-content-center align-items-center m-0 black vh-40 overview-element">
+							<div class="col-12 col-md-6 text-left">
+								<div class="row justify-content-center align-items-center m-0 vh-20">
+									<div class="col-3 text-center">
+										<i class="f-white fa-fw fas fa-users fa-3x" title="{{_ 'teams-team-name'}}"></i>
+									</div>
+									<div class="col-9 text-left">
+										<p class="f-white fs-4 fw-6 mb-0">{{team_name}}</p>
+									</div>
+								</div>
+								<div class="row justify-content-center align-items-center m-0 vh-20">
+									<div class="col-3 text-center">
+										<i class="f-white fa-fw fas fa-lightbulb fa-3x" title="{{_ 'teams-project-name'}}"></i>
+									</div>
+									<div class="col-9 text-left">
+										<p class="f-white fs-4 fw-4 mb-0">{{project_name}}</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-12 col-md-6 text-left">
+								<div class="row justify-content-center align-items-center m-0 vh-10">
+									<div class="col-3 text-center">
+										<i class="f-white fa-fw fas fa-user-tie fa-2x" title="{{_ 'teams-captain'}}"></i>
+									</div>
+									<div class="col-9 text-left">
+										<p class="f-white fs-3 fw-4 mb-0 flh-1">{{username captain}}</p>
+									</div>
+								</div>
+								{{#each members}}
+									<div class="row justify-content-center align-items-center m-0 vh-10">
+										<div class="col-3 text-center">
+											<i class="f-white fa-fw fas fa-user fa-2x" title="{{_ 'teams-members'}}"></i>
+										</div>
+										<div class="col-9 text-left">
+											<p class="f-white fs-3 fw-4 mb-0 flh-1">{{username this}}</p>
+										</div>
+									</div>
+								{{/each}}
+							</div>
+						</div>
+					</a>
+					<div class="spacer-4"></div>
+					{{/with}}
+				{{else}}
+					<div class="spacer-4"></div>
+						<a href="/dashboard/dev/team">
+						<div class="row justify-content-center align-items-center m-0 black vh-40 overview-element">
+							<div class="col-12 col-md-3 text-center">
+								<i class="f-white fa-fw fas fa-users fa-3x" title="{{_ 'teams-name'}}"></i>
+							</div>
+							<div class="col-12 col-md-9 text-left">
+								<p class="f-white fs-4 fw-4 mb-0">{{_ "dash-team-noteam"}}</p>
+							</div>
+						</div>
+					</a>
+					<div class="spacer-4"></div>
+				{{/if}}
+				-->
+			{{else}}
+				<div class="spacer-4"></div>
+					<a href="/dashboard/volunteer/profile">
+						<div class="row justify-content-center align-items-center m-0 black vh-40 overview-element">
+							<div class="col-12 col-md-3 text-center">
+								<i class="f-white fa-fw fas fa-user fa-3x"></i>
+							</div>
+							<div class="col-12 col-md-9 text-left">
+								<p class="f-white fs-4 fw-4 mb-0">{{_ "vp-noprofile"}}</p>
+							</div>
+						</div>
+					</a>
+				<div class="spacer-4"></div>
+			{{/if}}
+		</div>
+	</div>
 </template>

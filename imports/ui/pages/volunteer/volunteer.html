@@ -1,0 +1,135 @@
+<template name="volunteer_profile">
+	
+	<div class="row justify-content-start align-items-center m-0"> 
+        <div class="col-3 offset-9 position-fixed d-block d-md-none" style="top: 0; right:0; z-index: 10">
+            <div class="row justify-content-start align-items-center m-0 vh-15">
+                <div class="col-12 text-center" id="open-menu">
+                    <i class="fas f-white fa-bars cp fa-2x menu-icon"></i>
+                </div>
+                <div class="col-12 text-center" id="close-menu" style="display:none">
+                    <i class="fas f-white fa-times cp fa-2x menu-icon"></i>
+                </div>
+            </div> 
+        </div>
+        <div class="col-lg-10 col-md-9 col-12 px-0" id="landing-content">
+            <div class="row justify-content-center align-items-start m-0 vh-100 black">
+            	<div class="col-10 text-left p-0">
+            		<div class="spacer-8"></div>
+            		{{#if Template.subscriptionsReady}}
+            			{{#with volunteer}}
+            				<div class="row justify-content-start align-items-center m-0 py-2">
+            					<div class="col-12 col-md-8 text-left">
+	                    			<span class="f-white fs-6 fw-6 mb-0">{{name}}  </span>
+	            					<span class="f-white fs-4 fw-4 mb-0">( {{username}} ) </span>
+	                    		</div>
+	                    	</div>
+	                    	<hr class="red f-red" style="height:2px;border:none;" >
+	                    	{{#if adminInfo}}
+	                    		<div class="row justify-content-start align-items-start m-0 py-2">
+		                    		<div class="col-2 col-md-1 text-left my-2">
+		                    			<i class="f-white fa-fw fas fa-mobile-alt fs-5 mr-3" title="{{_ 'volunteers-phone'}}"></i>
+		                    		</div>
+		                    		<div class="col-10 col-md-3 text-left my-2">
+		                    			<span class="f-white fs-3 fw-4 mb-0">{{phone}}</span>
+		                    		</div>
+		                    		<div class="col-2 col-md-1 text-left my-2">
+		                    			<i class="f-white fa-fw fas fa-male fs-5 mr-3" title="{{_ 'volunteers-age'}}"></i>
+		                    		</div>
+		                    		<div class="col-10 col-md-2 text-left my-2">
+		                    			<span class="f-white fs-3 fw-4 mb-0">{{age}}</span>
+		                    		</div>
+		                    		<div class="col-2 col-md-1 text-left my-2">
+		                    			<i class="f-white fa-fw fas fa-at fs-5 mr-3" title="{{_ 'volunteers-email'}}"></i>
+		                    		</div>
+		                    		<div class="col-10 col-md-4 text-left my-2">
+		                    			<span class="f-white fs-3 fw-4 mb-0">{{email}}</span>
+		                    		</div>
+		                    	</div>
+	                    	{{/if}}
+	                    	<div class="row justify-content-start align-items-start m-0 my-2 py-2">
+	                    		<div class="col-2 col-md-1 text-left">
+	                    			<i class="f-white fa-fw fas fa-school fs-5" title="{{_ 'volunteers-school'}}"></i>
+	                    		</div>
+	                    		<div class="col-10 col-md-11 text-left">
+	                    			<span class="f-white fs-3 fw-4 mb-0">{{school}}</span>
+	                    		</div>
+	                    	</div>
+	                    	<div class="row justify-content-center align-items-start m-0 my-2 py-2">
+	                    		<div class="col-2 col-md-1 text-left">
+	                    			<i class="f-white fa-fw fas fa-graduation-cap fs-5" title="{{_ 'volunteers-course'}}"></i>
+	                    		</div>
+	                    		<div class="col-10 col-md-11 text-left">
+	                    			<span class="f-white fs-3 fw-4 mb-0">{{course}}</span>
+	                    		</div>
+	                    	</div>
+	                    	<div class="row justify-content-center align-items-start m-0 my-2 py-2">
+	                    		<div class="col-2 col-md-1 text-left">
+	                    			<i class="f-white fa-fw fas fa-quote-left fs-5" title="{{_ 'volunteers-bio'}}"></i>
+	                    		</div>
+	                    		<div class="col-10 col-md-11 text-left">
+	                    			<span class="f-white fs-2 fw-4 mb-0">{{bio}}</span>
+	                    		</div>
+	                    	</div>
+	                    	{{#if adminInfo}}
+	                    	<div class="row justify-content-center align-items-start m-0 my-2 py-2">
+	                    		<div class="col-2 col-md-1 text-left">
+	                    			<i class="f-white fa-fw fas fa-bullhorn fs-5" title="{{_ 'volunteers-motivation'}}"></i>
+	                    		</div>
+	                    		<div class="col-10 col-md-11 text-left">
+	                    			<span class="f-white fs-2 fw-4 mb-0">{{motivation}}</span>
+	                    		</div>
+	                    	</div>
+	                    	{{/if}}
+	                    	<div class="row justify-content-center align-items-start m-0 my-2 py-2">
+	                    		<div class="col-2 col-md-1 text-left">
+	                    			<i class="f-white fa-fw fas fa-theater-masks fs-5" title="{{_ 'volunteers-interest'}}"></i>
+	                    		</div>
+	                    		<div class="col-10 col-md-11 text-left">
+	                    			<span class="f-white fs-2 fw-4 mb-0">{{interest}}</span>
+	                    		</div>
+	                    	</div>
+	                    	{{#if adminInfo}}
+	                    		<div class="row justify-content-center align-items-start m-0 my-2 py-2">
+		                    		<div class="col-2 col-md-1 text-left">
+		                    			<i class="f-white fa-fw fas fa-fish fs-5" title="{{_ 'volunteers-food'}}"></i>
+		                    		</div>
+		                    		<div class="col-10 col-md-11 text-left">
+		                    			<span class="f-white fs-2 fw-4 mb-0">{{food}}</span>
+		                    		</div>
+		                    	</div>
+	                    	{{/if}}
+	                    {{/with}}
+            		{{else}}
+            			<p>Loading</p>
+            		{{/if}}
+            	</div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-2 col-md-3 p-0 d-md-block position-fixed offset-lg-10 offset-md-9" id="menu-col">
+            <div class="row justify-content-center align-items-center m-0 vh-20">
+                <div class="col-10 col-md-12 text-md-right text-left">
+                    <div class="spacer-4"></div>
+                    {{> logged}}
+                </div>
+            </div>
+            <div class="row justify-content-center align-items-center m-0 vh-60">
+                <div class="col-10 col-md-12 text-md-right text-left">
+                	<div class="row justify-content-center align-items-center m-0 cp">
+                        <div class="col-12 px-1">
+                            <span class="f-white fs-2 fw-4 menu-hover p-1 px-2 my-2" id="menu-goindex">
+                                {{_ "menu-goindex"}}
+                            </span>
+                        </div>
+                    </div>                    
+                    <div class="spacer-8"></div>
+                </div>
+            </div>
+            <div class="row justify-content-center align-items-center m-0 vh-20">
+                <div class="col-10 text-center f-white">
+                    {{> footer}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</template>

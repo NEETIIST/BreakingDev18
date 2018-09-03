@@ -26,6 +26,9 @@ Template.vp_profile.helpers({
 	},
 	email(){
 		return Meteor.users.findOne({"_id":Meteor.userId()}).emails[0].address;
+	},
+	approved(){
+		return Volunteers.findOne({"user":Meteor.userId()}).approved;	
 	}
 });
 
@@ -55,14 +58,14 @@ Template.vp_profile_edit.helpers({
 
 AutoForm.addHooks(['addVolunteer'],{
 	onSuccess: function(formType, result) {
-		alert(TAPi18n.__('volunteers-add-success'));
+		alert(TAPi18n.__('vp-profile-add-success'));
 		FlowRouter.go("VolunteerPanel");
 	}
 });
 
 AutoForm.addHooks(['editVolunteer'],{
 	onSuccess: function(formType, result) {
-		alert(TAPi18n.__('volunteers-edit-success'));
+		alert(TAPi18n.__('vp-profile-edit-success'));
 		FlowRouter.go("VolunteerPanel");
 	}
 });

@@ -29,10 +29,49 @@ Meteor.methods({
 		// User must own the profile it's updating
 		if ( this.userId != vol.user )
 			throw new Meteor.Error('not-owner', "User doesn't own this profile");
+		if ( vol.approved )
+			throw new Meteor.Error('already-approved', "Volunteer already was approved, can't change the information");
 		else
 		{
 			Volunteers.update(doc._id,doc.modifier);
 		}
 	},
 
+	applyVolunteer: function()
+	{
+		let vol = Volunteers.findOne({"user":this.userId});
+    	let user = Meteor.users.findOne({"_id":this.userId});
+
+		// User must be a volunteer
+		if ( ! Roles.userIsInRole(this.userId, "volunteer") )
+			throw new Meteor.Error('not-volunteer', "User is not a volunteer, can't apply to be a volunteer");
+		// User must have volunteer profile
+		else if ( vol == undefined )
+			throw new Meteor.Error('no-profile', "User doesn't have any profile info yet");
+		// User must not have applied already
+		else if ( vol.approved || vol.pending )
+			throw new Meteor.Error('already-applied', "Volunteer already applied");
+		else
+		{
+			Volunteers.update(vol._id,{'$set':{pending:true}});
+		}
+	},
+
+	approveVolunteer: function(id)
+	{
+		let vol = Volunteers.findOne({"_id":id});
+		if ( ! Roles.userIsInRole(this.userId, "staff") )
+			throw new Meteor.Error('not-staff', "User can't perform this action");
+		else
+			Volunteers.update(vol._id,{'$set':{pending:false, approved:true}});
+	},
+
+	removeVolunteer: function(id)
+	{
+		let vol = Volunteers.findOne({"_id":id});
+		if ( ! Roles.userIsInRole(this.userId, "staff") )
+			throw new Meteor.Error('not-staff', "User can't perform this action");
+		else
+			Volunteers.update(vol._id,{'$set':{pending:false, approved:false}});
+	},
 });

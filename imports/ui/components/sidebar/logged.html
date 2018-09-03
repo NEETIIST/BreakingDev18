@@ -23,6 +23,22 @@
                 {{#if isStaff}}
                     <p class="fs-1 fw-4 px-2 mb-1 mt-0 flh-1">{{_ "menu-staff"}}</p>
                 {{/if}}
+                {{#if isVolunteer}}
+                    {{#with volunteer}}
+                        {{#if pending}}
+                            <p class="fs-1 fw-4 px-2 mb-1 mt-0 flh-1">
+                                <i class="fas fa-exclamation-triangle mr-1"></i>
+                                {{_ "volunteers-pending"}}
+                            </p>
+                        {{/if}}
+                        {{#if approved}}
+                            <p class="fs-1 fw-4 px-2 mb-1 mt-0 flh-1">
+                                <i class="fas fa-check mr-1"></i>
+                                {{_ "volunteers-approved"}}
+                            </p>
+                        {{/if}}
+                    {{/with}}
+                {{/if}}
             </div>
         </div>
     {{else}}

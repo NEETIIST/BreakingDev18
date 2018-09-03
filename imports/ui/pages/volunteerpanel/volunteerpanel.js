@@ -23,7 +23,7 @@ Template.volunteerPanel.onRendered(function(){
 			}
 			else if ( Roles.userIsInRole(Meteor.userId(), "volunteer") )
 			{
-				FlowRouter.go("VolunteerPanel");
+				self.subscribe('volunteers.own');
 			}
 			else if ( Roles.userIsInRole(Meteor.userId(), "dev") )
 			{

@@ -2,6 +2,7 @@ import './logged.html'
 
 import { Teams } from '/imports/api/teams/teams.js';
 import { Devs } from '/imports/api/devs/devs.js';
+import { Volunteers } from '/imports/api/volunteers/volunteers.js';
 
 Template.logged.onRendered(function(){
 	var self = this;
@@ -25,6 +26,12 @@ Template.logged.helpers({
 	},
 	isStaff(){
 		return ( Roles.userIsInRole(Meteor.userId(), "staff"));
+	},
+	isVolunteer(){
+		return ( Roles.userIsInRole(Meteor.userId(), "volunteer"));
+	},
+	volunteer(){
+		return Volunteers.findOne({"user":Meteor.userId()});
 	},
 	hasTeam(){
 		let dev = Devs.findOne({"user":Meteor.userId()});

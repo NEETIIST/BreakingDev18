@@ -16,6 +16,7 @@ import '../../ui/pages/sponsorpanel/sponsorpanel.js';
 import '../../ui/pages/resetPassword/resetPassword.js';
 import '../../ui/pages/dev/dev.js';
 import '../../ui/pages/team/team.js';
+import '../../ui/pages/volunteer/volunteer.js';
 import '../../ui/pages/not-found/not-found.js';
 
 // Set up all routes in the app
@@ -306,6 +307,13 @@ FlowRouter.route('/dev/:username', {
 	name: 'DevProfileDisplay',
 	action() {
 		BlazeLayout.render('dev_profile');
+	},
+});
+
+FlowRouter.route('/volunteer/:username', {
+	name: 'VolunteerProfileDisplay',
+	action() {
+		BlazeLayout.render('volunteer_profile');
 	},
 });
 

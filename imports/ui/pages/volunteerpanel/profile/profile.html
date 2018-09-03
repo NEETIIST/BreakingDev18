@@ -1,6 +1,6 @@
 <template name="vp_profile">
 	<div class="row justify-content-center align-items-start m-0 black vh-100">
-		<div class="col-10 text-left f-white">
+		<div class="col-11 col-md-10 text-left f-white">
 			{{#if Template.subscriptionsReady}}
 				<div class="spacer-8"></div>
 				{{#if hasProfile}}
@@ -11,17 +11,24 @@
 							<div class="col-12 text-left p-0 col-md-9">
 								<span class="f-white fs-6 fw-6">{{_ "dash-profile-show"}}</span>
 							</div>
-							<div class="col-12 text-left p-0 mt-2 mb-1 col-md-3 text-md-right mb-md-0 mt-md-0">
-								<button class="form-submit cp mt-2 mb-0" id="profile-edit">
-									{{_ "profile-edit"}}
-								</button>
-							</div>
+							{{#if approved}}
+								<div class="col-12 text-left p-0 mt-2 mb-1 col-md-3 text-md-right mb-md-0 mt-md-3">
+									<i class="f-green fa-fw fas fa-check fs-3 mr-1" title="{{_ 'volunteers-approved'}}"></i>
+									<span class="f-white fs-3 fw-4 mb-0">{{_ 'volunteers-approved'}}</span>
+								</div>
+							{{else}}
+								<div class="col-12 text-left p-0 mt-2 mb-1 col-md-3 text-md-right mb-md-0 mt-md-0">
+									<button class="form-submit cp mt-2 mb-0" id="profile-edit">
+										{{_ "profile-edit"}}
+									</button>
+								</div>
+							{{/if}}
 						</div>
 						<hr class="red f-red" style="height:2px;border:none;" >
     					{{#with currentVolunteer}}
 							<div class="row justify-content-start align-items-start m-0 my-2 py-2">
 	                    		<div class="col-2 col-md-1 text-left">
-	                    			<i class="f-white fa-fw fas fa-user fs-5" title="{{_ 'devs-name'}}"></i>
+	                    			<i class="f-white fa-fw fas fa-user fs-5" title="{{_ 'volunteers-name'}}"></i>
 	                    		</div>
 	                    		<div class="col-10 col-md-11 text-left">
 	                    			<span class="f-white fs-3 fw-6 mb-0">{{name}}<span class="fw-4"> ({{username}})</span></span>
@@ -29,19 +36,19 @@
 	                    	</div>
 	                    	<div class="row justify-content-start align-items-start m-0 py-2 my-2">
 	                    		<div class="col-2 col-md-1 text-left my-2">
-	                    			<i class="f-white fa-fw fas fa-mobile-alt fs-5 mr-3" title="{{_ 'devs-phone'}}"></i>
+	                    			<i class="f-white fa-fw fas fa-mobile-alt fs-5 mr-3" title="{{_ 'volunteers-phone'}}"></i>
 	                    		</div>
 	                    		<div class="col-10 col-md-3 text-left my-2">
 	                    			<span class="f-white fs-3 fw-4 mb-0">{{phone}}</span>
 	                    		</div>
 	                    		<div class="col-2 col-md-1 text-left my-2">
-	                    			<i class="f-white fa-fw fas fa-male fs-5 mr-3" title="{{_ 'devs-age'}}"></i>
+	                    			<i class="f-white fa-fw fas fa-male fs-5 mr-3" title="{{_ 'volunteers-age'}}"></i>
 	                    		</div>
 	                    		<div class="col-10 col-md-2 text-left my-2">
 	                    			<span class="f-white fs-3 fw-4 mb-0">{{age}}</span>
 	                    		</div>
 	                    		<div class="col-2 col-md-1 text-left my-2">
-	                    			<i class="f-white fa-fw fas fa-at fs-5 mr-3" title="{{_ 'devs-email'}}"></i>
+	                    			<i class="f-white fa-fw fas fa-at fs-5 mr-3" title="{{_ 'volunteers-email'}}"></i>
 	                    		</div>
 	                    		<div class="col-10 col-md-4 text-left my-2">
 	                    			<span class="f-white fs-3 fw-4 mb-0">{{email}}</span>
@@ -49,7 +56,7 @@
 	                    	</div>
 	    					<div class="row justify-content-start align-items-start m-0 my-2 py-2">
 	                    		<div class="col-2 col-md-1 text-left">
-	                    			<i class="f-white fa-fw fas fa-school fs-5" title="{{_ 'devs-school'}}"></i>
+	                    			<i class="f-white fa-fw fas fa-school fs-5" title="{{_ 'volunteers-school'}}"></i>
 	                    		</div>
 	                    		<div class="col-10 col-md-11 text-left">
 	                    			<span class="f-white fs-3 fw-4 mb-0">{{school}}</span>
@@ -57,7 +64,7 @@
 	                    	</div>
 	                    	<div class="row justify-content-center align-items-start m-0 my-2 py-2">
 	                    		<div class="col-2 col-md-1 text-left">
-	                    			<i class="f-white fa-fw fas fa-graduation-cap fs-5" title="{{_ 'devs-course'}}"></i>
+	                    			<i class="f-white fa-fw fas fa-graduation-cap fs-5" title="{{_ 'volunteers-course'}}"></i>
 	                    		</div>
 	                    		<div class="col-10 col-md-11 text-left">
 	                    			<span class="f-white fs-3 fw-4 mb-0">{{course}}</span>
@@ -65,7 +72,7 @@
 	                    	</div>
 	                    	<div class="row justify-content-center align-items-start m-0 my-2 py-2">
 	                    		<div class="col-2 col-md-1 text-left">
-	                    			<i class="f-white fa-fw fas fa-quote-left fs-5" title="{{_ 'devs-bio'}}"></i>
+	                    			<i class="f-white fa-fw fas fa-quote-left fs-5" title="{{_ 'volunteers-bio'}}"></i>
 	                    		</div>
 	                    		<div class="col-10 col-md-11 text-left">
 	                    			<span class="f-white fs-2 fw-4 mb-0">{{bio}}</span>
@@ -73,7 +80,15 @@
 	                    	</div>
 	                    	<div class="row justify-content-center align-items-start m-0 my-2 py-2">
 	                    		<div class="col-2 col-md-1 text-left">
-	                    			<i class="f-white fa-fw fas fa-theater-masks fs-5" title="{{_ 'devs-interest'}}"></i>
+	                    			<i class="f-white fa-fw fas fa-bullhorn fs-5" title="{{_ 'volunteers-motivation'}}"></i>
+	                    		</div>
+	                    		<div class="col-10 col-md-11 text-left">
+	                    			<span class="f-white fs-2 fw-4 mb-0">{{motivation}}</span>
+	                    		</div>
+	                    	</div>
+	                    	<div class="row justify-content-center align-items-start m-0 my-2 py-2">
+	                    		<div class="col-2 col-md-1 text-left">
+	                    			<i class="f-white fa-fw fas fa-theater-masks fs-5" title="{{_ 'volunteers-interest'}}"></i>
 	                    		</div>
 	                    		<div class="col-10 col-md-11 text-left">
 	                    			<span class="f-white fs-2 fw-4 mb-0">{{interest}}</span>
@@ -81,7 +96,7 @@
 	                    	</div>
 	                    	<div class="row justify-content-center align-items-start m-0 my-2 py-2">
 	                    		<div class="col-2 col-md-1 text-left">
-	                    			<i class="f-white fa-fw fas fa-fish fs-5" title="{{_ 'devs-food'}}"></i>
+	                    			<i class="f-white fa-fw fas fa-fish fs-5" title="{{_ 'volunteers-food'}}"></i>
 	                    		</div>
 	                    		<div class="col-10 col-md-11 text-left">
 	                    			<span class="f-white fs-2 fw-4 mb-0">{{food}}</span>
@@ -110,6 +125,7 @@
 			{{> afQuickField name="course" class="form-input" autocomplete="off"}}
 			{{> afQuickField name="phone" class="form-input" autocomplete="off"}}
 			{{> afQuickField name="bio" class="form-input" autocomplete="off"}}
+			{{> afQuickField name="motivation" class="form-input" autocomplete="off"}}
 			{{> afQuickField name="interest" class="form-input" autocomplete="off"}}
 			{{> afQuickField name="food" class="form-input" autocomplete="off"}}
 		</fieldset>
@@ -137,6 +153,7 @@
 			{{> afQuickField name="course" class="form-input" autocomplete="off"}}
 			{{> afQuickField name="phone" class="form-input" autocomplete="off"}}
 			{{> afQuickField name="bio" class="form-input" autocomplete="off"}}
+			{{> afQuickField name="motivation" class="form-input" autocomplete="off"}}
 			{{> afQuickField name="interest" class="form-input" autocomplete="off"}}
 			{{> afQuickField name="food" class="form-input" autocomplete="off"}}
 		</fieldset>
@@ -168,7 +185,7 @@
     					{{#with currentDev}}
 							<div class="row justify-content-start align-items-start m-0 my-2 py-2">
 	                    		<div class="col-2 col-md-1 text-left">
-	                    			<i class="f-white fa-fw fas fa-user fs-5" title="{{_ 'devs-name'}}"></i>
+	                    			<i class="f-white fa-fw fas fa-user fs-5" title="{{_ 'volunteers-name'}}"></i>
 	                    		</div>
 	                    		<div class="col-10 col-md-11 text-left">
 	                    			<span class="f-white fs-3 fw-6 mb-0">{{name}}<span class="fw-4"> ({{username}})</span></span>
@@ -176,19 +193,19 @@
 	                    	</div>
 	                    	<div class="row justify-content-start align-items-start m-0 py-2 my-2">
 	                    		<div class="col-2 col-md-1 text-left my-2">
-	                    			<i class="f-white fa-fw fas fa-mobile-alt fs-5 mr-3" title="{{_ 'devs-phone'}}"></i>
+	                    			<i class="f-white fa-fw fas fa-mobile-alt fs-5 mr-3" title="{{_ 'volunteers-phone'}}"></i>
 	                    		</div>
 	                    		<div class="col-10 col-md-3 text-left my-2">
 	                    			<span class="f-white fs-3 fw-4 mb-0">{{phone}}</span>
 	                    		</div>
 	                    		<div class="col-2 col-md-1 text-left my-2">
-	                    			<i class="f-white fa-fw fas fa-male fs-5 mr-3" title="{{_ 'devs-age'}}"></i>
+	                    			<i class="f-white fa-fw fas fa-male fs-5 mr-3" title="{{_ 'volunteers-age'}}"></i>
 	                    		</div>
 	                    		<div class="col-10 col-md-2 text-left my-2">
 	                    			<span class="f-white fs-3 fw-4 mb-0">{{age}}</span>
 	                    		</div>
 	                    		<div class="col-2 col-md-1 text-left my-2">
-	                    			<i class="f-white fa-fw fas fa-at fs-5 mr-3" title="{{_ 'devs-email'}}"></i>
+	                    			<i class="f-white fa-fw fas fa-at fs-5 mr-3" title="{{_ 'volunteers-email'}}"></i>
 	                    		</div>
 	                    		<div class="col-10 col-md-4 text-left my-2">
 	                    			<span class="f-white fs-3 fw-4 mb-0">{{email}}</span>
@@ -196,7 +213,7 @@
 	                    	</div>
 	    					<div class="row justify-content-start align-items-start m-0 my-2 py-2">
 	                    		<div class="col-2 col-md-1 text-left">
-	                    			<i class="f-white fa-fw fas fa-school fs-5" title="{{_ 'devs-school'}}"></i>
+	                    			<i class="f-white fa-fw fas fa-school fs-5" title="{{_ 'volunteers-school'}}"></i>
 	                    		</div>
 	                    		<div class="col-10 col-md-11 text-left">
 	                    			<span class="f-white fs-3 fw-4 mb-0">{{school}}</span>
@@ -204,7 +221,7 @@
 	                    	</div>
 	                    	<div class="row justify-content-center align-items-start m-0 my-2 py-2">
 	                    		<div class="col-2 col-md-1 text-left">
-	                    			<i class="f-white fa-fw fas fa-graduation-cap fs-5" title="{{_ 'devs-course'}}"></i>
+	                    			<i class="f-white fa-fw fas fa-graduation-cap fs-5" title="{{_ 'volunteers-course'}}"></i>
 	                    		</div>
 	                    		<div class="col-10 col-md-11 text-left">
 	                    			<span class="f-white fs-3 fw-4 mb-0">{{course}}</span>
@@ -212,7 +229,7 @@
 	                    	</div>
 	                    	<div class="row justify-content-center align-items-start m-0 my-2 py-2">
 	                    		<div class="col-2 col-md-1 text-left">
-	                    			<i class="f-white fa-fw fas fa-quote-left fs-5" title="{{_ 'devs-bio'}}"></i>
+	                    			<i class="f-white fa-fw fas fa-quote-left fs-5" title="{{_ 'volunteers-bio'}}"></i>
 	                    		</div>
 	                    		<div class="col-10 col-md-11 text-left">
 	                    			<span class="f-white fs-2 fw-4 mb-0">{{bio}}</span>
@@ -220,7 +237,7 @@
 	                    	</div>
 	                    	<div class="row justify-content-center align-items-start m-0 my-2 py-2">
 	                    		<div class="col-2 col-md-1 text-left">
-	                    			<i class="f-white fa-fw fas fa-theater-masks fs-5" title="{{_ 'devs-interest'}}"></i>
+	                    			<i class="f-white fa-fw fas fa-theater-masks fs-5" title="{{_ 'volunteers-interest'}}"></i>
 	                    		</div>
 	                    		<div class="col-10 col-md-11 text-left">
 	                    			<span class="f-white fs-2 fw-4 mb-0">{{interest}}</span>
@@ -228,7 +245,7 @@
 	                    	</div>
 	                    	<div class="row justify-content-center align-items-start m-0 my-2 py-2">
 	                    		<div class="col-2 col-md-1 text-left">
-	                    			<i class="f-white fa-fw fas fa-laptop-code fs-5" title="{{_ 'devs-skills'}}"></i>
+	                    			<i class="f-white fa-fw fas fa-laptop-code fs-5" title="{{_ 'volunteers-skills'}}"></i>
 	                    		</div>
 	                    		<div class="col-10 col-md-11 text-left">
 	                    			<span class="f-white fs-2 fw-4 mb-0">{{skills}}</span>
@@ -236,7 +253,7 @@
 	                    	</div>
 	                    	<div class="row justify-content-center align-items-start m-0 my-2 py-2">
 	                    		<div class="col-2 col-md-1 text-left">
-	                    			<i class="f-white fa-fw fas fa-fish fs-5" title="{{_ 'devs-food'}}"></i>
+	                    			<i class="f-white fa-fw fas fa-fish fs-5" title="{{_ 'volunteers-food'}}"></i>
 	                    		</div>
 	                    		<div class="col-10 col-md-11 text-left">
 	                    			<span class="f-white fs-2 fw-4 mb-0">{{food}}</span>
@@ -258,7 +275,7 @@
 <template name="dash_profile_add">
 	<span class="f-white fs-6 fw-6">{{_ "dash-profile-add"}}</span>
     <hr class="red f-red" style="height:2px;border:none;" >
-	{{#autoForm collection=Devs id="addDev" type="method" template="nothing" meteormethod="createDev" validation="browser"}}
+	{{#autoForm collection=volunteers id="addDev" type="method" template="nothing" meteormethod="createDev" validation="browser"}}
 		<fieldset>
 			{{> afQuickField name="name" class="form-input" autocomplete="off"}}
 			{{> afQuickField name="age" class="form-input" autocomplete="off"}}
@@ -286,7 +303,7 @@
 		</div>
 	</div>
 	<hr class="red f-red" style="height:2px;border:none;" >
-	{{#autoForm collection=Devs id="editDev" doc=currentDev type="method-update" template="nothing" meteormethod="editDev" validation="browser"}}
+	{{#autoForm collection=volunteers id="editDev" doc=currentDev type="method-update" template="nothing" meteormethod="editDev" validation="browser"}}
 		<fieldset>
 			{{> afQuickField name="name" class="form-input" autocomplete="off"}}
 			{{> afQuickField name="age" class="form-input" autocomplete="off"}}

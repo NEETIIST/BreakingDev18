@@ -24,27 +24,26 @@ Template.ap_volunteers.helpers({
 });
 
 Template.ap_volunteers.events({
-	/*
-	'click #confirm-payment': function(){
+	
+	'click #confirm-aplication': function(){
 		console.log(this);
-		Meteor.call("confirmPayment", this._id, function (err, data) {
+		Meteor.call("approveVolunteer", this._id, function (err, data) {
 	        if(err){
 	            alert(err);
 	        }else{
-	            alert(TAPi18n.__('ap-volunteers-confirm-payment-success'));
+	            alert(TAPi18n.__('ap-volunteers-confirm-success'));
 	        }
 		});
 	},
 
-	'click #cancel-payment': function(){
-		Meteor.call("cancelPayment", this._id, function (err, data) {
+	'click #cancel-aplication': function(){
+		Meteor.call("removeVolunteer", this._id, function (err, data) {
 	        if(err){
 	            alert(err);
 	        }else{
-	            alert(TAPi18n.__('ap-volunteers-cancel-payment-success'));
+	            alert(TAPi18n.__('ap-volunteers-cancel-success'));
 	        }
 		});
 	},
 
-	*/
 })

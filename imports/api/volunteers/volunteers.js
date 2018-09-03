@@ -10,6 +10,12 @@ Volunteers.allow({
 	remove() { return false; }
 });
 
+Volunteers.deny({
+	insert() { return true; },
+	update() { return true; },
+	remove() { return true; }
+});
+
 VolunteersSchema = new SimpleSchema({
 	user: {
 		type: String,
@@ -30,7 +36,7 @@ VolunteersSchema = new SimpleSchema({
 	},
 	school: {
 		type: String,
-		label: TAPi18n.__('volunteers-college'),
+		label: TAPi18n.__('volunteers-school'),
 	},
 	course: {
 		type: String,
@@ -47,6 +53,14 @@ VolunteersSchema = new SimpleSchema({
 	      	placeholder: TAPi18n.__('volunteers-bio-desc')
 	    },
 	    label: TAPi18n.__('volunteers-bio'),
+	},
+	motivation: {
+		type: String,
+		autoform: {
+  			rows: 3,
+  			placeholder: TAPi18n.__('volunteers-motivation-desc')
+		},
+		label: TAPi18n.__('volunteers-motivation'),
 	},
 	interest: {
 		type: String,
@@ -65,7 +79,7 @@ VolunteersSchema = new SimpleSchema({
 		optional: true,
 	},
 	pending: {
-		type: String,
+		type: Boolean,
 		optional:true,
 		autoform: { omit:true },
 	},
@@ -82,7 +96,7 @@ Volunteers.attachSchema( VolunteersSchema );
 Volunteers.publicFields = {
 	user:1,
 	name:1,
-	college:1,
+	school:1,
 	course:1,
 	bio:1,
 	interest:1	
