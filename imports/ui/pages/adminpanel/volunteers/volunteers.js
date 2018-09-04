@@ -5,7 +5,7 @@ import { Volunteers } from '/imports/api/volunteers/volunteers.js';
 Template.ap_volunteers.onRendered(function(){
 	var self = this;
 	self.autorun(function(){
-		self.subscribe("volunteers.all");
+		
 	})
 });
 

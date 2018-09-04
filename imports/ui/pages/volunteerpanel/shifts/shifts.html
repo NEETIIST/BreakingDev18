@@ -1,0 +1,71 @@
+<template name="vp_shifts">
+	<div class="row justify-content-center align-items-start m-0 black vh-100">
+		<div class="col-11 col-md-10 text-left f-white">
+			<div class="spacer-4"></div>
+			<span class="f-white fs-6 fw-6">{{_ "vp-shifts"}}</span>
+			{{#if showHelp}}
+				<i class="fas fa-backspace fs-5 hvr-white-to-red mx-2 cp" id="toggle-help" title="{{_ 'vp-shifts-back'}}"></i>
+			{{else}}
+				<i class="far fa-question-circle fs-5 hvr-white-to-red mx-2 cp" id="toggle-help" title="{{_ 'vp-shifts-help'}}"></i>
+			{{/if}}
+			<hr class="red f-red" style="height:2px;border:none;" >
+			{{#if showHelp}}
+				<p class="f-white fs-3 fw-4">{{_ "vp-shifts-desc-1"}}</p>
+				<p class="f-white fs-2 fw-4">{{_ "vp-shifts-desc-2"}}</p>
+				<p class="f-white fs-2 fw-4">{{_ "vp-shifts-desc-3"}}</p>
+				<p class="f-white fs-2 fw-4">{{_ "vp-shifts-desc-4"}}
+					<span class="hvr-white-to-red">
+						<a href="mailto:breakingdev@neeti.tecnico.ulisboa.pt" target="_blank">
+							breakingdev@neeti.tecnico.ulisboa.pt
+						</a>
+					</span> .
+				</p>
+			{{else}}
+				{{#if Template.subscriptionsReady}}
+					<span class="f-white fs-3 fw-4">{{_ "vp-shifts-assigned"}}</span>
+					<div class="row justify-content-start align-items-center mx-0 my-2">
+						{{#each assignedShifts}}
+							<div class="col-6 col-md-3 text-center p-2 shiftCol">
+								<span class="fs-2 fw-4">{{_ "vp-shifts-day"}} {{day}} :<br>{{start}} - {{end}}</span>
+							</div>
+						{{else}}
+							<div class="col-12 text-left p-0 hvr-white-to-red">
+								<span class="fs-2 fw-4">{{_ "vp-shifts-assigned-none"}}</span>
+							</div>
+						{{/each}}
+					</div>
+					<hr class="red f-red" style="height:2px;border:none;" >
+					<p class="f-white fs-3 fw-4">{{_ "vp-shifts-available"}}</p>
+					{{#each singleDay}}
+						<div class="row justify-content-start align-items-start py-2 px-3 m-0 vh-15 mb-3 dayRow">
+							<div class="col-12 p-0 mb-2 mx-2">
+								<span class="f-white fs-2 fw-4">{{_ "vp-shifts-day"}} {{this}} :</span>
+							</div>
+							{{#each dayShifts this}}
+								<div class="col-4 col-md-2 px-1 px-md-2 text-center hvr-white-to-red cp" id="toggle-available">
+									<span class="fs-2 fw-4 mb-0">{{start}} - {{end}}</span>
+									<hr class="red f-red my-1" style="height:2px;border:none;" >
+									{{#if userIsAssigned}}
+										<i class="f-white fas fa-check fs-5 mt-1"></i>
+									{{else}}
+										{{#if userIsAvailable}}
+											<i class="far fa-check-square fs-5 mt-1" title="{{_ 'vp-shifts-unmark'}}"></i>
+											{{else}}
+											<i class="far fa-square fs-5 mt-1" title="{{_ 'vp-shifts-mark'}}"></i>
+										{{/if}}
+									{{/if}}
+								</div>
+							{{/each}}
+						</div>
+					{{else}}
+						<div class="row justify-content-start align-items-start m-0 mb-3">
+							<div class="col-12 p-0 hvr-white-to-red">
+								<span class="fs-2 fw-4">{{_ "vp-shifts-available-none"}}</span>
+							</div>
+						</div>
+					{{/each}}
+				{{/if}}
+			{{/if}}
+		</div>
+	</div>
+</template>

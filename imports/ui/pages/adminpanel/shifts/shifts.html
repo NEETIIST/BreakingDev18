@@ -1,0 +1,80 @@
+<template name="ap_shifts">
+	<div class="row justify-content-center align-items-start m-0">
+    	<div class="col-10 p-0">
+    		<div class="spacer-4"></div>
+    		<p class="f-white fs-6 fw-6 mb-0 flh-2">{{_ "ap-shifts"}}</p>
+    		<hr class="red f-red" style="height:2px;border:none;">
+    		<form id="ap-shifts" autocomplete="off">
+    			<div class="row justify-content-start align-items-center m-0 vh-10 f-white">    			
+	    			<div class="col-5 col-md-2">
+	    				<p class="fs-1 fw-4 mb-0 flh-2">{{_ "ap-shifts-add"}}</p>
+	    			</div>
+	    			<div class="col-5 col-md-2">
+	    				<input class="form-input mb-2" type="number" name="day" placeholder='ex: 28'/>
+	    			</div>
+	    			<div class="col-5 col-md-3">
+	    				<input class="form-input mb-2" type="text" name="start" placeholder='ex: 12:00'/>
+	    			</div>
+	    			<div class="col-5 col-md-3">
+	    				<input class="form-input mb-2" type="text" name="end" placeholder='ex: 14:00'/>
+	    			</div>
+	    			<div class="col-2 col-md-2 text-center">
+	    				<button class="form-submit mx-0 my-3 cp">
+	    					<i class="fas fa-check fs-4 cp p-0 p-md-1" title="{{_ 'ap-shifts-newshift'}}"></i>
+	    				</button>
+	    			</div>
+    			</div>
+    		</form>
+    		<hr class="red f-red mb-0" style="height:2px;border:none;">
+    		<div class="row justify-content-center align-items-center m-0 vh-10 f-white">
+				{{#each singleDay}}
+					<div class="col-3 text-center {{isActiveDay this}} cp selectDay">
+						<p class="fs-2 fw-4 mb-0 flh-2">{{_ "ap-shifts-day"}} {{this}}</p>
+					</div>
+				{{/each}}
+    		</div>
+    		<div class="row justify-content-start align-items-center m-0 f-white">
+				{{#each dayShifts currentDay}}
+					<div class="col-4 text-center">
+						<p class="fs-1 fw-4 mb-0 flh-2">{{start}} - {{end}}</p>
+						<hr class="red f-red my-1" style="height:2px;border:none;">
+						<div class="row justify-content-center align-items-center m-0">
+							<div class="col-12 text-left px-1">
+								{{#each assigned}}
+									<div class="row justify-content-center align-items-center m-0" >
+										<div class="col-2 p-0 text-left cp">
+											<i class="fas fa-minus f-red ap-unassign-user" id="{{../_id}}" title="{{_ 'ap-shifts-unassign'}}"></i>
+										</div>
+										<div class="col-10 p-0 text-left">
+											<span class="fs-1 fw-4 mb-0 flh-2">{{username this}}</span>
+										</div>
+									</div>
+								{{/each}}
+								<div class="spacer-2"></div>
+								{{#each available}}
+									<div class="row justify-content-center align-items-center m-0" >
+										<div class="col-2 p-0 text-left cp">
+											<i class="fas fa-plus f-green ap-assign-user" id="{{../_id}}" title="{{_ 'ap-shifts-assign'}}"></i>
+										</div>
+										<div class="col-10 p-0 text-left">
+											<span class="fs-1 fw-4 mb-0 flh-2">{{username this}}</span>
+										</div>
+									</div>
+								{{/each}}
+							</div>
+							<div class="col-6 text-left">
+							</div>
+						</div>
+						<hr class="red f-red my-1" style="height:2px;border:none;">
+						<i class="fas fa-times f-red fa-fw cp" id="ap-remove-shift" title="{{_ 'ap-shifts-remove'}}"></i>
+						{{#if closed}}
+							<i class="fas fa-toggle-off fa-fw f-green cp mx-2" id="ap-reopen-shift" title="{{_ 'ap-shifts-reopen'}}"></i>
+						{{else}}
+							<i class="fas fa-toggle-on fa-fw f-red cp mx-2" id="ap-close-shift" title="{{_ 'ap-shifts-close'}}"></i>
+						{{/if}}
+					</div>
+				{{/each}}
+    		</div>
+    	</div>
+    </div>
+</template>

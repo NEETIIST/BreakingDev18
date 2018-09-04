@@ -5,6 +5,7 @@ import './teams/teams.js';
 import './devs/devs.js';
 import './email/email.js';
 import './volunteers/volunteers.js';
+import './shifts/shifts.js';
 
 Template.adminPanel.onRendered(function(){
 	$("html").css({ "overflow-y":"scroll" });
@@ -15,6 +16,8 @@ Template.adminPanel.onRendered(function(){
 			self.subscribe("users.all");
 			self.subscribe("roles.all");
 			self.subscribe("teams.all");
+			self.subscribe('volunteers.all');
+			self.subscribe('shifts.all');
 		}
 		else if ( Roles.userIsInRole(Meteor.userId(), "nothing") )
 		{
@@ -76,6 +79,10 @@ Template.adminPanel.events({
 
 	"click #ap_volunteers": function(){
 		FlowRouter.go("AdminVolunteers");
+	},
+
+	"click #ap_shifts": function(){
+		FlowRouter.go("AdminShifts");
 	},
 
 	"click #ap_email": function(){

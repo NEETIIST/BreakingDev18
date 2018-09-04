@@ -112,6 +112,19 @@ FlowRouter.route('/admin/email/:username', {
   	},
 });
 
+FlowRouter.route('/admin/shifts', {
+	name: 'AdminShifts',
+  	action() {
+  		if ( Meteor.userId() )
+  		{
+			BlazeLayout.render('adminPanel', {ap_content:"ap_shifts"});
+			Session.set("ap_activeMenu","ap_shifts");
+		}
+		else
+			FlowRouter.go("Login");
+  	},
+});
+
 FlowRouter.route('/dashboard', {
 	name: 'Dashboard',
 	action() {
@@ -259,6 +272,19 @@ FlowRouter.route('/dashboard/volunteer/profile', {
 		{
 			BlazeLayout.render('volunteerPanel', {vp_content:"vp_profile"});
 			Session.set("vp_activeMenu","vp_profile");
+		}
+		else
+			FlowRouter.go("Login");
+  	},
+});
+
+FlowRouter.route('/dashboard/volunteer/shifts', {
+	name: 'VolunteerShifts',
+  	action() {
+		if ( Meteor.userId() )
+		{
+			BlazeLayout.render('volunteerPanel', {vp_content:"vp_shifts"});
+			Session.set("vp_activeMenu","vp_shifts");
 		}
 		else
 			FlowRouter.go("Login");

@@ -4,6 +4,7 @@
 			{{#if hasProfile}}
 				{{#with volunteer}}
 					<div class="spacer-4"></div>
+					<!--
 					<div class="row justify-content-center align-items-center m-0 px-0">
 						<a href="/dashboard/volunteer/profile">
 							<div class="row justify-content-center align-items-center m-0 black vh-40 overview-element">
@@ -43,6 +44,7 @@
 						</a>
 					</div>
 					<div class="spacer-4"></div>
+					-->
 					<div class="row justify-content-center align-items-center m-0">
 						{{#if approved}}
 							<div class="col-10 col-md-5 dashboard-warning p-3 m-3">
@@ -58,6 +60,59 @@
 									</div>
 								</div>
 							</div>
+							{{#if hasShifts}}
+								{{#if hasShiftsAssigned}}
+									<div class="col-10 col-md-5 dashboard-opt p-3 m-3">
+										<a href="/dashboard/volunteer/shifts">
+											<div class="row justify-content-center align-items-center m-0 vh-20">
+												<div class="col-2 text-center">
+													<i class="fas fa-exclamation fa-3x"></i>
+												</div>
+												<div class="col-10 text-center">
+													{{#with nextShift}}
+														<span class="f-white fs-3 fw-4">{{_ "vp-shifts-next" day start end}}</span>
+													{{/with}}
+												</div>
+												<div class="col-12 text-left">
+													<span class="f-white fs-1 fw-4">{{_ "vp-shifts-next-desc"}}</span>
+												</div>
+											</div>
+										</a>
+									</div>
+								{{else}}
+									{{#if hasShiftsAvailable}}
+										<div class="col-10 col-md-5 dashboard-warning p-3 m-3">
+											<div class="row justify-content-center align-items-center m-0 vh-20">
+												<div class="col-4 text-center">
+													<i class="fas fa-clipboard-list fa-3x"></i>
+												</div>
+												<div class="col-8 text-center">
+													<span class="f-white fs-3 fw-4">{{_ "vp-shifts-pending"}}</span>
+												</div>
+												<div class="col-12 text-left">
+													<span class="f-white fs-1 fw-4">{{_ "vp-shifts-pending-desc"}}</span>
+												</div>
+											</div>
+										</div>
+									{{/if}}
+								{{/if}}
+							{{else}}
+								<div class="col-10 col-md-5 dashboard-opt p-3 m-3">
+									<a href="/dashboard/volunteer/shifts">
+										<div class="row justify-content-center align-items-center m-0 vh-20">
+											<div class="col-4 text-center">
+												<i class="far fa-calendar-plus fa-3x"></i>
+											</div>
+											<div class="col-8 text-center">
+												<span class="f-white fs-3 fw-4">{{_ "vp-noshifts"}}</span>
+											</div>
+											<div class="col-12 text-left">
+												<span class="f-white fs-1 fw-4">{{_ "vp-noshifts-desc"}}</span>
+											</div>
+										</div>
+									</a>
+								</div>
+							{{/if}}
 						{{/if}}
 						{{#if pending}}
 							<div class="col-10 col-md-6 dashboard-warning p-3 m-3">

@@ -1,0 +1,30 @@
+.dayRow
+{
+	border-left: 2px solid $primary-red;
+	border-right: 2px solid $black;
+	//cursor: pointer;
+	transition: 0.2s;
+}
+
+.dayRow:hover
+{
+	background-color: #111111;
+	border-right: 2px solid $primary-red;
+	transition: 0.2s;
+}
+
+.shiftCol
+{
+	border-left: 2px solid $black;
+	border-right: 2px solid $black;
+	//cursor: pointer;
+	transition: 0.2s;
+}
+
+.shiftCol:hover
+{
+	background-color: #111111;
+	border-left: 2px solid $primary-red;
+	border-right: 2px solid $primary-red;
+	transition: 0.2s;
+}

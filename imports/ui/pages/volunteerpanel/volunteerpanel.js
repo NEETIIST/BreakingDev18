@@ -2,6 +2,9 @@ import './volunteerpanel.html';
 
 import './overview/overview.js';
 import './profile/profile.js';
+import './shifts/shifts.js';
+
+import { Volunteers } from '/imports/api/volunteers/volunteers.js';
 
 Template.volunteerPanel.onRendered(function(){
 	$("html").css({ "overflow-y":"scroll" });
@@ -24,6 +27,7 @@ Template.volunteerPanel.onRendered(function(){
 			else if ( Roles.userIsInRole(Meteor.userId(), "volunteer") )
 			{
 				self.subscribe('volunteers.own');
+				self.subscribe("shifts.volunteer");
 			}
 			else if ( Roles.userIsInRole(Meteor.userId(), "dev") )
 			{
@@ -44,6 +48,10 @@ Template.volunteerPanel.helpers({
 			return "menu-active";
 		else
 			return "menu-hover";
+	},
+	readyShifts(){
+		let vol = Volunteers.findOne({"user":Meteor.userId()});
+		return ( vol != undefined && (vol.approved) );
 	},
 	/*
 	userHasProfile(){
@@ -82,11 +90,9 @@ Template.volunteerPanel.events({
 		FlowRouter.go("VolunteerProfile");
 	},
 
-	/*
-	"click #vp_team": function(){
-		FlowRouter.go("DevTeam");
+	"click #vp_shifts": function(){
+		FlowRouter.go("VolunteerShifts");
 	},
-	*/
 
 	"click #vp_logout": function(){
 		FlowRouter.go("Logout");
