@@ -40,6 +40,22 @@
 				</div>
 			{{/with}}
 			{{#if teamValidated}}
+				{{#if validPayment}}
+				{{else}}
+					<div class="col-10 col-md-6 dashboard-opt p-3 m-3" id="dash-team-payment">
+						<div class="row justify-content-center align-items-center m-0 vh-20">
+							<div class="col-4 text-center">
+								<i class="far fa-credit-card fa-3x"></i>
+							</div>
+							<div class="col-8 text-center">
+								<span class="f-white fs-3 fw-4">{{_ "dash-team-payment"}}</span>
+							</div>
+							<div class="col-12 text-left">
+								<span class="f-white fs-1 fw-4">{{_ "dash-team-payment-desc"}}</span>
+							</div>
+						</div>
+					</div>
+				{{/if}}
 				<div class="col-10 col-md-6 dashboard-warning p-3 m-3">
 					<div class="row justify-content-center align-items-center m-0 vh-20">
 						<div class="col-4 text-center">
@@ -53,6 +69,21 @@
 						</div>
 					</div>
 				</div>
+				{{#if validPayment}}
+					<div class="col-10 col-md-6 dashboard-warning p-3 m-3">
+						<div class="row justify-content-center align-items-center m-0 vh-20">
+							<div class="col-4 text-center">
+								<i class="f-green far fa-credit-card fa-3x"></i>
+							</div>
+							<div class="col-8 text-center">
+								<span class="f-white fs-3 fw-4">{{_ "dash-team-payment-valid"}}</span>
+							</div>
+							<div class="col-12 text-left">
+								<span class="f-white fs-1 fw-4">{{_ "dash-team-payment-valid-desc"}}</span>
+							</div>
+						</div>
+					</div>
+				{{/if}}
 			{{else}}
 				{{#if teamPending}}
 					<div class="col-10 col-md-6 dashboard-warning p-3 m-3">
@@ -408,4 +439,69 @@
 			</div>
 		{{/each}}
 	</div>
+</template>
+
+<template name="dash_team_payment">
+	<div class="row justify-content-center align-items-start m-0">
+		<div class="col-12 text-left p-0 col-md-9">
+			<span class="f-white fs-6 fw-6">{{_ "dash-team-payment"}}</span>
+		</div>
+		<div class="col-12 text-left p-0 mt-2 mb-1 col-md-3 text-md-right mb-md-0 mt-md-0">
+			<a href="/dashboard/dev/team">
+				<button class="form-submit cp mt-2 mb-0">
+					{{_ "dash-team-invite-cancel"}}
+				</button>
+			</a>
+		</div>
+	</div>
+	<hr class="red f-red" style="height:2px;border:none;">
+	{{#if Template.subscriptionsReady}}
+
+			{{#if isFree}}
+				<p class="f-white fs-3 fw-4">{{_ "dash-team-payment-free"}}</p>
+			{{else}}
+				{{#if alreadyPaid}}
+					<p class="f-white fs-3 fw-4">{{_ "dash-team-payment-already-paid"}}</p>
+				{{else}}
+					<p class="f-white fs-2 fw-4">{{_ "dash-team-payment-1"}}</p>
+					<p class="f-white fs-3 fw-4">{{_ "dash-team-payment-2"}}</p>
+					<p class="f-white fs-3 fw-4 mb-1 hvr-white-to-red">{{_ "dash-team-payment-iban"}}</p>
+					<p class="f-white fs-3 fw-4 mb-1 hvr-white-to-red">{{_ "dash-team-payment-name"}}</p>
+					<p class="f-white fs-3 fw-4 hvr-white-to-red">{{_ "dash-team-payment-value" value}}</p>
+					<p class="f-white fs-2 fw-4 mb-2">{{_ "dash-team-payment-3"}}</p>
+					<p class="f-white fs-2 fw-4 mb-1">
+						{{_ "dash-team-payment-subject-intro"}}
+						<span class="hvr-white-to-red">{{_ "dash-team-payment-subject"}}</span>
+					</p>
+					<p class="f-white fs-2 fw-4 mb-2">
+						{{_ "dash-team-payment-mail-intro"}}
+						<a href="mailto:breakingdev@neeti.tecnico.ulisboa.pt" target="_blank">
+							<span class="hvr-white-to-red">{{_ "dash-team-payment-mail"}}</span>
+						</a>
+					</p>
+					<p class="f-white fs-2 fw-4">{{_ "dash-team-payment-4"}}</p>
+					<hr class="red f-red" style="height:2px;border:none;">
+					{{#if hasCode}}
+						<p class="f-white fs-2 fw-4">
+							{{_ "dash-team-payment-already-code"}}
+							<span class="hvr-white-to-red fw-6">{{code}}</span>
+						</p>
+					{{else}}
+						<form id="dash-team-payment-code" autocomplete="off">
+					    	<input class="form-input" type="text" name="code" placeholder="{{_ 'dash-team-payment-code-holder'}}" style="width: 40%; text-align: center;"/>
+					    	<button class="form-submit m-3 cp">{{_ "dash-team-payment-code-submit"}}</button>
+						</form>
+					{{/if}}
+				{{/if}}
+			{{/if}}
+		
+	{{else}}
+		<div class="row justify-content-center align-items-center m-0 vh-50">
+			<div class="col-12 text-center">
+				<i class="fas fa-circle-notch fa-spin fa-5x m-3"></i>
+				<p class="f-white fs-3 fw-4">{{_ "loading"}}</p>
+			</div>
+		</div>
+	{{/if}}
+
 </template>

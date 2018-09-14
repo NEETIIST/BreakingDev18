@@ -2,7 +2,7 @@ import './team.html';
 
 import { Teams } from '/imports/api/teams/teams.js';
 import { Devs } from '/imports/api/devs/devs.js';
-
+import { Promocodes } from '/imports/api/promocodes/promocodes.js';
 
 Template.dash_team.onRendered(function(){
 	var self = this;
@@ -63,7 +63,11 @@ Template.dash_team_manage.helpers({
 		let dev = Devs.findOne({"user":Meteor.userId()});
 		let team = Teams.findOne({"_id":dev.team});
 		return team.validated;
-	}
+	},
+	validPayment(){
+		let dev = Devs.findOne({"user":Meteor.userId()});
+		return dev.payment;
+	},
 });
 
 Template.dash_team_manage.events({
@@ -117,6 +121,9 @@ Template.dash_team_manage.events({
 	            }
         	});
 		}
+	},
+	'click #dash-team-payment': function(){
+		FlowRouter.go("DevTeamPayment");
 	},
 })
 
@@ -298,3 +305,69 @@ Template.dash_team_find.events({
 		}
 	},
 });
+
+// Team Payment
+
+// Team Find
+Template.dash_team_payment.onRendered(function(){
+	var self = this;
+	self.autorun(function(){
+		self.subscribe('promocodes.own');
+	});
+});
+
+Template.dash_team_payment.helpers({
+	code(){
+		return ( Promocodes.findOne({"user": Meteor.userId()}).code );
+	},	
+	hasCode(){
+		return ( Promocodes.find({"user": Meteor.userId()}).count() != 0 )
+	},
+	value: function(){
+		let pc = Promocodes.findOne({"user": Meteor.userId()})
+		if ( pc == undefined )
+			return 10;
+		else
+			return (10 - pc.value);
+	},
+	isFree: function(){
+		let pc = Promocodes.findOne({"user": Meteor.userId()})
+		if ( pc != undefined)
+			return ( pc.value == 10 )
+		return false;
+	},
+	alreadyPaid: function(){
+		let dev = Devs.findOne({"user":Meteor.userId()});
+		return dev.payment;
+	},
+});
+
+Template.dash_team_payment.events({
+	'submit #dash-team-payment-code': function(event) {
+	    // Prevent default browser form submit
+	    event.preventDefault();
+	 
+	    // Get value from form element
+	    const target = event.target;
+	    const code = target.code.value;
+	 
+	    // Meteor Call Processing
+	    Meteor.call("usePromocode", code, function (err, data) {
+            if(err){
+            	console.log(err);
+            	if ( err.error=="already-used" )
+            		alert(TAPi18n.__('dash-team-payment-code-already-used'));
+            	else if ( err.error=="doesnt-exist" )
+            		alert(TAPi18n.__('dash-team-payment-code-doesnt-exist'));
+            	else
+                	alert("Error: " + err);
+            }else{
+                alert(TAPi18n.__('dash-team-payment-code-success'));
+                //FlowRouter.go("DevTeam");
+            }
+    	});
+	 
+	    // Clear form
+	    target.code.value = '';
+	},
+})

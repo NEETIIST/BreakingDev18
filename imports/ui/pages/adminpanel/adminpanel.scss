@@ -18,3 +18,18 @@
 	max-height: 8vh;
 	width: auto;
 }
+
+.strikeout {
+  font-size: inherit;
+  line-height: inherit;
+  position: relative;
+}
+.strikeout::after {
+  border-bottom: 0.15em solid white;
+  content: "";
+  left: 0;
+  margin-top: calc(0.1em / 2 * -1);
+  position: absolute;
+  right: 0;
+  top: 50%;
+}

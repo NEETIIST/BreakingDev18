@@ -185,6 +185,29 @@
 	"dash-team-pending-desc": "A inscrição da tua equipa está à espera de ser confirmada pela organização. Mantem-te atento.",
 	"dash-team-validated": "Inscrição Confirmada",
 	"dash-team-validated-desc": "A tua equipa está confirmada no BreakingDev!",
+	"dash-team-payment": "Efetuar Pagamento",
+	"dash-team-payment-desc": "Efetua o pagamento para terminares a inscrição",
+	"dash-team-payment-1": "Para terminares o processo de inscrição no BreakingDev deves transferir para a organização o valor correspondente à tua inscrição e enviar por e-mail o comprovativo de transferência. Cada membro da equipa deve fazer a sua transferência individualmente. Se tiveres um código promocional, coloca-o no final da página.",
+	"dash-team-payment-2": "A transferência deve ser feita para a seguinte conta:",
+	"dash-team-payment-iban": "IBAN: PT50 0036 0106 99100060511 42",
+	"dash-team-payment-name": "None: NUC EST ENG TELECOMUNICAÇÕES IST",
+	"dash-team-payment-value": "Valor: %s €",
+	"dash-team-payment-3": "Depois de efetuares a transferência, envia o comprovativo por email:",
+	"dash-team-payment-subject-intro": "Com o assunto:",
+	"dash-team-payment-subject": " [Pagamento Inscrição] <username>",
+	"dash-team-payment-mail-intro": "Para o endereço:",
+	"dash-team-payment-mail": "breakingdev@neeti.tecnico.ulisboa.pt",
+	"dash-team-payment-4": "Deverás receber uma resposta em cerca de 24 horas. Também podes enviar qualquer dúvida para este endereço e responderemos assim que possível.",
+	"dash-team-payment-code-submit": "Aplicar código",
+	"dash-team-payment-code-holder": "Código Promocional",
+	"dash-team-payment-valid": "Pagamento Efetuado",
+	"dash-team-payment-valid-desc": "O teu pagamento já foi processado.",
+	"dash-team-payment-free": "Por teres usado um código promocional com um desconto de 100% da inscrição, o teu pagamento encontra-se automaticamente processado e não precisas de efetuar nenhuma transferência, o teu processo de inscrição está terminado. Estamos à tua espera no BreakingDev!",
+	"dash-team-payment-already-code": "Está a ser aplicado o código promocional: ",
+	"dash-team-payment-already-paid": "O teu pagamento já foi confirmado pela organização, isto significa que o teu processo de inscrição está terminado. Estamos à tua espera no BreakingDev!",
+	"dash-team-payment-code-success": "Código aplicado com sucesso.",
+	"dash-team-payment-code-already-used": "Este código já foi utilizado.",
+	"dash-team-payment-code-doesnt-exist": "Este código não existe.",
 
 	// Admin Panel
 	"ap-overview": "Overview",
@@ -201,7 +224,7 @@
 	"ap-devs-confirm-payment": "Confirmar Pagamento",
 	"ap-devs-confirm-payment-success": "Pagamento Confirmado com Sucesso",
 	"ap-devs-cancel-payment": "Cancelar Pagamento",
-	"ap-devs-cancel-payment-success": "Pagamento Confirmado com Sucesso",
+	"ap-devs-cancel-payment-success": "Pagamento Cancelado com Sucesso",
 	"ap-devs-seemore": "Ver Perfil",
 	"ap-devs-confirmed": "Confirmado",
 	"ap-devs-email": "Enviar E-mail",
@@ -228,6 +251,13 @@
 	"ap-shifts-reopen": "Reabrir Turno",
 	"ap-shifts-close": "Fechar Turno",
 	"ap-shifts-remove": "Remover Turno",
+	"ap-promocodes": "Promo Codes",
+	"ap-promocodes-add": "Adicionar código:",
+	"ap-promocodes-newcode": "Adicionar",
+	"ap-promocodes-available": "Disponíveis",
+	"ap-promocodes-used": "Utilizados",
+	"ap-promocodes-delete": "Apagar Código",
+
 
 	// Teams Collection
 	"teams-team-name": "Nome da Equipa",
@@ -261,6 +291,10 @@
 	"volunteers-email": "E-Mail",
 	"volunteers-pending": "Pendente",
 	"volunteers-approved": "Aprovado",
+
+	// Promocodes Collection
+	"promocodes-code": "Código",
+	"promocodes-value": "Valor",
 
 	// Volunteer Panel
 	"vp-overview": "Overview",
@@ -303,6 +337,9 @@
 	"404-title": "Página Não Encontrada",
 	"404-desc": "Huuum, alguma coisa não correu bem.",
 	"404-goback": "Voltar à página inicial",
+
+	// Misc
+	"loading": "A carregar",
 
 	// FAQ Page
 	"faq-title": "Frequently Asked Questions",

@@ -1,0 +1,67 @@
+<template name="ap_promocodes">
+    <div class="row justify-content-center align-items-start m-0">
+    	<div class="col-10 p-0">
+    		<div class="spacer-4"></div>
+    		<p class="f-white fs-6 fw-6 mb-0 flh-2">{{_ "ap-promocodes"}}</p>
+    		<hr class="red f-red" style="height:2px;border:none;">
+    		<form id="ap-promocodes" autocomplete="off">
+    			<div class="row justify-content-start align-items-center m-0 vh-10 f-white">    			
+	    			<div class="col-4">
+	    				<p class="fs-1 fw-4 mb-0 flh-2">{{_ "ap-promocodes-add"}}</p>
+	    			</div>
+	    			<div class="col-3">
+	    				<input class="form-input mb-2" type="text" name="code" placeholder="{{_ 'promocodes-code'}}"/>
+	    			</div>
+	    			<div class="col-3">
+	    				<input class="form-input mb-2" type="number" name="value" placeholder="{{_ 'promocodes-value'}}"/>
+	    			</div>
+	    			<div class="col-2 text-right">
+	    				<button class="form-submit mx-0 my-3 cp">
+	    					<i class="fas fa-check fs-4 cp p-0 p-md-1" title="{{_ 'ap-promocodes-newcode'}}"></i>
+	    				</button>
+	    			</div>
+    			</div>
+    		</form>
+    		<hr class="red f-red" style="height:2px;border:none;">
+			<div class="row justify-content-center align-items-start m-0">
+	    		<div class="col-12 col-md-5 p-0 mx-0">
+	    			<p class="f-white fs-2 fw-4 mb-0 flh-2 text-center">{{_ "ap-promocodes-available"}}</p>
+		    		{{#each promocode}}
+		    			<div class="row justify-content-start align-items-center team-list mx-0 my-3 py-2">
+			    			<div class="col-8 col-md-9 text-left">
+			    				<span class="fs-2 fw-6 mb-0 hvr-white-to-red">
+			    					{{code}}
+			    					<span class="fw-4 f-white">({{value}}€)</span>
+			    				</span>
+			    			</div>
+			    			<div class="col-4 col-md-3 text-right order-1 order-md-2">
+			    				<i class="fas fa-times mr-1 cp hvr-white-to-red" title="{{_ 'ap-promocodes-delete'}}" id="cancel-code"></i>
+			    			</div>
+			    		</div>
+		    		{{/each}}
+		    	</div>
+		    	<div class="col-0 col-md-1 p-0"></div>
+		    	<div class="col-12 col-md-6 p-0 mx-0">
+		    		<p class="f-white fs-2 fw-4 mb-0 flh-2 text-center">{{_ "ap-promocodes-used"}}</p>
+		    		{{#each usedPromocode}}
+		    			<div class="row justify-content-start align-items-center team-list mx-0 my-3 py-2">
+			    			<div class="col-5 col-md-5 text-left">
+			    				<span class="fs-2 fw-6 mb-0 hvr-white-to-red">
+			    					{{code}}
+			    					<span class="fw-4 f-white">({{value}}€)</span>
+			    				</span>
+			    			</div>
+			    			<div class="col-5 col-md-6 text-center">
+			    				<i class="fas fa-user f-white mr-2"></i>
+			    				<span class="f-white fs-2 fw-4 mb-0">{{username user}}</span>
+			    			</div>
+			    			<div class="col-2 col-md-1 text-right order-1 order-md-2">
+			    				<i class="fas fa-times mr-1 cp hvr-white-to-red" title="{{_ 'ap-promocodes-delete'}}" id="cancel-code"></i>
+			    			</div>
+			    		</div>
+		    		{{/each}}
+		    	</div>
+	    	</div>
+    	</div>
+    </div>
+</template>

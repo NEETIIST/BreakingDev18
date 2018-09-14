@@ -125,6 +125,19 @@ FlowRouter.route('/admin/shifts', {
   	},
 });
 
+FlowRouter.route('/admin/promocodes', {
+	name: 'AdminPromocodes',
+  	action() {
+  		if ( Meteor.userId() )
+  		{
+			BlazeLayout.render('adminPanel', {ap_content:"ap_promocodes"});
+			Session.set("ap_activeMenu","ap_promocodes");
+		}
+		else
+			FlowRouter.go("Login");
+  	},
+});
+
 FlowRouter.route('/dashboard', {
 	name: 'Dashboard',
 	action() {
@@ -236,6 +249,19 @@ FlowRouter.route('/dashboard/dev/team/join/:number', {
 		{
 			Session.set("dash_activeMenu","dash_team");
 			BlazeLayout.render('dashboard', {dash_content:"dash_team", team_option:"dash_team_join"});
+		}
+		else
+			FlowRouter.go("Login");
+	},
+});
+
+FlowRouter.route('/dashboard/dev/team/payment', {
+	name: 'DevTeamPayment',
+	action() {
+		if ( Meteor.userId() )
+		{
+			Session.set("dash_activeMenu","dash_team");
+			BlazeLayout.render('dashboard', {dash_content:"dash_team", team_option:"dash_team_payment"});
 		}
 		else
 			FlowRouter.go("Login");

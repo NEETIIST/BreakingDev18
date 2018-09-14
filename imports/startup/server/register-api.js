@@ -17,3 +17,6 @@ import '../../api/volunteers/server/publications.js';
 
 import '../../api/shifts/methods.js';
 import '../../api/shifts/server/publications.js';
+
+import '../../api/promocodes/methods.js';
+import '../../api/promocodes/server/publications.js';
