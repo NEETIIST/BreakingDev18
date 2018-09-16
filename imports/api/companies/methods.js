@@ -1,4 +1,4 @@
-import { Companies } from './comapnies.js';
+import { Companies } from './companies.js';
 
 Meteor.methods({
 

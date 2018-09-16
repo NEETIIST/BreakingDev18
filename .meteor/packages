@@ -52,3 +52,6 @@ gildaspk:simpleschema-tapi18n-labels
 gwendall:autoform-i18n
 momentjs:moment
 matb33:collection-hooks
+
+# Uploads
+ostrio:files
