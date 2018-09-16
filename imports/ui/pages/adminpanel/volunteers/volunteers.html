@@ -25,6 +25,9 @@
 	    				{{#if pending}}
 	    					<i class="fas fa-user-check mr-1 cp hvr-white-to-red" title="{{_ 'ap-volunteers-approve'}}" id="confirm-aplication"></i>
 	    				{{/if}}
+	    				{{#if nothing}}
+	    					<i class="fas fa-exclamation-triangle mr-1 cp hvr-white-to-red" title="{{_ 'ap-volunteers-force'}}" id="force-aplication"></i>
+	    				{{/if}}
 	    				<a href="/admin/email/{{username}}">
     						<i class="fas fa-envelope hvr-white-to-red cp mx-2 cp" title="{{_ 'ap-devs-email'}}"></i>
     					</a>

@@ -20,3 +20,6 @@ import '../../api/shifts/server/publications.js';
 
 import '../../api/promocodes/methods.js';
 import '../../api/promocodes/server/publications.js';
+
+import '../../api/companies/methods.js';
+import '../../api/companies/server/publications.js';

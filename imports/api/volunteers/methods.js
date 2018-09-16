@@ -57,6 +57,14 @@ Meteor.methods({
 		}
 	},
 
+	applyVolunteerAdmin: function(id){
+		let vol = Volunteers.findOne({"_id":id});
+		if ( ! Roles.userIsInRole(this.userId, "staff") )
+			throw new Meteor.Error('not-staff', "User can't perform this action");
+		else
+			Volunteers.update(vol._id,{'$set':{pending:true}});
+	},
+
 	approveVolunteer: function(id)
 	{
 		let vol = Volunteers.findOne({"_id":id});

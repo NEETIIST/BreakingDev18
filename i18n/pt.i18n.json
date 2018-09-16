@@ -242,6 +242,8 @@
 	"ap-volunteers-cancel-success": "Voluntário cancelado",
 	"ap-volunteers-pending": "Candidatura Pendente",
 	"ap-volunteers-approved": "Candidatura Aceite",
+	"ap-volunteers-force": "Forçar Candidatura (não usar)",
+	"ap-volunteers-force-success": "Candidatura forçada com sucess",
 	"ap-shifts": "Turnos",
 	"ap-shifts-add": "Novo Turno:",
 	"ap-shifts-day": "Dia",
