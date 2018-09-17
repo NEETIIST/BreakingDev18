@@ -7,6 +7,6 @@ Meteor.publish('companies.own', function(){
 
 //Admin Use
 Meteor.publish('companies.all', function(){
-	if (Roles.userIsInRole( this.userId, 'companies'))
+	if (Roles.userIsInRole( this.userId, 'staff'))
 		return Companies.find();
 });
