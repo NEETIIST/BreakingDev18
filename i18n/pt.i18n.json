@@ -259,7 +259,17 @@
 	"ap-promocodes-available": "Disponíveis",
 	"ap-promocodes-used": "Utilizados",
 	"ap-promocodes-delete": "Apagar Código",
-
+	"ap-companies": "Empresas",
+	"ap-companies-add": "Adicionar Empresa",
+	"ap-companies-add-success": "Empresa adicionada com successo",
+	"ap-companies-add-submit": "Criar Empresa",
+	"ap-companies-edit": "Editar Empresa",
+	"ap-companies-edit-success": "Informações editadas com sucesso",
+	"ap-companies-edit-submit": "Confirmar Alterações",
+	"ap-companies-seemore": "Ver Página da Empresa",
+	"ap-companies-generate-code": "Gerar chave de accesso",
+	"ap-companies-remove-code": "Apagar chave",
+	"ap-companies-goback": "Voltar Atrás",
 
 	// Teams Collection
 	"teams-team-name": "Nome da Equipa",
@@ -334,6 +344,20 @@
 	"vp-shifts-pending-desc": "Ainda não te foi atribuído nenhum turno, mantém-te atento",
 	"vp-shifts-next": "Dia %s das %s às %s",
 	"vp-shifts-next-desc": "Este é o teu próximo turno. Ficamos à tua espera no recinto.",
+
+	// Companies Collection
+	"companies-name": "Nome da Empresa",
+	"companies-short": "Nome curto",
+	"companies-work": "Trabalho",
+	"companies-work-desc": "Uma breve descrição do tipo de trabalho levado a cabo na empresa",
+	"companies-search": "À procura de",
+	"companies-search-desc": "Um curto resumo do tipo de pessoas que está à procura para a sua empresa",
+	"companies-category": "Categoria",
+	"companies-category-desc": "Qual o tamanho da sua empresa? Multinacional? Start-up?",
+	"companies-website": "Website",
+	"companies-email": "E-mail",
+	"companies-members": "Membros",
+
 
 	//404
 	"404-title": "Página Não Encontrada",
