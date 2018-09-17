@@ -35,50 +35,53 @@ CompaniesSchema = new SimpleSchema({
         optional: true,
         label: TAPi18n.__('companies-work'),
     },
-    search: {
-        type: String,
-        autoform: {
-            rows: 3,
-            placeholder: TAPi18n.__('companies-work-search')
-        },
-        optional: true,
-        label: TAPi18n.__('companies-search'),
-    },
-    category: {
-        type: String,
-        autoform: {
-            placeholder: TAPi18n.__('companies-work-category')
-        },
-        optional: true,
-        label: TAPi18n.__('companies-category'),
-    },
-    website: {
-        type: String,
-        optional: true,
-        label: TAPi18n.__('companies-website'),
-    },
-    email: {
-        type: String,
-        optional: true,
-        label: TAPi18n.__('companies-email'),
-    },
-    logo: {
-        type: String,
-        //optional: true,
-        autoform: {
-            afFieldInput: {
-                type: 'fileUpload',
-                collection: 'Images',
-                uploadTemplate: 'uploadForm',
-            },
-        },
-        label: TAPi18n.__('companies-logo'),
-    },
-    members: {
-		type: Array,
-    	autoform: { omit:true },
-    	optional: true,
-        label: TAPi18n.__('companies-members'),
+  search: {
+      type: String,
+      autoform: {
+          rows: 3,
+          placeholder: TAPi18n.__('companies-work-search')
+      },
+      optional: true,
+      label: TAPi18n.__('companies-search'),
+  },
+  category: {
+      type: String,
+      autoform: {
+          placeholder: TAPi18n.__('companies-work-category')
+      },
+      optional: true,
+      label: TAPi18n.__('companies-category'),
+  },
+  website: {
+      type: String,
+      optional: true,
+      label: TAPi18n.__('companies-website'),
+  },
+  email: {
+      type: String,
+      optional: true,
+      label: TAPi18n.__('companies-email'),
+  },
+  logo: {
+      type: String,
+      //optional: true,
+  picture: {
+      type: String,
+      optional: true,
+      autoform: {
+          afFieldInput: {
+              type: 'fileUpload',
+              collection: 'Images',
+              uploadTemplate: 'uploadForm',
+          },
+      },
+      label: TAPi18n.__('companies-logo'),
+  },
+  members: {
+  type: Array,
+    autoform: { omit:true },
+    optional: true,
+      label: TAPi18n.__('companies-members'),
 	},
 	'members.$': { type: String },
     codes: {

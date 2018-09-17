@@ -42,7 +42,7 @@
 		    				<a href="/company/{{short}}">
 		    					<i class="fas fa-search hvr-white-to-red cp mx-1" title="{{_ 'ap-companies-seemore'}}"></i>
 		    				</a>
-                            <i class="fas fa-times f-red cp mx-1" title="{{_ 'ap-companies-delete'}}" id="ap-companies-delete"></i>
+                  <i class="fas fa-times f-red cp mx-1" title="{{_ 'ap-companies-delete'}}" id="ap-companies-delete"></i>
 		    				<!--
 		    				{{#if pending}}
 		    					<i class="fas fa-check hvr-white-to-red cp mx-1" id="validate-team" title="{{_ 'ap-teams-validate'}}"></i>
@@ -83,7 +83,7 @@
 					<fieldset>
 						{{> afQuickField name="name" class="form-input" autocomplete="off"}}
 						{{> afQuickField name="short" class="form-input" autocomplete="off"}}
-                        {{> afQuickField name="logo"}}
+            {{> afQuickField name="logo"}}
 					</fieldset>
 					<button type="submit" class="form-submit cp my-3" style="float:right">{{_ "ap-companies-add-submit"}}</button>
 				{{/autoForm}}
