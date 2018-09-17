@@ -18,6 +18,15 @@ Meteor.methods({
 		}
 	},
 
+	removeCompany: function(id){
+		if ( ! Roles.userIsInRole(this.userId, "staff") )
+			throw new Meteor.Error('not-staff', "User doesn't have permission for this");
+		else
+		{
+			Companies.remove(id);
+		}
+	},
+
 	editCompanyAdmin: function(doc)
 	{
 		let company = Companies.findOne({"_id":doc._id});

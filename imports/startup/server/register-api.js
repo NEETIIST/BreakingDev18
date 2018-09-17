@@ -23,3 +23,6 @@ import '../../api/promocodes/server/publications.js';
 
 import '../../api/companies/methods.js';
 import '../../api/companies/server/publications.js';
+
+import '../../api/images/methods.js';
+import '../../api/images/server/publications.js';

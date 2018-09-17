@@ -270,6 +270,9 @@
 	"ap-companies-generate-code": "Gerar chave de accesso",
 	"ap-companies-remove-code": "Apagar chave",
 	"ap-companies-goback": "Voltar Atrás",
+	"ap-companies-delete": "Apagar Empresa",
+	"ap-companies-delete-confirm": "Tem a certeza que quer apagar esta empresa? Isto é irreversível!",
+	"ap-companies-delete-success": "Empresa Apagada",
 
 	// Teams Collection
 	"teams-team-name": "Nome da Equipa",
@@ -357,7 +360,7 @@
 	"companies-website": "Website",
 	"companies-email": "E-mail",
 	"companies-members": "Membros",
-
+	"companies-logo": "Logotipo",
 
 	//404
 	"404-title": "Página Não Encontrada",
@@ -366,6 +369,9 @@
 
 	// Misc
 	"loading": "A carregar",
+	"uploading": "A fazer upload",
+  	"upload_sucess": "Upload concluído com sucesso do ficheiro: ",
+  	"upload_toobig": "Por favor usa um ficheiro de imagem com menos de 5 MB.",
 
 	// FAQ Page
 	"faq-title": "Frequently Asked Questions",
