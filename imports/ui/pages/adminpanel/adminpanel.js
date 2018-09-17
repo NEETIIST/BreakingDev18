@@ -8,6 +8,7 @@ import './volunteers/volunteers.js';
 import './shifts/shifts.js';
 import './promocodes/promocodes.js';
 import './companies/companies.js';
+import '../../components/uploadForm/uploadForm.js';
 
 Template.adminPanel.onRendered(function(){
 	$("html").css({ "overflow-y":"scroll" });
@@ -22,6 +23,7 @@ Template.adminPanel.onRendered(function(){
 			self.subscribe('shifts.all');
 			self.subscribe('promocodes.all');
 			self.subscribe('companies.all');
+			self.subscribe('files.images.all');
 		}
 		else if ( Roles.userIsInRole(Meteor.userId(), "nothing") )
 		{

@@ -1,6 +1,7 @@
 import './companies.html';
 
 import { Companies } from '/imports/api/companies/companies.js';
+import { Images } from '/imports/api/images/images.js';
 
 // Team Add
 Template.ap_companies.onRendered(function(){
@@ -14,6 +15,13 @@ Template.ap_companies.onRendered(function(){
 Template.ap_companies.helpers({
 	company(){
 		return Companies.find();
+	},
+	getImage(img)
+	{
+		console.log(this);
+		console.log(img);
+		console.log(Images.findOne({"_id":img}).link());
+		return Images.findOne({"_id":img}).link();
 	},
 });
 
@@ -38,6 +46,19 @@ Template.ap_companies.events({
 	        }
 		});
 	},
+
+	"click #ap-companies-delete": function(){
+		if ( confirm(TAPi18n.__('ap-companies-delete-confirm')) )
+		{
+			Meteor.call("removeCompany", this._id, function (err, data) {
+		        if(err){
+		            alert(err);
+		        }else{
+		            alert(TAPi18n.__('ap-companies-delete-success'));
+		        }
+			});
+		}
+	},
 });
 
 // Company Add
@@ -56,7 +77,7 @@ Template.ap_companies_add.helpers({
 
 AutoForm.addHooks(['addCompany'], {
     onSuccess: function(operation, result, template) {
-    	alert(TAPi18n.__('ap-company-add-success'));
+    	alert(TAPi18n.__('ap-companies-add-success'));
     	FlowRouter.go("AdminCompanies");	
     },
    	onError: function(operation, error, template) {
@@ -85,7 +106,7 @@ Template.ap_companies_edit.helpers({
 
 AutoForm.addHooks(['editCompany'], {
     onSuccess: function(operation, result, template) {
-    	alert(TAPi18n.__('ap-company-edit-success'));
+    	alert(TAPi18n.__('ap-companies-edit-success'));
     	FlowRouter.go("AdminCompanies");	
     },
    	onError: function(operation, error, template) {
