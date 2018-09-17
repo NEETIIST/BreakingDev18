@@ -5,12 +5,10 @@ import { ReactiveVar } from 'meteor/reactive-var';
 import { FilesCollection } from 'meteor/ostrio:files';
 
 Template.uploadForm.onRendered(function () {
-	console.log("RENDERED");
 	this.currentUpload = new ReactiveVar(false);
 	this.hasUploaded = new ReactiveVar(false);
 	this.justUploaded = new ReactiveVar(false);
 	//this.subscribe('files.images.all');
-	//this.subscribe('products');
 });
 
 Template.uploadForm.onCreated(function () {
@@ -35,6 +33,7 @@ Template.uploadForm.events({
 		if (e.currentTarget.files && e.currentTarget.files[0]) {
 			// We upload only one file, in case
 			// multiple files were selected
+			console.log("HERE");
 			var upload = Images.insert({
 				file: e.currentTarget.files[0],
 				streams: 'dynamic',
