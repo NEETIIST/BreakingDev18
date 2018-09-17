@@ -1,5 +1,6 @@
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
+import { Images } from '/imports/api/images/images.js';
 SimpleSchema.extendOptions(['autoform']);
 
 export const Companies = new Mongo.Collection( 'companies' );
@@ -61,19 +62,18 @@ CompaniesSchema = new SimpleSchema({
         optional: true,
         label: TAPi18n.__('companies-email'),
     },
-    /*
-    picture: {
+    logo: {
         type: String,
-        optional: true,
+        //optional: true,
         autoform: {
             afFieldInput: {
                 type: 'fileUpload',
                 collection: 'Images',
                 uploadTemplate: 'uploadForm',
             },
-        }
+        },
+        label: TAPi18n.__('companies-logo'),
     },
-    */
     members: {
 		type: Array,
     	autoform: { omit:true },
