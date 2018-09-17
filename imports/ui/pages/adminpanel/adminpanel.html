@@ -19,13 +19,13 @@
             </div>
         </div>
         <div class="col-12 col-lg-2 col-md-3 p-0 d-md-block position-fixed offset-lg-10 offset-md-9" id="menu-col">
-            <div class="row justify-content-center align-items-center m-0 vh-15">
+            <div class="row justify-content-center align-items-center m-0 vh-20">
                 <div class="col-10 col-md-12 text-md-right text-left">
                     <div class="spacer-2"></div>
                     {{> logged}}
                 </div>
             </div>
-            <div class="row justify-content-center align-items-start m-0 vh-65">
+            <div class="row justify-content-center align-items-start m-0 vh-80">
                 <div class="col-10 col-md-12 text-md-right text-left">
                 	<div class="spacer-2"></div>
                 	<div class="row justify-content-center align-items-center m-0 cp">
@@ -78,6 +78,14 @@
                     <div class="spacer-4"></div>
                     <div class="row justify-content-center align-items-center m-0 cp">
                         <div class="col-12 px-1">
+                            <span class="f-white fs-2 fw-4 {{isActiveMenu 'companies'}} p-1 px-2 my-2" id="ap_companies">
+                                {{_ "ap-companies"}}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="spacer-4"></div>
+                    <div class="row justify-content-center align-items-center m-0 cp">
+                        <div class="col-12 px-1">
                             <span class="f-white fs-2 fw-4 {{isActiveMenu 'email'}} p-1 px-2 my-2" id="ap_email">
                                 {{_ "ap-email"}}
                             </span>
@@ -93,11 +101,13 @@
                     </div>
                 </div>
             </div>
+            <!--
             <div class="row justify-content-center align-items-center m-0 vh-20">
                 <div class="col-10 text-center f-white">
                     {{> footer}}
                 </div>
             </div>
+            -->
         </div>
     </div>
 

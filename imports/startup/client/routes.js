@@ -138,6 +138,48 @@ FlowRouter.route('/admin/promocodes', {
   	},
 });
 
+FlowRouter.route('/admin/companies', {
+	name: 'AdminCompanies',
+  	action() {
+  		if ( Meteor.userId() )
+  		{
+			BlazeLayout.render('adminPanel', {ap_content:"ap_companies"});
+			Session.set("ap_activeMenu","ap_companies");
+		}
+		else
+			FlowRouter.go("Login");
+  	},
+});
+
+
+FlowRouter.route('/admin/companies/add', {
+	name: 'AdminCompaniesAdd',
+  	action() {
+  		if ( Meteor.userId() )
+  		{
+			BlazeLayout.render('adminPanel', {ap_content:"ap_companies_add"});
+			Session.set("ap_activeMenu","ap_companies");
+		}
+		else
+			FlowRouter.go("Login");
+  	},
+});
+
+FlowRouter.route('/admin/companies/edit/:short', {
+	name: 'AdminCompaniesEdit',
+  	action() {
+  		if ( Meteor.userId() )
+  		{
+			BlazeLayout.render('adminPanel', {ap_content:"ap_companies_edit"});
+			Session.set("ap_activeMenu","ap_companies");
+		}
+		else
+			FlowRouter.go("Login");
+  	},
+});
+
+
+
 FlowRouter.route('/dashboard', {
 	name: 'Dashboard',
 	action() {

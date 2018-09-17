@@ -26,7 +26,7 @@ Template.ap_devs.helpers({
 
 Template.ap_devs.events({
 	'click #confirm-payment': function(){
-		console.log(this);
+		//console.log(this);
 		Meteor.call("confirmPayment", this._id, function (err, data) {
 	        if(err){
 	            alert(err);
