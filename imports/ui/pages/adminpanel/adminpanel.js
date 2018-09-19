@@ -7,6 +7,8 @@ import './email/email.js';
 import './volunteers/volunteers.js';
 import './shifts/shifts.js';
 import './promocodes/promocodes.js';
+import './companies/companies.js';
+import '../../components/uploadForm/uploadForm.js';
 
 Template.adminPanel.onRendered(function(){
 	$("html").css({ "overflow-y":"scroll" });
@@ -20,6 +22,8 @@ Template.adminPanel.onRendered(function(){
 			self.subscribe('volunteers.all');
 			self.subscribe('shifts.all');
 			self.subscribe('promocodes.all');
+			self.subscribe('companies.all');
+			self.subscribe('files.images.all');
 		}
 		else if ( Roles.userIsInRole(Meteor.userId(), "nothing") )
 		{
@@ -93,6 +97,10 @@ Template.adminPanel.events({
 
 	"click #ap_promocodes": function(){
 		FlowRouter.go("AdminPromocodes");
+	},
+
+	"click #ap_companies": function(){
+		FlowRouter.go("AdminCompanies");
 	},
 
 	"click #ap_logout": function(){
