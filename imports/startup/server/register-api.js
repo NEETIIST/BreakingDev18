@@ -26,3 +26,6 @@ import '../../api/companies/server/publications.js';
 
 import '../../api/images/methods.js';
 import '../../api/images/server/publications.js';
+
+import '../../api/sponsors/methods.js';
+import '../../api/sponsors/server/publications.js';

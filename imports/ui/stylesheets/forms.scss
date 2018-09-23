@@ -35,3 +35,15 @@
  	box-shadow: 1px 1px 2px 0px rgba(28,28,28,0.75);
 	transition: 0.2s;
 }
+
+.af-file-upload-capture, .af-file-upload-capture:active, .af-file-upload-capture:focus{
+	background-color: $black;
+	color: white;
+	transition: 0.2s;
+	outline: none;
+}
+
+.af-file-upload-capture:hover{
+	border: 1px solid $primary-red;
+	transition: 0.2s;
+}

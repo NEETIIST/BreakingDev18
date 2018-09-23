@@ -55,8 +55,7 @@ Meteor.methods({
 
 	removeCode: function(code){
 		let company = Companies.findOne({"codes":code});
-		// User must be an admin
-		if ( ! Roles.userIsInRole(this.userId, "staff") )
+		if ( ! Roles.userIsInRole(this.userId, "staff")  )
 			throw new Meteor.Error('not-staff', "User doesn't have permission for this operation");
 		else
 		{

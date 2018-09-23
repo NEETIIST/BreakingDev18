@@ -93,6 +93,19 @@ Template.signupRoles.events({
         	});
 		}
 	},
+	'click #signup-sponsor': function(){
+		var pass = prompt("Access Code");
+		if ( Meteor.userId() )
+		{
+			Meteor.call('registerSponsor', pass, function (err, data) {
+	            if(err){
+	                alert("err : " + err);
+	            }else{
+	                FlowRouter.go("SponsorPanel");
+	            }
+        	});
+		}
+	},
 })
 
 // Helper Functions
