@@ -26,6 +26,7 @@ Template.sponsorPanel.onRendered(function(){
 			{
 				self.subscribe("sponsors.own");
 				self.subscribe("companies.own");
+				self.subscribe('files.images.all');
 			}
 			else if ( Roles.userIsInRole(Meteor.userId(), "volunteer") )
 			{

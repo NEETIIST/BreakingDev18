@@ -1,0 +1,112 @@
+<template name="company_profile">
+	
+	<div class="row justify-content-start align-items-center m-0"> 
+        <div class="col-3 offset-9 position-fixed d-block d-md-none" style="top: 0; right:0; z-index: 10">
+            <div class="row justify-content-start align-items-center m-0 vh-15">
+                <div class="col-12 text-center" id="open-menu">
+                    <i class="fas f-white fa-bars cp fa-2x menu-icon"></i>
+                </div>
+                <div class="col-12 text-center" id="close-menu" style="display:none">
+                    <i class="fas f-white fa-times cp fa-2x menu-icon"></i>
+                </div>
+            </div> 
+        </div>
+        <div class="col-lg-10 col-md-9 col-12 px-0" id="landing-content">
+            <div class="row justify-content-center align-items-start m-0 vh-100 black">
+            	<div class="col-10 text-left p-0">
+            		<div class="spacer-4"></div>
+            		{{#if Template.subscriptionsReady}}
+            			{{#with company}}	
+            				<div class="row justify-content-start align-items-center m-0 mb-2">
+            					<div class="col-12 col-md-4 text-center p-0">
+	                    			<img src="{{getImage logo}}" class="img-fluid px-3 py-0 m-0"/>
+	                    		</div>
+            					<div class="col-12 col-md-8 text-left text-md-center p-0">
+	                    			<span class="f-white fs-6 fw-6 mb-0 flh-1">{{name}}</span>
+	                    		</div>
+	                    	</div>
+	                    	<hr class="red f-red" style="height:2px;border:none;" >
+	                    	<div class="row justify-content-center align-items-start m-0 py-2">
+	                    		<div class="col-2 col-md-1 text-left my-2 p-0">
+	                    			<i class="f-white fa-fw fas fa-globe-americas fs-5 mr-3" title="{{_ 'companies-website'}}"></i>
+	                    		</div>
+	                    		<div class="col-10 col-md-5 text-left my-2 p-0">
+	                    			<a href="{{website}}" target="_blank">
+	                    				<span class="hvr-white-to-red fs-3 fw-4 mb-0 cp">{{website}}</span>
+	                    			</a>
+	                    		</div>
+	                    		<div class="col-2 col-md-1 text-left my-2 p-0">
+	                    			<i class="f-white fa-fw fas fa-envelope fs-5 mr-3" title="{{_ 'companies-email'}}"></i>
+	                    		</div>
+	                    		<div class="col-10 col-md-5 text-left my-2 p-0">
+	                    			<a href="mailto:{{email}}" target="_blank">
+	                    				<span class="hvr-white-to-red fs-3 fw-4 mb-0 company_profile">{{email}}</span>
+	                    			</a>
+	                    		</div>
+	                    	</div>
+	                    	<div class="row justify-content-center align-items-start mx-0 my-2">
+	                    		<div class="col-2 col-md-1 text-left my-2 p-0">
+	                    			<i class="f-white fa-fw fas fa-toolbox fs-5 mr-3" title="{{_ 'companies-work-desc'}}"></i>
+	                    		</div>
+	                    		<div class="col-10 col-md-11 text-left my-2 p-0">
+                    				<span class="f-white fs-3 fw-4 mb-0">{{work}}</span>
+	                    		</div>
+	                    	</div>
+	                    	<div class="row justify-content-center align-items-start mx-0 my-2">
+	                    		<div class="col-2 col-md-1 text-left my-2 p-0">
+	                    			<i class="f-white fa-fw fas fa-search fs-5 mr-3" title="{{_ 'companies-search-desc'}}"></i>
+	                    		</div>
+	                    		<div class="col-10 col-md-11 text-left my-2 p-0">
+                    				<span class="f-white fs-3 fw-4 mb-0">{{search}}</span>
+	                    		</div>
+	                    	</div>
+	                    	<div class="row justify-content-start align-items-start m-0 py-2">
+	                    		{{#each member}}
+		                    		<div class="col-12 col-md-3 text-left f-white my-2 p-0">
+		                    			<a href="/sponsor/{{this.username}}" class="hvr-white-to-red cp">
+			                    			<i class="fa-fw fas fa-user fs-5 mr-3" title="{{_ 'teams-member'}}"></i>
+			                    			<span class="fs-2 fw-4 mb-0">{{this.username}}</span>
+			                    		</a>
+		                    		</div>
+		                    	{{/each}}
+	                    	</div>
+            			{{/with}}
+            		{{else}}
+            			<div class="row justify-content-center align-items-center vh-50">
+	            			<div class="col-12 text-center">
+				    			<i class="fas fa-circle-notch fa-spin fa-5x m-3 f-white"></i>
+				   				<p class="f-white fs-3 fw-4">{{_ "loading"}}</p>
+				   			</div>
+			   			</div>
+            		{{/if}}
+            	</div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-2 col-md-3 p-0 d-md-block position-fixed offset-lg-10 offset-md-9" id="menu-col">
+            <div class="row justify-content-center align-items-center m-0 vh-20">
+                <div class="col-10 col-md-12 text-md-right text-left">
+                    <div class="spacer-4"></div>
+                    {{> logged}}
+                </div>
+            </div>
+            <div class="row justify-content-center align-items-center m-0 vh-60">
+                <div class="col-10 col-md-12 text-md-right text-left">
+                	<div class="row justify-content-center align-items-center m-0 cp">
+                        <div class="col-12 px-1">
+                            <span class="f-white fs-2 fw-4 menu-hover p-1 px-2 my-2" id="menu-goindex">
+                                {{_ "menu-goindex"}}
+                            </span>
+                        </div>
+                    </div>                    
+                    <div class="spacer-8"></div>
+                </div>
+            </div>
+            <div class="row justify-content-center align-items-center m-0 vh-20">
+                <div class="col-10 text-center f-white">
+                    {{> footer}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</template>

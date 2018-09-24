@@ -18,6 +18,8 @@ import '../../ui/pages/dev/dev.js';
 import '../../ui/pages/team/team.js';
 import '../../ui/pages/volunteer/volunteer.js';
 import '../../ui/pages/not-found/not-found.js';
+import '../../ui/pages/company/company.js';
+import '../../ui/pages/sponsor/sponsor.js';
 
 // Set up all routes in the app
 FlowRouter.route('/', {
@@ -470,6 +472,20 @@ FlowRouter.route('/team/:number', {
 	name: 'TeamDisplay',
 	action() {
 		BlazeLayout.render('team_profile');
+	},
+});
+
+FlowRouter.route('/company/:short', {
+	name: 'CompanyProfileDisplay',
+	action() {
+		BlazeLayout.render('company_profile');
+	},
+});
+
+FlowRouter.route('/sponsor/:username', {
+	name: 'SponsorProfileDisplay',
+	action() {
+		BlazeLayout.render('sponsor_profile');
 	},
 });
 

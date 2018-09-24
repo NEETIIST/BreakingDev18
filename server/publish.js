@@ -1,4 +1,5 @@
 import { Teams } from '/imports/api/teams/teams.js';
+import { Companies } from '/imports/api/companies/companies.js';
 
 //Admin User
 Meteor.publish("users.all", function () {
@@ -45,6 +46,15 @@ Meteor.publish("users.team.own",function(){
 Meteor.publish("users.sponsor", function(){
 	if (Roles.userIsInRole( this.userId, 'sponsor'))
 		return Meteor.users.find({},{fields:{"username":1, "emails":1}});
+});
+
+Meteor.publish("users.company",function(number){
+	let team = Companies.findOne({"short":number});
+	let members = [];
+	team.members.forEach(function(m){
+		members.push(m);
+	})
+	return Meteor.users.find({"_id":{$in: members}}, {fields:{"username":1}});
 });
 
 Meteor.publish("roles.all", function () {

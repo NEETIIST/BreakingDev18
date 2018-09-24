@@ -19,9 +19,9 @@ Template.ap_companies.helpers({
 	},
 	getImage(img)
 	{
-		console.log(this);
-		console.log(img);
-		console.log(Images.findOne({"_id":img}).link());
+		//console.log(this);
+		//console.log(img);
+		//console.log(Images.findOne({"_id":img}).link());
 		return Images.findOne({"_id":img}).link();
 	},
 });

@@ -110,6 +110,12 @@
 	"devs-food": "Restrições Alimentares",
 	"devs-food-desc": "Se tiveres algumas alergias ou preferências alimentares, diz-nos aqui.",
 	"devs-email": "E-Mail",
+	"devs-github": "Github",
+	"devs-github-desc": "Github Username",
+	"devs-linkedin": "LinkedIn",
+	"devs-linkedin-desc": "Linkedin Username",
+	"devs-twitter": "Twitter",
+	"devs-twitter-desc": "Twitter Username",
 
 	// Dashboard
 	"dash-overview": "Dashboard",
@@ -354,7 +360,7 @@
 	"companies-work": "Trabalho",
 	"companies-work-desc": "Uma breve descrição do tipo de trabalho levado a cabo na empresa",
 	"companies-search": "À procura de",
-	"companies-search-desc": "Um curto resumo do tipo de pessoas que está à procura para a sua empresa",
+	"companies-search-desc": "Um curto resumo do tipo de pessoas que a empresa procura",
 	"companies-category": "Categoria",
 	"companies-category-desc": "Qual o tamanho da sua empresa? Multinacional? Start-up?",
 	"companies-website": "Website",
@@ -379,6 +385,12 @@
 	"sp-logout": "Logout",
 	"sp-profile-edit": "Editar Perfil",
 	"sp-company-edit": "Editar Empresa",
+	"sp-teams": "Equipas",
+	"sp-devs": "Participantes",
+	"sp-company-desc": "Edite os dados da sua empresa",
+	"sp-profile-desc": "Edite os seus dados de perfil",
+	"sp-teams-desc": "Consulte a lista de equipas",
+	"sp-devs-desc": "Veja todos os participantes",
 
 	//404
 	"404-title": "Página Não Encontrada",

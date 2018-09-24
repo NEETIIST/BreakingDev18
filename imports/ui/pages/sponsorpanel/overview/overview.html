@@ -1,3 +1,70 @@
 <template name="sp_overview">
-	<p class="f-white">Lorem</p>
+	<div class="row justify-content-center align-items-center m-0 black vh-100">
+		<div class="col-10 text-left f-white">
+			<div class="row justify-content-center align-items-center m-0">
+				{{#with ownCompany}}
+					<div class="col-10 col-md-5 dashboard-opt p-3 m-3">
+						<a href="/dashboard/sponsor/company">
+							<div class="row justify-content-center align-items-center m-0 vh-20">
+								<div class="col-8 text-center">
+									<img src="{{getImage logo}}" class="img-fluid"/>
+								</div>
+								<div class="col-12 text-center">
+									<span class="f-white fs-1 fw-4">{{_ "sp-company-desc"}}</span>
+								</div>
+							</div>
+						</a>
+					</div>
+				{{/with}}
+				{{#with ownProfile}}
+					<div class="col-10 col-md-5 dashboard-opt p-3 m-3">
+						<a href="/dashboard/sponsor/profile">
+							<div class="row justify-content-center align-items-center m-0 vh-20">
+								<div class="col-4 text-center">
+									<i class="fas fa-user-alt fa-3x fa-fw"></i>
+								</div>
+								<div class="col-8 text-center">
+									<span class="f-white fs-3 fw-4">{{_ "sp-profile"}}</span>
+								</div>
+								<div class="col-12 text-left">
+									<span class="f-white fs-1 fw-4">{{_ "sp-profile-desc"}}</span>
+								</div>
+							</div>
+						</a>
+					</div>
+				{{/with}}
+				<div class="col-10 col-md-5 dashboard-opt p-3 m-3">
+					<a href="/dashboard/sponsor/teams">
+						<div class="row justify-content-center align-items-center m-0 vh-20">
+							<div class="col-4 text-center">
+								<i class="fas fa-users fa-3x fa-fw"></i>
+							</div>
+							<div class="col-8 text-center">
+								<span class="f-white fs-3 fw-4">{{_ "sp-teams"}}</span>
+							</div>
+							<div class="col-12 text-left">
+								<span class="f-white fs-1 fw-4">{{_ "sp-teams-desc"}}</span>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-10 col-md-5 dashboard-opt p-3 m-3">
+					<a href="/dashboard/sponsor/devs">
+						<div class="row justify-content-center align-items-center m-0 vh-20">
+							<div class="col-4 text-center">
+								<i class="fas fa-user-tag fa-fw fa-3x"></i>
+							</div>
+							<div class="col-8 text-center">
+								<span class="f-white fs-3 fw-4">{{_ "sp-devs"}}</span>
+							</div>
+							<div class="col-12 text-left">
+								<span class="f-white fs-1 fw-4">{{_ "sp-devs-desc"}}</span>
+							</div>
+						</div>
+					</a>
+				</div>
+
+			</div>
+		</div>
+	</div>
 </template>

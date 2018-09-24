@@ -76,16 +76,25 @@ DevsSchema = new SimpleSchema({
 		type: String,
 		optional:true,
 		label: TAPi18n.__('devs-github'),
+		autoform: {
+  			placeholder: TAPi18n.__('devs-github-desc')
+		},
 	},
 	twitter: {
 		type: String,
 		optional:true,
 		label: TAPi18n.__('devs-twitter'),
+		autoform: {
+  			placeholder: TAPi18n.__('devs-twitter-desc')
+		},
 	},
 	linkedin: {
 		type: String,
 		optional:true,
 		label: TAPi18n.__('devs-linkedin'),
+		autoform: {
+  			placeholder: TAPi18n.__('devs-linkedin-desc')
+		},
 	},
 	team: {
 		type: String,
