@@ -76,21 +76,42 @@ Template.dashboard.events({
 
 	'click #menu-goindex': function() {
 		FlowRouter.go("Index");
+		closeMenu();
 	},
 	
 	"click #dash_overview": function(){
 		FlowRouter.go("Dashboard");
+		closeMenu();
 	},
 
 	"click #dash_profile": function(){
 		FlowRouter.go("DevProfile");
+		closeMenu();
 	},
 
 	"click #dash_team": function(){
 		FlowRouter.go("DevTeam");
+		closeMenu();
 	},
 
 	"click #dash_logout": function(){
 		FlowRouter.go("Logout");
 	},
-})
+});
+
+function closeMenu()
+{
+	// Close Mobile
+	if ( $(window)[0].outerWidth < 768)
+	{
+		$("#close-menu").hide("fade", 200, function(){
+			$("#menu-col").hide("slide", {direction:"right"}, 1000, function(){
+				$("#open-menu").show("fade",200, function(){
+					$('html, body').animate({
+			        	scrollTop: $("#landing-"+newopt).offset().top + dir
+			    	}, 1000);
+				});
+			});
+		});
+	}
+}

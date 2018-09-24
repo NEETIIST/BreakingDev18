@@ -86,6 +86,7 @@ Meteor.methods({
                 let newCodes = comp.codes;
                 newCodes = newCodes.filter(e => e !== password);
                 Companies.update(comp._id, {'$set':{ codes: newCodes }});
+                Companies.update(comp._id, {'$push':{ members: this.userId }});
             }
         }
     },

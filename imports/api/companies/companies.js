@@ -39,7 +39,7 @@ CompaniesSchema = new SimpleSchema({
         type: String,
         autoform: {
             rows: 3,
-            placeholder: TAPi18n.__('companies-work-search-desc')
+            placeholder: TAPi18n.__('companies-search-desc')
         },
         optional: true,
         label: TAPi18n.__('companies-search'),
@@ -47,7 +47,7 @@ CompaniesSchema = new SimpleSchema({
     category: {
         type: String,
         autoform: {
-            placeholder: TAPi18n.__('companies-work-category-desc')
+            placeholder: TAPi18n.__('companies-category-desc')
         },
         optional: true,
         label: TAPi18n.__('companies-category'),
@@ -98,5 +98,13 @@ CompaniesSchema = new SimpleSchema({
 Companies.attachSchema( CompaniesSchema ); 
 
 Companies.publicFields = {
-	
+    name:1,
+    short:1,
+    work:1,
+    search:1,
+    category:1,
+    website:1,
+    email:1,
+    logo:1,
+    members:1	
 };

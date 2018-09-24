@@ -38,6 +38,19 @@ Meteor.methods({
 		}
 	},
 
+	editCompany: function(doc)
+	{
+		let company = Companies.findOne({"_id":doc._id});
+		if ( ! Roles.userIsInRole(this.userId, "sponsor") )
+			throw new Meteor.Error('not-sponsor', "User doesn't have permission for this operation");
+		else if ( !((company.members).includes(this.userId)) )
+			throw new Meteor.Error('not-member', "User doesn't have permission for this operation");
+		else
+		{
+			Companies.update(doc._id,doc.modifier);
+		}
+	},
+
 	generateCode: function(comp){
 
 		let company = Companies.findOne({"short":comp});

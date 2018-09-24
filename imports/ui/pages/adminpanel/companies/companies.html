@@ -113,7 +113,7 @@
     		
     		<hr class="red f-red" style="height:2px;border:none;">
     		{{#if Template.subscriptionsReady}}
-    			{{#autoForm collection=Companies doc=company id="editCompany" type="method-update" template="nothing" meteormethod="editCompanyAdmin" validation="browser"}}
+    			{{#autoForm collection=Companies doc=company id="editCompanyAdmin" type="method-update" template="nothing" meteormethod="editCompanyAdmin" validation="browser"}}
 					<fieldset>
 						{{> afQuickField name="name" class="form-input" autocomplete="off"}}
 						{{> afQuickField name="short" class="form-input" autocomplete="off"}}

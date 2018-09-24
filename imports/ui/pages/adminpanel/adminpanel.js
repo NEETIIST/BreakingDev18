@@ -24,6 +24,7 @@ Template.adminPanel.onRendered(function(){
 			self.subscribe('promocodes.all');
 			self.subscribe('companies.all');
 			self.subscribe('files.images.all');
+			self.subscribe('sponsors.all');
 		}
 		else if ( Roles.userIsInRole(Meteor.userId(), "nothing") )
 		{
@@ -72,38 +73,63 @@ Template.adminPanel.events({
 	},
 	
 	"click #ap_overview": function(){
+		closeMenu();
 		FlowRouter.go("AdminPanel");
 	},
 
 	"click #ap_devs": function(){
+		closeMenu();
 		FlowRouter.go("AdminDevs");
 	},
 
 	"click #ap_teams": function(){
+		closeMenu();
 		FlowRouter.go("AdminTeams");
 	},
 
 	"click #ap_volunteers": function(){
+		closeMenu();
 		FlowRouter.go("AdminVolunteers");
 	},
 
 	"click #ap_shifts": function(){
+		closeMenu();
 		FlowRouter.go("AdminShifts");
 	},
 
 	"click #ap_email": function(){
+		closeMenu();
 		FlowRouter.go("AdminEmail");
 	},
 
 	"click #ap_promocodes": function(){
+		closeMenu();
 		FlowRouter.go("AdminPromocodes");
 	},
 
 	"click #ap_companies": function(){
+		closeMenu();
 		FlowRouter.go("AdminCompanies");
 	},
 
 	"click #ap_logout": function(){
 		FlowRouter.go("Logout");
 	},
-})
+});
+
+function closeMenu()
+{
+	// Close Mobile
+	if ( $(window)[0].outerWidth < 768)
+	{
+		$("#close-menu").hide("fade", 200, function(){
+			$("#menu-col").hide("slide", {direction:"right"}, 1000, function(){
+				$("#open-menu").show("fade",200, function(){
+					$('html, body').animate({
+			        	scrollTop: $("#landing-"+newopt).offset().top + dir
+			    	}, 1000);
+				});
+			});
+		});
+	}
+}

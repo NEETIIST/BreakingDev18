@@ -2,6 +2,7 @@ import './companies.html';
 
 import { Companies } from '/imports/api/companies/companies.js';
 import { Images } from '/imports/api/images/images.js';
+import { Sponsors } from '/imports/api/sponsors/sponsors.js';
 
 // Team Add
 Template.ap_companies.onRendered(function(){
@@ -104,7 +105,7 @@ Template.ap_companies_edit.helpers({
 	},
 });
 
-AutoForm.addHooks(['editCompany'], {
+AutoForm.addHooks(['editCompanyAdmin'], {
     onSuccess: function(operation, result, template) {
     	alert(TAPi18n.__('ap-companies-edit-success'));
     	FlowRouter.go("AdminCompanies");	

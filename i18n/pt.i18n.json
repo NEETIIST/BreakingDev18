@@ -362,6 +362,24 @@
 	"companies-members": "Membros",
 	"companies-logo": "Logotipo",
 
+	// Sponsors Collection
+	"sponsors-name": "Nome",
+	"sponsors-job": "Cargo",
+	"sponsors-info": "Informação",
+	"sponsors-info-desc": "Alguma informação sobre si",
+	"sponsors-email": "Email",
+	"sponsors-github": "Github",
+	"sponsors-linkedin": "Linkedin",
+	"sponsors-twitter": "Twitter",
+
+	// Sponsors Panel
+	"sp-overview": "Overview",
+	"sp-profile": "Perfil",
+	"sp-company": "Empresa",
+	"sp-logout": "Logout",
+	"sp-profile-edit": "Editar Perfil",
+	"sp-company-edit": "Editar Empresa",
+
 	//404
 	"404-title": "Página Não Encontrada",
 	"404-desc": "Huuum, alguma coisa não correu bem.",

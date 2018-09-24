@@ -314,7 +314,36 @@ FlowRouter.route('/dashboard/sponsor', {
 	name: 'SponsorPanel',
   	action() {
 		if ( Meteor.userId() )
-			BlazeLayout.render('sponsorPanel');
+		{
+			BlazeLayout.render('sponsorPanel', {sp_content:"sp_overview"});
+			Session.set("sp_activeMenu","sp_overview");
+		}
+		else
+			FlowRouter.go("Login");
+  	},
+});
+
+FlowRouter.route('/dashboard/sponsor/profile', {
+	name: 'SponsorProfile',
+  	action() {
+		if ( Meteor.userId() )
+		{
+			BlazeLayout.render('sponsorPanel', {sp_content:"sp_profile"});
+			Session.set("sp_activeMenu","sp_profile");
+		}
+		else
+			FlowRouter.go("Login");
+  	},
+});
+
+FlowRouter.route('/dashboard/sponsor/company', {
+	name: 'SponsorCompany',
+  	action() {
+		if ( Meteor.userId() )
+		{
+			BlazeLayout.render('sponsorPanel', {sp_content:"sp_company"});
+			Session.set("sp_activeMenu","sp_company");
+		}
 		else
 			FlowRouter.go("Login");
   	},

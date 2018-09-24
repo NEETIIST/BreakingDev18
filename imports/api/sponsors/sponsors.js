@@ -2,7 +2,7 @@ import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 SimpleSchema.extendOptions(['autoform']);
 
-export const Sponsors = new Mongo.Collection( 'Sponsors' );
+export const Sponsors = new Mongo.Collection( 'sponsors' );
 
 Sponsors.allow({
 	insert() { return false; },
@@ -43,6 +43,11 @@ SponsorsSchema = new SimpleSchema({
 	      	placeholder: TAPi18n.__('sponsors-info-desc')
 	    },
 	    label: TAPi18n.__('sponsors-info'),
+	},
+	email: {
+		type: String,
+		optional:true,
+		label: TAPi18n.__('sponsors-email'),
 	},
 	github: {
 		type: String,
