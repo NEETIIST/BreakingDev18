@@ -74,7 +74,8 @@ Meteor.methods({
                 // Create Sponsor Profile Associated with this User
                 let sponsor = {
                     user:this.userId,
-                    company: comp._id
+                    company: comp._id,
+                    favorites: []
                 };
 
                 //console.log(sponsor);

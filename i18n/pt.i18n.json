@@ -391,6 +391,9 @@
 	"sp-profile-desc": "Edite os seus dados de perfil",
 	"sp-teams-desc": "Consulte a lista de equipas",
 	"sp-devs-desc": "Veja todos os participantes",
+	"sp-access-code": "Código de Acesso",
+	"sp-devs-unfavorite": "Remover de Favoritos",
+	"sp-devs-favorite": "Marcar como favorito",
 
 	//404
 	"404-title": "Página Não Encontrada",

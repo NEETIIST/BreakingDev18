@@ -94,7 +94,7 @@ Template.signupRoles.events({
 		}
 	},
 	'click #signup-sponsor': function(){
-		var pass = prompt("Access Code");
+		var pass = prompt(TAPi18n.__('sp-access-code'));
 		if ( Meteor.userId() )
 		{
 			Meteor.call('registerSponsor', pass, function (err, data) {

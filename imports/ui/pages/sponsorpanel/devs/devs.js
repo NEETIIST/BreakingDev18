@@ -2,6 +2,7 @@ import './devs.html'
 
 import { Teams } from '/imports/api/teams/teams.js';
 import { Devs } from '/imports/api/devs/devs.js';
+import { Sponsors } from '/imports/api/sponsors/sponsors.js';
 
 Template.sp_devs.onRendered(function(){
 	var self = this;
@@ -26,30 +27,34 @@ Template.sp_devs.helpers({
 	},
 	teamName(){
 		return Teams.findOne({"_id":this.team}).team_name;
+	},
+	isFavorite()
+	{
+		let sponsor =  Sponsors.findOne({"user":Meteor.userId()});
+		return (sponsor.favorites).includes(this.user);
 	}
 });
 
 Template.sp_devs.events({
-	/*
-	'click #confirm-payment': function(){
-		//console.log(this);
-		Meteor.call("confirmPayment", this._id, function (err, data) {
+	
+	'click #sp-devs-makefavorite': function(){
+		Meteor.call("addToFavorites", this.user, function (err, data) {
 	        if(err){
 	            alert(err);
 	        }else{
-	            alert(TAPi18n.__('ap-devs-confirm-payment-success'));
+	            //alert(TAPi18n.__('ap-devs-confirm-payment-success'));
 	        }
 		});
 	},
 
-	'click #cancel-payment': function(){
-		Meteor.call("cancelPayment", this._id, function (err, data) {
+	'click #sp-devs-removefavorite': function(){
+		Meteor.call("removeFromFavorites", this.user, function (err, data) {
 	        if(err){
 	            alert(err);
 	        }else{
-	            alert(TAPi18n.__('ap-devs-cancel-payment-success'));
+	            //alert(TAPi18n.__('ap-devs-confirm-payment-success'));
 	        }
 		});
 	},
-	*/
+
 });

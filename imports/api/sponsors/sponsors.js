@@ -64,6 +64,12 @@ SponsorsSchema = new SimpleSchema({
 		optional:true,
 		label: TAPi18n.__('sponsors-linkedin'),
 	},
+	favorites: {
+		type: Array,
+    	autoform: { omit:true },
+    	optional: true,
+	},
+	'favorites.$': { type: String },
 	
 });
 

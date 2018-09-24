@@ -35,4 +35,31 @@ Meteor.methods({
 		}
 	},
 
+	addToFavorites: function(id)
+	{
+		let sponsor = Sponsors.findOne({"user":this.userId});
+		if ( sponsor != undefined )
+		{
+			let fav = sponsor.favorites;
+			fav.push(id);
+			Sponsors.update(sponsor._id,{'$set':{favorites:fav}});
+		}
+	},
+
+	removeFromFavorites: function(id)
+	{
+		var sponsor = Sponsors.findOne({"user":this.userId});
+		if ( sponsor != undefined )
+		{
+			var favs = sponsor.favorites ;
+			var search_term = id;
+			for (var i=favs.length-1; i>=0; i--) {
+				if (favs[i] === search_term) {
+				    favs.splice(i, 1);
+				}
+			}
+			Sponsors.update(sponsor._id,{'$set':{favorites:favs}});
+		}
+	},
+
 });

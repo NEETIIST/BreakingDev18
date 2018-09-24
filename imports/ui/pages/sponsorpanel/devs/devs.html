@@ -19,9 +19,11 @@
 								-->
 			    			</div>
 			    			<div class="col-4 col-md-3 text-right order-1 order-md-2">
-			    				<!--
-			    				<i class="far fa-star f-yellow mr-1 cp" title="{{_ 'ap-devs-confirmed'}}"></i>
-			    				-->
+			    				{{#if isFavorite}}
+			    					<i class="fas fa-star f-yellow mr-1 cp" title="{{_ 'sp-devs-unfavorite'}}" id="sp-devs-removefavorite"></i>
+			    				{{else}}
+			    					<i class="far fa-star f-yellow mr-1 cp" title="{{_ 'sp-devs-favorite'}}" id="sp-devs-makefavorite"></i>
+			    				{{/if}}
 			    				<a href="/dev/{{username}}">
 		    						<i class="fas fa-search hvr-white-to-red cp mx-1 cp" title="{{_ 'ap-devs-seemore'}}"></i>
 		    					</a>
