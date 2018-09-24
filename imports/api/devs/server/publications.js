@@ -19,6 +19,12 @@ Meteor.publish('devs.username.admin', function(username){
 	}
 })
 
+// Sponsor Use
+Meteor.publish('devs.sponsor', function(){
+	if (Roles.userIsInRole( this.userId, 'sponsor'))
+		return Devs.find({team : {$ne : null}},{ fields: Devs.publicFields });
+});
+
 //Admin Use
 Meteor.publish('devs.all', function(){
 	if (Roles.userIsInRole( this.userId, 'staff'))

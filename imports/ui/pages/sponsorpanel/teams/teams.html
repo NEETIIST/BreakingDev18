@@ -1,0 +1,54 @@
+<template name="sp_teams">
+	<div class="row justify-content-center align-items-start m-0">
+    	<div class="col-10 p-0">
+    		<div class="spacer-4"></div>
+    		<p class="f-white fs-6 fw-6 mb-0 flh-2">{{_ "sp-teams"}}</p>
+    		<hr class="red f-red" style="height:2px;border:none;">
+    		<div class="row justify-content-center align-items-start m-0 p-0">
+	    		{{#if Template.subscriptionsReady}}
+	    			{{#each teams}}
+	    				<div class="col-12 col-md-6 text-left p-0 px-md-3 mb-3">
+						<div class="spacer-2"></div>
+						<div class="row justify-content-center align-items-center m-0 vh-20 team-info p-3">
+							<div class="col-3 text-center">
+								{{#if isWeb this}}
+									<img class="square-icon" src="/icons/Web.png"/>
+								{{else}}
+									<img class="square-icon" src="/icons/Jogos.png"/>
+								{{/if}}
+							</div>
+							<div class="col-7 text-center">
+								<span class="f-white fs-3 fw-6 mb-0">{{team_name}}</span>
+							</div>
+							<div class="col-2 text-center">
+								<a href="/team/{{number}}">
+									<i class="fas fa-search hvr-white-to-red cp fs-3 my-2" title='{{_ "dash-team-find-seemore"}}'></i>
+								</a>
+								<!--
+								<i class="far fa-envelope hvr-white-to-red cp fs-3 my-2" id="dash-team-find-request" title='{{_ "dash-team-find-request"}}'></i>
+								<a href="/dashboard/dev/team/join/{{number}}">
+									<i class="fas fa-user-plus hvr-white-to-red cp fs-3 my-2" title='{{_ "dash-team-find-join"}}'></i>
+								</a>
+								-->
+							</div>
+							<div class="col-12 text-left pt-3">
+								<p class="f-white fs-3 fw-4 mb-1 flh-2">"{{project_name}}"</p>
+								<!--
+								<p class="f-white fs-2 fw-4 mb-1 flh-2">{{idea}}</p>
+								-->
+								<p class="f-white fs-2 fw-4 mb-1 flh-2">{{skills}}</p>
+							</div>
+						</div>
+						<div class="spacer-2"></div>
+					</div>
+	    			{{/each}}
+	    		{{else}}
+	    			<div class="col-12 text-center">
+		    			<i class="fas fa-circle-notch fa-spin fa-5x m-3 f-white"></i>
+		   				<p class="f-white fs-3 fw-4">{{_ "loading"}}</p>
+		   			</div>
+	    		{{/if}}
+	    	</div>
+    	</div>
+    </div>
+</template>

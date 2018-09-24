@@ -42,6 +42,10 @@ Meteor.publish("users.team.own",function(){
 		return;
 });
 
+Meteor.publish("users.sponsor", function(){
+	if (Roles.userIsInRole( this.userId, 'sponsor'))
+		return Meteor.users.find({},{fields:{"username":1, "emails":1}});
+});
 
 Meteor.publish("roles.all", function () {
     if (Roles.userIsInRole( this.userId, 'staff'))

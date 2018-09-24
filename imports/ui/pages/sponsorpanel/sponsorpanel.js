@@ -3,6 +3,8 @@ import './sponsorpanel.html';
 import './overview/overview.js';
 import './profile/profile.js';
 import './company/company.js';
+import './teams/teams.js';
+import './devs/devs.js';
 
 //import { Volunteers } from '/imports/api/volunteers/volunteers.js';
 
@@ -82,6 +84,14 @@ Template.sponsorPanel.events({
 
 	"click #sp_company": function(){
 		FlowRouter.go("SponsorCompany");
+	},
+
+	"click #sp_teams": function(){
+		FlowRouter.go("SponsorTeams");
+	},
+
+	"click #sp_devs": function(){
+		FlowRouter.go("SponsorDevs");
 	},
 
 	"click #sp_logout": function(){

@@ -1,0 +1,41 @@
+<template name="sp_devs">
+    <div class="row justify-content-center align-items-start m-0">
+    	<div class="col-10 p-0">
+    		<div class="spacer-4"></div>
+    		<p class="f-white fs-6 fw-6 mb-0 flh-2">{{_ "sp-devs"}}</p>
+    		<hr class="red f-red" style="height:2px;border:none;">
+    		{{#if Template.subscriptionsReady}}
+		    		{{#each dev}}
+		    			<div class="row justify-content-start align-items-center team-list mx-1 my-2 py-2">
+			    			<div class="col-8 col-md-4 text-left">
+			    				<span class="f-white fs-2 fw-6 mb-0">{{name}}</span>
+			    			</div>
+			    			<div class="col-12 col-md-5 text-left order-2 order-md-1">
+			    				<i class="fas fa-envelope f-white mr-2" title="{{_ 'devs-email'}}"></i>
+			    				<span class="f-white fs-2 fw-4 mb-0">{{email}}</span>
+			    				<!--
+			    				<i class="fas fa-user-graduate f-white ml-3 mr-2" title="{{_ 'devs-course'}}"></i>
+			    				<span class="f-white fs-2 fw-4 mb-0">{{course}}</span>
+								-->
+			    			</div>
+			    			<div class="col-4 col-md-3 text-right order-1 order-md-2">
+			    				<!--
+			    				<i class="far fa-star f-yellow mr-1 cp" title="{{_ 'ap-devs-confirmed'}}"></i>
+			    				-->
+			    				<a href="/dev/{{username}}">
+		    						<i class="fas fa-search hvr-white-to-red cp mx-1 cp" title="{{_ 'ap-devs-seemore'}}"></i>
+		    					</a>
+			    			</div>
+			    		</div>
+		    		{{/each}}
+	    	{{else}}
+	    		<div class="row justify-content-center align-items-start m-0">
+	    			<div class="col-12 text-center">
+		    			<i class="fas fa-circle-notch fa-spin fa-5x m-3 f-white"></i>
+		   				<p class="f-white fs-3 fw-4">{{_ "loading"}}</p>
+		   			</div>
+		   		</div>
+	    	{{/if}}
+    	</div>
+    </div>
+</template>

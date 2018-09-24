@@ -349,6 +349,32 @@ FlowRouter.route('/dashboard/sponsor/company', {
   	},
 });
 
+FlowRouter.route('/dashboard/sponsor/teams', {
+	name: 'SponsorTeams',
+  	action() {
+		if ( Meteor.userId() )
+		{
+			BlazeLayout.render('sponsorPanel', {sp_content:"sp_teams"});
+			Session.set("sp_activeMenu","sp_teams");
+		}
+		else
+			FlowRouter.go("Login");
+  	},
+});
+
+FlowRouter.route('/dashboard/sponsor/devs', {
+	name: 'SponsorDevs',
+  	action() {
+		if ( Meteor.userId() )
+		{
+			BlazeLayout.render('sponsorPanel', {sp_content:"sp_devs"});
+			Session.set("sp_activeMenu","sp_devs");
+		}
+		else
+			FlowRouter.go("Login");
+  	},
+});
+
 FlowRouter.route('/dashboard/volunteer', {
 	name: 'VolunteerPanel',
   	action() {

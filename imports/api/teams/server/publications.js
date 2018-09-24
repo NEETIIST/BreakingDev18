@@ -27,6 +27,11 @@ Meteor.publish('teams.available', function(){
 	return Teams.find({$where: "this.members.length < 3","abandoned":false,"pending":false,"validated":false},{ fields: Teams.publicFields });
 });
 
+Meteor.publish('teams.sponsor',function(){
+	if (Roles.userIsInRole( this.userId, 'sponsor'))
+		return Teams.find({},{ fields: Teams.publicFields });
+});
+
 //Admin Use
 Meteor.publish('teams.all', function(){
 	if (Roles.userIsInRole( this.userId, 'staff'))
